@@ -7,11 +7,37 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <?php
+            include "./includes/header.php"
+        ?>
+        <title>Cats</title>
     </head>
     <body>
         <?php
-        // put your code heretest
+            include "./includes/nav.php"
         ?>
+
+        <div class="hero-carousel">
+            <p>TEST</p>
+            <div class="hero-data">
+                <p class="hero-title">B U G C A T T I</p>
+                <p class="hero-description">This is a car</p>
+            </div>
+        </div>
+        <div class="promo-cats">
+            <div class="cat">
+                <img class="abs" src="images/hd/cat4.png"/>
+                <p class="cat-desc">This is a cat</p>
+            </div>
+            <div class="cat">
+                <img class="abs" src="images/hd/cat2.png"/>
+                <p class="cat-desc">This is a cat</p>
+            </div>
+            <div class="cat">
+                <img class="abs" src="images/hd/cat3.png"/>
+                <p class="cat-desc">This is a cat</p>
+            </div>
+        </div>
+        ^ not actual carousel yet, and NOT YET RESPONSIVE to height < 1080px
     </body>
 </html>
