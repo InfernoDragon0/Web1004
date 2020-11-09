@@ -18,7 +18,7 @@ and open the template in the editor.
         ?>
 
         <div class="hero-carousel">
-            <p>TEST</p>
+            <img class="abs" src="images/hd/hero.png"/>
             <div class="hero-data">
                 <p class="hero-title">B U G C A T T I</p>
                 <p class="hero-description">This is a car</p>

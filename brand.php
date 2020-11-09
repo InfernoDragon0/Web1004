@@ -1,3 +1,10 @@
+<html>
+<head>
+    <?php include "./includes/header.php"?>
+</head>
+<body>
+    <?php include "./includes/nav.php" ?>
+
 <?php
 
 //do some weird stuff for fetching all cars of the selected brand
@@ -17,7 +24,7 @@ function helloDb() {
     else {
         $stmt = $conn->prepare("SELECT * FROM car_list WHERE brand=?");
 
-        //int id, varchar catID, varchar brand, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo
+        //int id, varchar catID, varchar brand, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo, int isMain
 
         $stmt->bind_param("s", $brand);
         $stmt->execute();
@@ -28,7 +35,8 @@ function helloDb() {
             //data for images
             $bigimage = $row["bigimage"];
             $logo = $row["logo"];
-
+            $isMain = $row["isMain"]; //use this to show as the hero image
+            
             //data for the car desc
             $model = $row["model"];
             $description = $row["description"];
@@ -42,3 +50,15 @@ function helloDb() {
 }
 
 ?>
+
+    <div class="brand-main">
+        <img src="<?php echo "images/hd/cat4.png"?>"/>
+        <div class="hero-data">
+            <p class="hero-title">B U G C A T T I</p>
+            <p class="hero-description">This is a car</p>
+        </div>
+    </div>
+    <div class="logoheader"></div>
+
+</body>
+</html>
