@@ -9,56 +9,99 @@
 
 //do some weird stuff for fetching all cars of the selected brand
 $brand = $_GET['brand']; 
-helloDb();
-
 echo "your brand is ". $brand;
 
+helloDb();
+
+
 function helloDb() {
+    global $brand;
+
     $config = parse_ini_file('../../private/db-config.ini');
-    $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
+    $conn = new mysqli($config['servername'], $config['username'], $config['password'], "project1004");
 
     if ($conn->connect_error) {
         $errorMsg = "Connection failed: " . $conn->connect_error;
+        echo $errorMsg;
         $success = false;
     } 
     else {
         $stmt = $conn->prepare("SELECT * FROM car_list WHERE brand=?");
 
-        //int id, varchar catID, varchar brand, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo, int isMain
+        //int id, varchar catID, varchar brand, varchar heading, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo, int isMain
 
         $stmt->bind_param("s", $brand);
         $stmt->execute();
         $result = $stmt->get_result();
+        echo $result->num_rows;
         if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
+            //$row = $result->fetch_assoc();
+            $d1 = 0;
+            while($row = $result->fetch_assoc()) {
+                //data for images
+                $bigimage = $row["bigImage"];
+                $logo = $row["logo"];
+                $isMain = $row["isMain"]; //use this to show as the hero image
+                
+                //data for the car desc
+                $model = $row["model"];
+                $description = $row["description"];
+                $brandx = $row["brand"];
+                $heading = $row["heading"];
 
-            //data for images
-            $bigimage = $row["bigimage"];
-            $logo = $row["logo"];
-            $isMain = $row["isMain"]; //use this to show as the hero image
-            
-            //data for the car desc
-            $model = $row["model"];
-            $description = $row["description"];
+                if ($isMain == 1) {
+                    ?>
+                        <div class="brand-main">
+                            <img src="images/hd/<?php echo $bigimage?>"/>
+                            <div class="hero-data">
+                                <p class="hero-title"><?php echo strtoupper($brandx)?></p>
+                            </div>
+                        </div>
+                        <div class="logoheader">
+                            <p class="brand-description"><?php echo $description?></p>
+                            <img src="images/logos/<?php echo $logo?>"/>
+                            <p class="short-desc">Cars of <?php echo $brandx?></p>
+                            <hr class="short">
+                        </div>
+                    <?php
+                }
+                
+                if ($d1 == 0) {
+                    ?>
+                        <div class="car-container">
+                    <?php
+                    $d1 = 1;
+                }
+
+                if ($isMain == 0)  {
+                    ?>
+                        <div class="brand-car">
+                            <img src="images/hd/<?php echo $bigimage?>"/>
+                            <div class="car-data">
+                                <p class="car-title"><?php echo $model?></p>
+                                <p class="car-description"><?php echo $heading?></p>
+                            </div>
+                        </div>
+                    <?php
+                }
+            }
+
+            if ($d1 == 1) {
+                ?>
+                    </div>
+                <?php
+
+                $d1 = 2;
+            }            
 
         } else {
-            $errorMsg = "No cars in this brand";
-            $success = false;
+            echo "<br><br><br><p class='hero-title'>No cars in this brand</p>";
         }
         $stmt->close();
     }
 }
 
 ?>
-
-    <div class="brand-main">
-        <img src="<?php echo "images/hd/cat4.png"?>"/>
-        <div class="hero-data">
-            <p class="hero-title">B U G C A T T I</p>
-            <p class="hero-description">This is a car</p>
-        </div>
-    </div>
-    <div class="logoheader"></div>
 
 </body>
 </html>
