@@ -4,7 +4,6 @@
         <?php
             include "./includes/header.php"
         ?>
-        <title>Cats</title>
 </head>
 <body>
     <?php

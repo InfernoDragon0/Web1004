@@ -33,6 +33,8 @@ function helloDb() {
         $stmt->bind_param("s", $brand);
         $stmt->execute();
         $result = $stmt->get_result();
+
+        $vid = "none";
         echo $result->num_rows;
         if ($result->num_rows > 0) {
             //$row = $result->fetch_assoc();
@@ -73,7 +75,7 @@ function helloDb() {
                     $d1 = 1;
                 }
 
-                if ($isMain == 0)  {
+                if ($isMain == 0 && $description != "VIDEO")  {
                     ?>
                         <div class="brand-car">
                             <img src="images/hd/<?php echo $bigimage?>"/>
@@ -84,6 +86,10 @@ function helloDb() {
                         </div>
                     <?php
                 }
+
+                if ($description == "VIDEO") {
+                    $vid = $bigimage;
+                }
             }
 
             if ($d1 == 1) {
@@ -92,7 +98,21 @@ function helloDb() {
                 <?php
 
                 $d1 = 2;
-            }            
+            } 
+            
+            if ($vid != "none") {
+                ?>
+
+                <div class="brand-video">
+                    <p class="video-heading"><?php echo strtoupper($brandx)?> SHOWCASE</p>
+                    <iframe src="<?php echo $vid?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <?php
+            }
+
+            
+            
 
         } else {
             echo "<br><br><br><p class='hero-title'>No cars in this brand</p>";
@@ -112,17 +132,17 @@ function helloDb() {
 
     slider.addEventListener('mousedown', (e) => {
         isDown = true;
-        slider.classList.add('active');
+        //slider.classList.add('active');
         startX = e.pageX - slider.offsetLeft;
         scrollLeft = slider.scrollLeft;
     });
     slider.addEventListener('mouseleave', () => {
         isDown = false;
-        slider.classList.remove('active');
+        //slider.classList.remove('active');
     });
     slider.addEventListener('mouseup', () => {
         isDown = false;
-        slider.classList.remove('active');
+        //slider.classList.remove('active');
     });
     slider.addEventListener('mousemove', (e) => {
         if(!isDown) return;

@@ -10,7 +10,6 @@ and open the template in the editor.
         <?php
             include "./includes/header.php"
         ?>
-        <title>Cats</title>
     </head>
     <body>
         <?php
