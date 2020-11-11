@@ -41,8 +41,8 @@ function helloDb() {
             $d1 = 0;
             while($row = $result->fetch_assoc()) {
                 //data for images
-                $bigimage = $row["bigImage"];
-                $logo = $row["logo"];
+                $bigimage = $row["media"];
+                $logo = $row["brand"] . ".png"; //
                 $isMain = $row["isMain"]; //use this to show as the hero image
                 
                 //data for the car desc

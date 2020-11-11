@@ -15,6 +15,7 @@
             </div>
         </div>
         <a class="link" href="./login.php">LOGIN</a>
+        <a class="link" href="./checkout.php">TestCheckout</a>
 
     </ul>
 </nav>
