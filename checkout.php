@@ -22,7 +22,8 @@
                     <h1 id="orderheading">Your Order</h1>
                     <h2 id="orderpricing">$0 SGD</h2>
                 </div>
-                <button id="cobutton" class="cobutton">Checkout</button>
+                <button id="cobutton" onclick="window.location.href='./purchaseHandler.php'" class="cobutton">Checkout</button>
+                <!-- hide the button if thcart is empty-->
             </div>
 
             <div class="cart">
@@ -74,7 +75,7 @@
                                 echo "<script>document.getElementById('showcase').src = './images/hd/$display';</script>";
                                 $d1 = 1;
                             }
-                            
+
                             ?>
                                 <div class="cart-data">
                                     <img class="display" src="./images/hd/<?php echo $display?>"/>
