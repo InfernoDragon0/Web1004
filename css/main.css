@@ -437,7 +437,7 @@ a:hover {
 }
 
 .checkout-container {
-    width: 40%;
+    width: 35%;
     height: 100%;
     background-color: #00000077;
     color: white;
@@ -449,7 +449,8 @@ a:hover {
 
 .cart {
     width: 100%;
-    height: 50%;
+    height: 70%;
+    overflow-y: scroll;
 }
 
 .cart-data {
@@ -462,7 +463,7 @@ a:hover {
 }
 
 .cart-data:hover {
-    transform: scale(1.1);
+    height: 190px;
     z-index: 5;
 }
 
@@ -471,6 +472,7 @@ a:hover {
     height: auto;
     width: 100%;
     min-height: 0;
+    top: -50%;
 }
 
 .checkout {
@@ -496,4 +498,54 @@ a:hover {
     top: 0;
     height: 100%;
     line-height: 60px;
+}
+
+#showcase {
+    transition: all 0.2 linear;
+}
+
+.page-header .data {
+    float: left;
+}
+
+.page-header .cobutton {
+    float: right;
+    min-width: 200px;
+    height: 45px;
+    margin: 10px 0;
+    background: gold;
+    color: black;
+    border: none;
+    outline: none;
+    transition: all 0.2s linear;
+}
+
+.cobutton:hover {
+    background: lightyellow;
+}
+
+.small-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 64px !important;
+    height: auto !important;
+    min-height: 0px !important;
+    margin: 5px;
+}
+
+.smaller-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px !important;
+    height: auto !important;
+    min-height: 0px !important;
+    margin: 5px;
+}
+
+
+
+.light-accent {
+    color: lightyellow;
 }

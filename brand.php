@@ -26,7 +26,7 @@ function helloDb() {
         $success = false;
     } 
     else {
-        $stmt = $conn->prepare("SELECT * FROM car_list WHERE brand=?");
+        $stmt = $conn->prepare("SELECT * FROM car WHERE brand=?");
 
         //int id, varchar catID, varchar brand, varchar heading, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo, int isMain
 
