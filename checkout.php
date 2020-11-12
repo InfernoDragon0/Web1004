@@ -11,7 +11,7 @@
     ?>
 
     <div class="auth">
-        <img id="showcase" src="./images/hd/cat1.png"/>
+        <img id="showcase" src="./images/hd/floorneedspolish.png"/>
         <div class="checkout-container">
             <br>
             <br>
@@ -22,7 +22,7 @@
                     <h1 id="orderheading">Your Order</h1>
                     <h2 id="orderpricing">$0 SGD</h2>
                 </div>
-                <button class="cobutton">Checkout</button>
+                <button id="cobutton" class="cobutton">Checkout</button>
             </div>
 
             <div class="cart">
@@ -59,13 +59,22 @@
                     //echo $result->num_rows;
                     if ($result->num_rows > 0) {
                         //$row = $result->fetch_assoc();
+
+                        $d1 = 0;
                         
                         while($row = $result->fetch_assoc()) {
+                            
+
                             $display = $row["media"];
                             $logo = $row["brand"] . ".png";
                             $itemname = strtoupper($row["brand"]) . " " . $row["model"];
                             $price = money_format('%.2n', $row["price"]);
                             $totalprice += $row["price"]; 
+                            if ($d1 == 0) {
+                                echo "<script>document.getElementById('showcase').src = './images/hd/$display';</script>";
+                                $d1 = 1;
+                            }
+                            
                             ?>
                                 <div class="cart-data">
                                     <img class="display" src="./images/hd/<?php echo $display?>"/>
@@ -78,30 +87,33 @@
                             <?php
                         }
 
-                        if ($result->num_rows < 5) {
-                            $extra = 5-$result->num_rows;
-
-                            for ($i = 0; $i < $extra; $i++) {
-                                ?>
-                                    <div class="cart-data">
-                                        <a href="./">
-                                            <img class="display" src="./images/hd/background.jpg"/>
-                                            <img class="smaller-logo" src="./images/logos/plus.png"/>
-                                            <p class="item-name light-accent">Continue Shopping!</p>
-                                            <div class="item-data">
-                                                <p></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                <?php
-                            }
-                        }
+                        
 
                         echo "<script>document.getElementById('orderpricing').innerHTML = '". money_format('%.2n', $totalprice) ."';</script>";
 
                     }
                     else {
-                        echo "<script>document.getElementById('orderheading').innerHTML = 'No items in cart. Continue Shopping!';</script>";
+                        //also hide checkout button
+                        echo "<script>document.getElementById('orderheading').innerHTML = 'No items. Add more!';</script>";
+                    }
+
+                    if ($result->num_rows < 5) {
+                        $extra = 5-$result->num_rows;
+
+                        for ($i = 0; $i < $extra; $i++) {
+                            ?>
+                                <div class="cart-data">
+                                    <a href="./">
+                                        <img class="display" src="./images/hd/background.jpg"/>
+                                        <img class="smaller-logo" src="./images/logos/plus.png"/>
+                                        <p class="item-name light-accent">Continue Shopping!</p>
+                                        <div class="item-data">
+                                            <p></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            <?php
+                        }
                     }
                 }
 
