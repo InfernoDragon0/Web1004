@@ -45,7 +45,7 @@
 
                 $curdate = date("Y-m-d");
 
-                //create sale in ORDERS table
+                //CREATE sale in ORDERS table
                 $stmt3 = $conn->prepare("INSERT INTO orders (member_id, charge_id, transaction_date) VALUES (?, ?, ?)");
                 $stmt3->bind_param("iss", $memberid, $chargeid, $curdate);
                 $check = $stmt3->execute();
