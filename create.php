@@ -18,20 +18,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $price = $input_price;
     }
     
-    // Validate stock
     $input_stock = trim($_POST["stock"]);
     if(empty($input_stock)){
         $stock_err = "Please enter the stock amount.";     
     } elseif(!ctype_digit($input_stock)){
-        $stock_err = "Please enter a positive integer value.";
+        $stock_err = "Please enter a integer value.";
     } else{
         $stock = $input_stock;
     }
     
-    // Validate status
     $input_status = trim($_POST["status"]);
     if(empty($input_status)){
-        $status_err = "Please enter the status value.";     
+        $status_err = "Please enter the status.";     
     } elseif(!ctype_digit($input_status)){
         $status_err = "Please enter a positive integer value.";
     } else{
@@ -40,23 +38,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     // Check input errors before inserting in database
     if(empty($price_err) && empty($stock_err) && empty($status_err)){
-        // Prepare the statement:
-        $stmt = $conn->prepare("INSERT INTO car (brand, model, price, stock, status) VALUES (?, ?, ?, ?, ?)");
-
-        // Bind & execute the query statement:
-        $stmt->bind_param("sssss", $brand, $model, $price, $stock, $status);
-        if (!$stmt->execute())
-        {
-            $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
-            $success = false;
-        }
-        $stmt->close();
+        // Prepare an insert statement
+        $sql = "INSERT INTO car (brand, model, price, stock, status) VALUES (?, ?, ?, ?, ?)";
+         
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "sssss", $param_brand, $param_model, $param_price, $param_stock, $param_status);
+            
+            // Set parameters
+            $param_brand = $brand;
+            $param_model = $model;
+            $param_price = $price;
+            $param_stock = $stock;
+            $param_status = $status;
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                // Records created successfully. Redirect to landing page
+                header("location: admin.php");
+                exit();
+            } else{
+                echo "Something went wrong. Please try again later.";
+            }
         }
          
+        // Close statement
+        mysqli_stmt_close($stmt);
     }
     
     // Close connection
-    $conn->close();
+    mysqli_close($link);
+}
 ?>
  
 <!DOCTYPE html>
@@ -99,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </div>
                         <div class="form-group <?php echo (!empty($stock_err)) ? 'has-error' : ''; ?>">
                             <label>Stock</label>
-                            <input type="number" name="stock" class="form-control"><?php echo $stock; ?></input>
+                            <input type="number" name="stock" class="form-control" value="<?php echo $stock; ?>">
                             <span class="help-block"><?php echo $stock_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($status_err)) ? 'has-error' : ''; ?>">

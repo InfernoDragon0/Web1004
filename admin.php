@@ -38,7 +38,7 @@
                     
                     // Attempt select query execution
                     $sql = "SELECT * FROM car";
-                    if($result = mysqli_query($conn, $sql)){
+                    if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";
@@ -76,7 +76,7 @@
                             echo "<p class='lead'><em>No records were found.</em></p>";
                         }
                     } else{
-                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
                     }
                     ?>
                 </div>
