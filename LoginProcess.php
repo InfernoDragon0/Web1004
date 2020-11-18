@@ -1,15 +1,4 @@
-  <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
-        
-    <?php
-        include "nav.inc.php";
-    ?>   
-        <?php
+<?php
         $email = $first_name = $last_name = $password_hashed = $errorMsg = $errorMsg1 = "";
         $success = true;
         if ($_SERVER["REQUEST_METHOD"]=="POST")
@@ -87,7 +76,7 @@ and open the template in the editor.
                     $lname = $row["last_name"];
                     $pwd_hashed = $row["password"];
                     // Check if the password matches:
-                    if (!password_verify($_POST["password"], $pwd_hashed))
+                    if (!password_verify($_POST["password"], $password_hashed))
                     {
                         // Don't be too specific with the error message - hackers don't
                         // need to know which one they got right or wrong. :)
@@ -105,8 +94,8 @@ and open the template in the editor.
             $conn->close();
         }
         ?>
-<?php
-if ($success)
+            <?php
+            if ($success)
             {
                 echo"<h2>Login successful!</h2>";
                 echo"<h4>Welcome back, " . $first_name . " " . $last_name . ".</h4>";
