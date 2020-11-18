@@ -78,7 +78,9 @@ function helloDb() {
                 if ($isMain == 0 && $description != "VIDEO")  {
                     ?>
                         <div class="brand-car">
-                            <img src="images/hd/<?php echo $bigimage?>"/>
+                            <a href="car.php?id=<?php echo $carid?>">
+                                <img src="images/hd/<?php echo $bigimage?>">
+                            </a>
                             <div class="car-data">
                                 <p class="car-title"><?php echo $model?></p>
                                 <p class="car-description"><?php echo $heading?></p>
