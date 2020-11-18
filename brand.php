@@ -54,7 +54,7 @@ function helloDb() {
                 if ($isMain == 1) {
                     ?>
                         <div class="brand-main">
-                            <a href="ProductDetail.php?id=<?php echo $carid?>">
+                            <a href="car.php?id=<?php echo $carid?>">
                             <img src="images/hd/<?php echo $bigimage?>"/>
                             </a>
                             <div class="brandhero">
