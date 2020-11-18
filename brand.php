@@ -50,11 +50,16 @@ function helloDb() {
                 $description = $row["description"];
                 $brandx = $row["brand"];
                 $heading = $row["heading"];
-
+                $carid = $row["id"];
                 if ($isMain == 1) {
                     ?>
+                <img class="abs" src="images/hd/hero.png"/>
+                <p class="hero-title">B U G C A T T I</p>
+                <p class="hero-description">This is a car</p>
                         <div class="brand-main">
-                            <img src="images/hd/<?php echo $bigimage?>"/>
+                            <a href="car.php?id="<?php echo $carid?>>
+                                <img src="images/hd/<?php echo $bigimage?>"/>
+                            </a>
                             <div class="brandhero">
                                 <p class="hero-title"><?php echo strtoupper($brandx)?></p>
                             </div>
