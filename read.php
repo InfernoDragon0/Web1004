@@ -32,7 +32,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 $description = $row["description"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
-                header("location: error.php");
+                header("location: admin.php");
                 exit();
             }
             

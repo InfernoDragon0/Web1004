@@ -2,13 +2,36 @@
 require_once "conntodb.php";
  
 // Define variables and initialize with empty values
-$brand = $model = $price = $stock = $status = "";
-$price_err = $stock_err = $status_err = "";
+$brand = $model = $price = $stock = $status = $color = $description = "";
+$brand_err = $model_err = $color_err = $price_err = $stock_err = $status_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     
-    // Validate price
+    $input_description = trim($_POST["description"]);
+    $description = $input_description;
+    
+    $input_brand = trim($_POST["brand"]);
+    if(empty($input_brand)){
+        $brand_err = "Please enter the brand.";     
+    } else{
+        $brand = $input_brand;
+    }
+    
+    $input_model = trim($_POST["model"]);
+    if(empty($input_model)){
+        $model_err = "Please enter the model.";     
+    } else{
+        $model = $input_model;
+    }
+    
+    $input_color = trim($_POST["color"]);
+    if(empty($input_color)){
+        $color_err = "Please enter the color.";     
+    } else{
+        $color = $input_color;
+    }
+    
     $input_price = trim($_POST["price"]);
     if(empty($input_price)){
         $price_err = "Please enter the price amount.";     
@@ -37,13 +60,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($price_err) && empty($stock_err) && empty($status_err)){
+    if(empty($price_err) && empty($stock_err) && empty($status_err) && empty($brand_err) && empty($model_err) && empty($color_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO car (brand, model, price, stock, status) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO car (brand, model, price, stock, status, color, description) VALUES (?, ?, ?, ?, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssss", $param_brand, $param_model, $param_price, $param_stock, $param_status);
+            mysqli_stmt_bind_param($stmt, "sssssss", $param_brand, $param_model, $param_price, $param_stock, $param_status, $param_color, $param_description);
             
             // Set parameters
             $param_brand = $brand;
@@ -51,6 +74,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_price = $price;
             $param_stock = $stock;
             $param_status = $status;
+            $param_color = $color;
+            $param_description = $description;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -58,7 +83,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 header("location: admin.php");
                 exit();
             } else{
-                echo "Something went wrong. Please try again later.";
+                echo "Error: " . $sql . "<br>" . mysqli_error($link);
             }
         }
          
@@ -93,16 +118,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <h2>Create Record</h2>
                     </div>
                     <p>Please fill this form and submit to add a car record to the database.</p>
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <div class="form-group">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"" method="post">
+                        <div class="form-group <?php echo (!empty($brand_err)) ? 'has-error' : ''; ?>">
                             <label>Brand</label>
                             <input type="text" name="brand" class="form-control" value="<?php echo $brand; ?>">
-                            <span class="help-block"></span>
+                            <span class="help-block"><?php echo $brand_err;?></span>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?php echo (!empty($model_err)) ? 'has-error' : ''; ?>">
                             <label>Model</label>
                             <input type="text" name="model" class="form-control" value="<?php echo $model; ?>">
-                            <span class="help-block"></span>
+                            <span class="help-block"><?php echo $model_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
                             <label>Price</label>
@@ -118,6 +143,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <label>Status</label>
                             <input type="number" min="1" max="4" name="status" class="form-control" value="<?php echo $status; ?>">
                             <span class="help-block"><?php echo $status_err;?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($color_err)) ? 'has-error' : ''; ?>">
+                            <label>Color</label>
+                            <input type="text" name="color" class="form-control" value="<?php echo $color; ?>">
+                            <span class="help-block"><?php echo $color_err;?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea name="description" class="form-control"><?php echo $description; ?></textarea>
+                            <span class="help-block"></span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">
                         <a href="admin.php" class="btn btn-default">Cancel</a>
