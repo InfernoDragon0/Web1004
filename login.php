@@ -31,11 +31,11 @@
                 <br>
                 <p class="auth-header">REGISTER NOW</p>
                 <form action="RegisterProcess.php" method="post">
-                    <input type="text" class="form-control" required placeholder="First Name" id="fname"/>
-                    <input type="text" class="form-control" required placeholder="Last Name" id="lname"/>
+                    <input type="text" class="form-control" required placeholder="First Name" id="first_name"/>
+                    <input type="text" class="form-control" required placeholder="Last Name" id="last_name"/>
                     <input type="email" class="form-control" required placeholder="Email Address" id="email"/>
-                    <input type="password" class="form-control" required placeholder="Password" id="pw"/>
-                    <input type="password" class="form-control" required placeholder="Re-Password" id="pw_confirm"/><br>
+                    <input type="password" class="form-control" required placeholder="Password" id="password"/>
+                    <input type="password" class="form-control" required placeholder="Re-Password" id="password_confirm"/><br>
                     <input type="checkbox" id="tc" required /><label for="tc">I have read and agreed to the terms and conditions</label><br>
                     <input type="checkbox" id="mailing" required /><label for="mailing">I want spam mail</label><br>
                     <br><br>
