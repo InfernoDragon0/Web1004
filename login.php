@@ -25,38 +25,11 @@
                 <hr>
                 <p class="qs">New? Click <a onclick="switchTab(event, 'register');">Here to register</a></p>
         </div>
-        <form action="RegisterProcess.php" method="post">
+
         <div id="register" class="auth-container">
                 <br>
                 <br>
                 <p class="auth-header">REGISTER NOW</p>
-<<<<<<< HEAD
-                <div class="form-group">
-                <input class="form-control" type="text" id="first_name"
-                name="fname" placeholder="Enter first name">
-                 </div>
-                <div class="form-group">
-                <input class="form-control" type="text" id="last_name" required maxlength="45"
-                name="lname" placeholder="Enter last name">
-                </div>
-                <div class="form-group">
-                <input class="form-control" type="email" id="email" required
-                name="email" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                <input class="form-control" type="password" id="password" required
-                accept=""name="pwd" placeholder="Enter password">
-                </div>
-                <div class="form-group">
-                <input class="form-control" type="password" id="password_confirm" required
-                name="pwd_confirm" placeholder="Confirm password">
-                </div>
-                <input type="checkbox" id="tc"/><label for="tc">I have read and agreed to the terms and conditions</label><br>
-                <input type="checkbox" id="mailing"/><label for="mailing">I want spam mail</label><br>
-                <br><br>
-                <button class="auth-submit">Register</button><br>
-                <hr>
-=======
                 <form action="authHandler.php" method="post">
                     <input type="text" class="inputs" placeholder="First Name" id="fname"/>
                     <input type="text" class="inputs" placeholder="Last Name" id="lname"/>
@@ -68,10 +41,8 @@
                     <br><br>
                     <button class="auth-submit">Register</button><br>
                     <hr>
->>>>>>> origin/main
                 <p class="qs">Have an account? Click <a onclick="switchTab(event, 'login');">Here to login</a></p>
         </div>
-        </form>>
 
     </div>
 
