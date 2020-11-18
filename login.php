@@ -31,13 +31,13 @@
                 <br>
                 <p class="auth-header">REGISTER NOW</p>
                 <form action="RegisterProcess.php" method="post">
-                    <input type="text" class="form-control" required placeholder="First Name" id="first_name"/>
-                    <input type="text" class="form-control" required placeholder="Last Name" id="last_name"/>
-                    <input type="email" class="form-control" required placeholder="Email Address" id="email"/>
-                    <input type="password" class="form-control" required placeholder="Password" id="password"/>
-                    <input type="password" class="form-control" required placeholder="Re-Password" id="password_confirm"/><br>
-                    <input type="checkbox" id="tc" required /><label for="tc">I have read and agreed to the terms and conditions</label><br>
-                    <input type="checkbox" id="mailing" required /><label for="mailing">I want spam mail</label><br>
+                    <input type="text" class="inputs" required placeholder="First Name" name="first_name"/>
+                    <input type="text" class="inputs" required placeholder="Last Name" name="last_name"/>
+                    <input type="email" class="inputs" required placeholder="Email Address" name="email"/>
+                    <input type="password" class="inputs" required placeholder="Password" name="password"/>
+                    <input type="password" class="inputs" required placeholder="Re-Password" name="password_confirm"/><br>
+                    <input type="checkbox" id="tc" name="tc" required /><label for="tc">I have read and agreed to the terms and conditions</label><br>
+                    <input type="checkbox" id="mailing" name="mailing" required /><label for="mailing">I want spam mail</label><br>
                     <br><br>
                     <button class="auth-submit">Register</button><br>
                     <hr>
