@@ -16,11 +16,13 @@
                 <br>
                 <br>
                 <p class="auth-header">WEBSITE NAME</p>
-                <input type="email" class="inputs" placeholder="Email"/>
-                <input type="password" class="inputs" placeholder="Password"/><br>
+                <form action="LoginProcess.php" method="post">
+                <input type="email" class="inputs" required placeholder="Email"/>
+                <input type="password" class="inputs" required placeholder="Password"/><br>
                 <input type="checkbox" id="cb"/><label for="cb">Remember me</label><br>
                 <br><br>
                 <button class="auth-submit">Login</button><br>
+                </form>
                 <a class="qs" href="./forget.php">Forget Password</a>
                 <hr>
                 <p class="qs">New? Click <a onclick="switchTab(event, 'register');">Here to register</a></p>
