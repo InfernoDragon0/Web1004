@@ -1,3 +1,11 @@
+<html>
+    <head>
+        <?php include "./includes/header.php" ?>
+    </head>
+    <body>
+        <?php include "./includes/nav.php" ?>
+
+
 <?php
 
 //do some weird stuff for fetching all cars of the selected brand
@@ -40,3 +48,5 @@ function helloDb() {
 }
 
 ?>
+    </body>
+</html>
