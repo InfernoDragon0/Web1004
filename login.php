@@ -30,17 +30,18 @@
                 <br>
                 <br>
                 <p class="auth-header">REGISTER NOW</p>
-                <form action="authHandler.php" method="post">
-                    <input type="text" class="inputs" placeholder="First Name" id="fname"/>
-                    <input type="text" class="inputs" placeholder="Last Name" id="lname"/>
-                    <input type="email" class="inputs" placeholder="Email Address" id="email"/>
-                    <input type="password" class="inputs" placeholder="Password" id="pw"/>
-                    <input type="password" class="inputs" placeholder="Re-Password" id="pw_confirm"/><br>
-                    <input type="checkbox" id="tc"/><label for="tc">I have read and agreed to the terms and conditions</label><br>
-                    <input type="checkbox" id="mailing"/><label for="mailing">I want spam mail</label><br>
+                <form action="RegisterProcess.php.php" method="post">
+                    <input type="text" class="inputs" required placeholder="First Name" id="fname"/>
+                    <input type="text" class="inputs" required placeholder="Last Name" id="lname"/>
+                    <input type="email" class="inputs" required placeholder="Email Address" id="email"/>
+                    <input type="password" class="inputs" required placeholder="Password" id="pw"/>
+                    <input type="password" class="inputs" required placeholder="Re-Password" id="pw_confirm"/><br>
+                    <input type="checkbox" id="tc" required /><label for="tc">I have read and agreed to the terms and conditions</label><br>
+                    <input type="checkbox" id="mailing" required /><label for="mailing">I want spam mail</label><br>
                     <br><br>
                     <button class="auth-submit">Register</button><br>
                     <hr>
+                </form>
                 <p class="qs">Have an account? Click <a onclick="switchTab(event, 'login');">Here to login</a></p>
         </div>
 
