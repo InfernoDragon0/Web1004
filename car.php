@@ -13,7 +13,7 @@ function helloDb() {
         $success = false;
     } 
     else {
-        $stmt = $conn->prepare("SELECT * FROM car_list WHERE id=?");
+        $stmt = $conn->prepare("SELECT * FROM car WHERE id=?");
 
         //int id, varchar catID, varchar brand, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo
 
