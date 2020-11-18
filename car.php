@@ -1,7 +1,7 @@
 <?php
 
 //do some weird stuff for fetching all cars of the selected brand
-$car = $_GET['car']; 
+$car = $_GET['id']; 
 helloDb();
 
 function helloDb() {
@@ -13,7 +13,7 @@ function helloDb() {
         $success = false;
     } 
     else {
-        $stmt = $conn->prepare("SELECT * FROM car_list WHERE model=?");
+        $stmt = $conn->prepare("SELECT * FROM car_list WHERE id=?");
 
         //int id, varchar catID, varchar brand, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo
 
