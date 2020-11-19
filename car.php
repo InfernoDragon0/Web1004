@@ -22,7 +22,7 @@
                 echo $errorMsg;
                 $success = false;
             } else {
-                $stmt = $conn->prepare("SELECT * FROM car WHERE id=?");
+                $stmt = $conn->prepare("SELECT * FROM project1004.car WHERE id=?");
 
                 //int id, varchar catID, varchar brand, varchar heading, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo, int isMain
 
