@@ -72,14 +72,12 @@
                     // Note that email field is unique, so should only have
                     // one row in the result set.
                     $row = $result->fetch_assoc();
-                    $fname = $row["first_name"];
-                    $lname = $row["last_name"];
-                    $pwd_hashed = $row["password"];
+                    $first_name = $row["first_name"];
+                    $last_name = $row["last_name"];
+                    $password_hashed = $row["password"];
                     // Check if the password matches:
                     if (!password_verify($_POST["password"], $password_hashed))
                     {
-                        // Don't be too specific with the error message - hackers don't
-                        // need to know which one they got right or wrong. :)
                         $errorMsg = "Email not found or password doesn't match...";
                         $success = false;
                     }

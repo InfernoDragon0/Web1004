@@ -17,8 +17,8 @@
                 <br>
                 <p class="auth-header">WEBSITE NAME</p>
                 <form action="LoginProcess.php" method="post">
-                <input type="email" class="inputs" required placeholder="Email"/>
-                <input type="password" class="inputs" required placeholder="Password"/><br>
+                <input type="email" class="inputs" name="email" required placeholder="Email"/>
+                <input type="password" class="inputs" name="password" required placeholder="Password"/><br>
                 <input type="checkbox" id="cb"/><label for="cb">Remember me</label><br>
                 <br><br>
                 <button class="auth-submit">Login</button><br>
