@@ -5,23 +5,15 @@
     <body>
         <?php include "./includes/nav.php" ?>
 
-
         <?php
-        // get car id to view
+//do some weird stuff for fetching all cars of the selected brand
         $car = $_GET['id'];
-        echo "your carid is " . $car;
+        echo "your brand is " . $car;
+
         helloDb();
 
         function helloDb() {
-//            $config = parse_ini_file('../../private/db-config.ini');
-//            $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-//
-//            if ($conn->connect_error) {
-//                $errorMsg = "Connection failed: " . $conn->connect_error;
-//                $success = false;
-//            } else {
-//                $stmt = $conn->prepare("SELECT * FROM car WHERE id=?");
-            global $car;
+            global $brand;
 
             $config = parse_ini_file('../../private/db-config.ini');
             $conn = new mysqli($config['servername'], $config['username'], $config['password'], "project1004");
@@ -33,41 +25,127 @@
             } else {
                 $stmt = $conn->prepare("SELECT * FROM car WHERE id=?");
 
-                //int id, varchar catID, varchar brand, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo
+                //int id, varchar catID, varchar brand, varchar heading, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo, int isMain
 
-                $stmt->bind_param("s", $car);
+                $stmt->bind_param("s", $brand);
                 $stmt->execute();
                 $result = $stmt->get_result();
-                if ($result->num_rows > 0) { //there should only be one
-                    $row = $result->fetch_assoc();
-                    //data for images
-                    $bigimage = $row["bigimage"];
-                    $logo = $row["logo"];
 
-                    //data for the car desc
-                    $model = $row["model"];
-                    $description = $row["description"];
-                } else {
-                    $errorMsg = "No named cars found";
-                    $success = false;
-                } if ($isMain == 1) {
-                    ?>
-                    <div class="itemcar">
-                            <img src="images/hd/<?php echo $bigimage ?>"/>
-                        <div class="brandhero">
-                            <p class="hero-title"><?php echo strtoupper($brandx) ?></p>
-                        </div>
-                    </div>
-                    <div class="logoheader">
-                        <img src="images/logos/<?php echo $logo ?>"/>
-                        <p class="short-desc">Cars of <?php echo $brandx ?></p>
-                        <hr class="short">
-                    </div>
+                $vid = "none";
+                echo $result->num_rows;
+                if ($result->num_rows > 0) {
+                    //$row = $result->fetch_assoc();
+                    $d1 = 0;
+                    while ($row = $result->fetch_assoc()) {
+                        //data for images
+                        $bigimage = $row["media"];
+                        $logo = $row["brand"] . ".png"; //
+                        $isMain = $row["isMain"]; //use this to show as the hero image
+                        //data for the car desc
+                        $model = $row["model"];
+                        $description = $row["description"];
+                        $brandx = $row["brand"];
+                        $heading = $row["heading"];
+                        $carid = $row["id"];
+                        if ($isMain == 1) {
+                            ?>
+                            <div class="brand-main">
+                                <a href="car.php?id="<?php echo $carid ?>>
+                                    <img src="images/hd/<?php echo $bigimage ?>"/>
+                                </a>
+                                <div class="brandhero">
+                                    <p class="hero-title"><?php echo strtoupper($brandx) ?></p>
+                                </div>
+                            </div>
+                            <div class="logoheader">
+                                <p class="brand-description"><?php echo $description ?></p>
+                                <img src="images/logos/<?php echo $logo ?>"/>
+                                <p class="short-desc">Cars of <?php echo $brandx ?></p>
+                                <hr class="short">
+                            </div>
                     <?php
                 }
-                $stmt->close();
+
+                if ($d1 == 0) {
+                    ?>
+                            <div class="car-container">
+                            <?php
+                            $d1 = 1;
+                        }
+
+                        if ($isMain == 0 && $description != "VIDEO") {
+                            ?>
+                                <div class="brand-car">
+                                    <img src="images/hd/<?php echo $bigimage ?>"/>
+                                    <div class="car-data">
+                                        <p class="car-title"><?php echo $model ?></p>
+                                        <p class="car-description"><?php echo $heading ?></p>
+                                    </div>
+                                </div>
+                    <?php
+                }
+
+                if ($description == "VIDEO") {
+                    $vid = $bigimage;
+                }
             }
+
+            if ($d1 == 1) {
+                ?>
+                        </div>
+                            <?php
+                            $d1 = 2;
+                        }
+
+                        if ($vid != "none") {
+                            ?>
+
+                        <div class="brand-video">
+                            <p class="video-heading"><?php echo strtoupper($brandx) ?> SHOWCASE</p>
+                            <iframe src="<?php echo $vid ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+
+                <?php
+            }
+        } else {
+            echo "<br><br><br><p class='hero-title'>No cars in this brand</p>";
         }
-        ?>
+        $stmt->close();
+    }
+}
+?>
+
+        <script>
+
+            const slider = document.querySelector('.car-container');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                //slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                //slider.classList.remove('active');
+            });
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                //slider.classList.remove('active');
+            });
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown)
+                    return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 3; //scroll-fast
+                slider.scrollLeft = scrollLeft - walk;
+            });
+
+        </script>
+
     </body>
 </html>
