@@ -13,9 +13,9 @@
 
         function helloDb() {
             global $car;
-
+            
             $config = parse_ini_file('../../private/db-config.ini');
-            $conn = new mysqli($config['servername'], $config['username'], $config['password'], "project1004");
+            $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['project1004']);
 
             if ($conn->connect_error) {
                 $errorMsg = "Connection failed: " . $conn->connect_error;
@@ -30,15 +30,13 @@
                 $stmt->execute();
                 $result = $stmt->get_result();
 
-                $vid = "none";
-                echo $result->num_rows;
-                if ($result->num_rows > 0) {
-                    //$row = $result->fetch_assoc();
-                   echo $car;
-                   
-                    
-                } else {
-                    echo "<br><br><br><p class='hero-title'>No cars in this brand</p>";
+               
+               if ($success)
+                {
+                    echo $car;
+                }
+                else 
+                {
                 }
                 $stmt->close();
             }
