@@ -4,7 +4,9 @@
 </head>
 <body>
     <?php include "./includes/nav.php" ?>
-
+<img class="abs" src="images/hd/hero.png"/>
+                <p class="hero-title">B U G C A T T I</p>
+                <p class="hero-description">This is a car</p>
 <?php
 
 //do some weird stuff for fetching all cars of the selected brand
@@ -53,9 +55,6 @@ function helloDb() {
                 $carid = $row["id"];
                 if ($isMain == 1) {
                     ?>
-                <img class="abs" src="images/hd/hero.png"/>
-                <p class="hero-title">B U G C A T T I</p>
-                <p class="hero-description">This is a car</p>
                         <div class="brand-main">
                             <a href="car.php?id="<?php echo $carid?>>
                                 <img src="images/hd/<?php echo $bigimage?>"/>
