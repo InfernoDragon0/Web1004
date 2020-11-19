@@ -13,7 +13,7 @@
         helloDb();
 
         function helloDb() {
-            global $brand;
+            global $car;
 
             $config = parse_ini_file('../../private/db-config.ini');
             $conn = new mysqli($config['servername'], $config['username'], $config['password'], "project1004");
@@ -27,7 +27,7 @@
 
                 //int id, varchar catID, varchar brand, varchar heading, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo, int isMain
 
-                $stmt->bind_param("s", $brand);
+                $stmt->bind_param("s", $car);
                 $stmt->execute();
                 $result = $stmt->get_result();
 
