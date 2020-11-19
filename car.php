@@ -13,7 +13,7 @@
         helloDb();
 
         function helloDb() {
-            global $car;
+            global $brand;
 
             $config = parse_ini_file('../../private/db-config.ini');
             $conn = new mysqli($config['servername'], $config['username'], $config['password'], "project1004");
@@ -24,6 +24,7 @@
                 $success = false;
             } else {
                 $stmt = $conn->prepare("SELECT * FROM car WHERE id=?");
+                echo "succuess";
 
                 //int id, varchar catID, varchar brand, varchar heading, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo, int isMain
 
