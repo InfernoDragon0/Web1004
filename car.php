@@ -34,47 +34,9 @@
                 echo $result->num_rows;
                 if ($result->num_rows > 0) {
                     //$row = $result->fetch_assoc();
-                    $d1 = 0;
-                    while ($row = $result->fetch_assoc()) {
-                        //data for images
-                        $bigimage = $row["media"];
-                        //$logo = $row["brand"] . ".png"; //
-                        //$isMain = $row["isMain"]; //use this to show as the hero image
-                        //data for the car desc
-                        $model = $row["model"];
-                        $description = $row["description"];
-                        $brandx = $row["brand"];
-                        //$heading = $row["heading"];
-                        $carid = $row["id"];
-                        if ($isMain == 1) {
-                            ?>
-                            <img src="images/hd/<?php echo $bigimage ?>"/>
-                            <div class="brandhero">
-                                <p class="hero-title"><?php echo strtoupper($brandx) ?></p>
-                            </div>
-                        </div>
-                        <div class="logoheader">
-                            <p class="brand-description"><?php echo $description ?></p>
-                            <p class="short-desc">Cars of <?php echo $brandx ?></p>
-                            <hr class="short">
-                        </div>
-                    <?php
-                }
-
-                if ($d1 == 0) {
-                    ?>
-                        <div class="car-container">
-                        <?php
-                        $d1 = 1;
-                    }
-                }
-
-                if ($d1 == 1) {
-                    ?>
-                    </div>
-                        <?php
-                        $d1 = 2;
-                    }
+                   echo $car;
+                   
+                    
                 } else {
                     echo "<br><br><br><p class='hero-title'>No cars in this brand</p>";
                 }
@@ -82,5 +44,5 @@
             }
         }
         ?>
-</body>
+    </body>
 </html>
