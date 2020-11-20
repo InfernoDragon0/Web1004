@@ -38,15 +38,15 @@
                     ?>
                     <section id="product">
                         <span class="name"><?php echo $row["model"]; ?></span><br>
-                        <img src="images/hd/<?php echo $row['picture']; ?>">
+                        <img src="images/hd/<?php echo $row['media']; ?>">
                         <aside id="detail">
-                            <span class="price" ><?php echo "$" . $product['price']; ?></span><br>
-                            <span class="stock"><?php echo "$" . $product['stock']; ?></span>
+                            <span class="price" ><?php echo "$" . $row['price']; ?></span><br>
+                            <span class="stock"><?php echo "There are stock: " . $row['stock']; ?></span>
                             <label for="cars">Q:</label>
                             <form action="cart.php" method="post">
                                 <select id="qty" name="qty">
                                     <?php
-                                    for ($x = 1; $x <= $product['stock']; $x++) {
+                                    for ($x = 1; $x <= $row['stock']; $x++) {
                                         echo '<option value="' . $x . '">' . $x . '</option>';
                                     }
                                     ?>

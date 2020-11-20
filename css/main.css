@@ -30,6 +30,10 @@ p {
     color: white;
 }
 
+span, label {
+    color: white;
+}
+
 ul {
     list-style-type: none;
     margin-block-start: 0;
