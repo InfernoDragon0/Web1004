@@ -7,7 +7,7 @@
         <br>
         <br>
         <br>
-    
+
         <?php
 //do some weird stuff for fetching all cars of the selected brand
         $car = $_GET['id'];
@@ -30,20 +30,36 @@
                 $stmt->bind_param("i", $car);
                 $stmt->execute();
                 //int id, varchar catID, varchar brand, varchar heading, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo, int isMain
-                
+
                 $result = $stmt->get_result();
                 $row = $result->fetch_assoc(); //not a while loop cos should only take one car 
 
                 if ($result->num_rows > 0) {
-                    echo "<p>" . $row["id"] . "<p>";
-                    echo "<p>" .$row["brand"] . "<p>";
-                    echo "<p>" .$row["model"] . "<p>";
-                    echo "<p>" .$row["price"] . "<p>";
-                    echo "<p>" .$row["stock"] . "<p>";
+                    ?>
+                    <section id="product">
+                        <span class="name"><?php echo $row["model"]; ?></span><br>
+                        <img src="images/hd/<?php echo $row['picture']; ?>">
+                        <aside id="detail">
+                            <span class="price" ><?php echo "$" . $product['price']; ?></span><br>
+                            <span class="stock"><?php echo "$" . $product['stock']; ?></span>
+                            <label for="cars">Q:</label>
+                            <form action="cart.php" method="post">
+                                <select id="qty" name="qty">
+                                    <?php
+                                    for ($x = 1; $x <= $product['stock']; $x++) {
+                                        echo '<option value="' . $x . '">' . $x . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                                <input type="submit" value="Add to cart" class="buttoncart">
+                                <input type="text" name="carid" value="<?php echo $row["id"]; ?>" hidden>
+                            </form>
+                        </aside>
 
+                    </section>
+                    <?php
                     //and more!
-                }
-                else {
+                } else {
                     echo "No results!";
                 }
 
