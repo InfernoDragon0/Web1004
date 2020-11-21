@@ -27,17 +27,26 @@ and open the template in the editor.
         </div>
         <div class="promo-cats">
             <div class="cat">
+                <a href="brand.php">
                 <img class="abs" src="images/hd/cat4.png"/>
-                <p class="cat-desc">This is a cat</p>
+                <h2 class="cat-desc">Browse Selections</h2>
+                </a>
             </div>
             <div class="cat">
+                <a href="reviews.php">
                 <img class="abs" src="images/hd/cat2.png"/>
-                <p class="cat-desc">This is a cat</p>
+                <h2 class="cat-desc">Customer Reviews</h2>
+                </a>
             </div>
             <div class="cat">
+                <a href="about.php">
                 <img class="abs" src="images/hd/cat3.png"/>
-                <p class="cat-desc">This is a cat</p>
+                <h2 class="cat-desc">About Us</h2>
+                </a>
             </div>
         </div>
+        <?php
+            include "./includes/footer.php";
+        ?>
     </body>
 </html>
