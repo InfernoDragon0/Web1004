@@ -16,6 +16,7 @@
                 <a href="./brand.php?brand=cat">Cat</a>
             </div>
         </div>
+        <a class="link" href="./reviews.php">REVIEWS</a>
         <a class="link" href="./login.php">LOGIN</a>
         <a class="link" href="./checkout.php">TestCheckout</a>
 
