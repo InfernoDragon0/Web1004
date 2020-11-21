@@ -1,6 +1,9 @@
 <html lang="en">
     <head>
         <title>Review</title>
+        <?php
+            include "./includes/header.php";
+        ?>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
                 class=""accesskey=""rel="stylesheet">
         <link rel="stylesheet" href="css/reviewpage.css">
@@ -8,7 +11,8 @@
     <body>
         <main>
             <h3>Reviews</h3>
-            <?php 
+            <?php
+                include "./includes/nav.php";
                 session_start();
                 $review = $errormsg = "";
                 $success = true;
