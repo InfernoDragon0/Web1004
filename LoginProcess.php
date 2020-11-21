@@ -105,6 +105,7 @@
             else
             {
                 echo"<h2>Oops!</h2>";
+                echo"<h2>testing</h2>";
                 echo"<h4>The following errors were detected:</h4>";
                 echo"<p>" . $errorMsg . "</p>";
                 echo"<a href='login.php' class='btn btn-warning' type>Return to Login</a>";
