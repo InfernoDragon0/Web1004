@@ -101,6 +101,7 @@
                 echo"<h4>Welcome back, " . $first_name . " " . $last_name . ".</h4>";
                 echo"<a href='index.php' class='btn btn-success'>Return to Home</a>";
                 echo"<a href='logout.php' class='btn btn-success'>Logout</a>";
+                echo"<h2>testing<h2>";
             
             }
             else
