@@ -100,6 +100,7 @@
                 echo"<h2>Login successful!</h2>";
                 echo"<h4>Welcome back again, " . $first_name . " " . $last_name . ".</h4>";
                 echo"<a href='index.php' class='btn btn-success'>Return to Home</a>";
+                echo"<a href='logout.php' class='btn btn-success'>Logout</a>";
             }
             else
             {
