@@ -1,6 +1,7 @@
 <html lang="en">
     <head>
         <title>Review</title>
+        <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
                 class=""accesskey=""rel="stylesheet">
         <link rel="stylesheet" href="css/reviewpage.css">
