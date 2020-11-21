@@ -17,10 +17,12 @@ and open the template in the editor.
         ?>
 
         <div class="hero-carousel">
-            <img class="abs" src="images/hd/hero.png"/>
+            <video autoplay muted loop id="MainVid">
+                <source src="images/Chiron.mp4" type="video/mp4">
+            </video>
             <div class="hero-data">
-                <p class="hero-title">B U G C A T T I</p>
-                <p class="hero-description">This is a car</p>
+                <p class="hero-title">L U X A U T O</p>
+                <p class="hero-description">The all new Bugatti Chiron now available</p>
             </div>
         </div>
         <div class="promo-cats">
@@ -37,6 +39,5 @@ and open the template in the editor.
                 <p class="cat-desc">This is a cat</p>
             </div>
         </div>
-        ^ not actual carousel yet, and NOT YET RESPONSIVE to height < 1080px
     </body>
 </html>

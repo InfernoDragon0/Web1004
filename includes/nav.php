@@ -1,6 +1,8 @@
 <nav class="top-navigator">
     <div class="logo">
-        logo
+        <a href="./index.php">
+        <img src="images/logos/companylogo.png" height="40"> 
+        </a>
     </div>
 
     <ul class="links">
