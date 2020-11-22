@@ -31,66 +31,70 @@
             echo "<h1>Forbidden</h1>";
             echo "You must have admin privileges to access this page.";
         }
-    ?>
+        else {
+            ?>
 
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header clearfix">
-                        <h2 class="pull-left">Car Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right">Add New Car</a>
-                    </div>
-                    <?php
-                    
-                    require_once "conntodb.php";
-                    
-                    // Attempt select query execution
-                    $sql = "SELECT * FROM car";
-                    if($result = mysqli_query($link, $sql)){
-                        if(mysqli_num_rows($result) > 0){
-                            echo "<table class='table table-bordered table-striped'>";
-                                echo "<thead>";
-                                    echo "<tr>";
-                                        echo "<th>#</th>";
-                                        echo "<th>Brand</th>";
-                                        echo "<th>Model</th>";
-                                        echo "<th>Price</th>";
-                                        echo "<th>Stock</th>";
-                                        echo "<th>Status</th>";
-                                        echo "<th>Action</th>";
-                                    echo "</tr>";
-                                echo "</thead>";
-                                echo "<tbody>";
-                                while($row = mysqli_fetch_array($result)){
-                                    echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
-                                        echo "<td>" . $row['brand'] . "</td>";
-                                        echo "<td>" . $row['model'] . "</td>";
-                                        echo "<td>" . $row['price'] . "</td>";
-                                        echo "<td>" . $row['stock'] . "</td>";
-                                        echo "<td>" . $row['status'] . "</td>";
-                                        echo "<td>";
-                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
-                                        echo "</td>";
-                                    echo "</tr>";
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-header clearfix">
+                                <h2 class="pull-left">Car Details</h2>
+                                <a href="create.php" class="btn btn-success pull-right">Add New Car</a>
+                            </div>
+                            <?php
+                            
+                            require_once "conntodb.php";
+                            
+                            // Attempt select query execution
+                            $sql = "SELECT * FROM car";
+                            if($result = mysqli_query($link, $sql)){
+                                if(mysqli_num_rows($result) > 0){
+                                    echo "<table class='table table-bordered table-striped'>";
+                                        echo "<thead>";
+                                            echo "<tr>";
+                                                echo "<th>#</th>";
+                                                echo "<th>Brand</th>";
+                                                echo "<th>Model</th>";
+                                                echo "<th>Price</th>";
+                                                echo "<th>Stock</th>";
+                                                echo "<th>Status</th>";
+                                                echo "<th>Action</th>";
+                                            echo "</tr>";
+                                        echo "</thead>";
+                                        echo "<tbody>";
+                                        while($row = mysqli_fetch_array($result)){
+                                            echo "<tr>";
+                                                echo "<td>" . $row['id'] . "</td>";
+                                                echo "<td>" . $row['brand'] . "</td>";
+                                                echo "<td>" . $row['model'] . "</td>";
+                                                echo "<td>" . $row['price'] . "</td>";
+                                                echo "<td>" . $row['stock'] . "</td>";
+                                                echo "<td>" . $row['status'] . "</td>";
+                                                echo "<td>";
+                                                    echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                                    echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                                    echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                                echo "</td>";
+                                            echo "</tr>";
+                                        }
+                                        echo "</tbody>";                            
+                                    echo "</table>";
+                                    // Free result set
+                                    mysqli_free_result($result);
+                                } else{
+                                    echo "<p class='lead'><em>No records were found.</em></p>";
                                 }
-                                echo "</tbody>";                            
-                            echo "</table>";
-                            // Free result set
-                            mysqli_free_result($result);
-                        } else{
-                            echo "<p class='lead'><em>No records were found.</em></p>";
-                        }
-                    } else{
-                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-                    }
-                    ?>
+                            } else{
+                                echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                            }
+                            ?>
+                        </div>
+                    </div>        
                 </div>
-            </div>        
-        </div>
-    </div>
+            </div>
+            <?php
+        }
+    ?>
 </body>
 </html>
