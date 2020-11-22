@@ -69,8 +69,9 @@
                         }
                         $stmt->execute();
                     }
+                    echo '<script>window.location.href = "reviews.php";</script>';
+
                 }
-                echo '<script>window.location.href = "reviews.php";</script>';
             ?>
         </main>
     </body>
