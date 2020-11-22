@@ -59,10 +59,10 @@
                         // Prepare the statement
                         date_default_timezone_set('Asia/Singapore');
                         $datetime = date("Y-m-d H:i:s");
-                        $stmt = $conn -> prepare("INSERT INTO reviews (id, member_id, review, date_time) VALUES (?, ?, ?, ?)");
+                        $stmt = $conn -> prepare("INSERT INTO reviews (member_id, review, date_time) VALUES (?, ?, ?)");
                         
                         // Bind & execute the query statement
-                        $stmt -> bind_param("ssss", $id, $member_id, $review, $datetime);
+                        $stmt -> bind_param("sss", $member_id, $review, $datetime);
                         if(!$stmt)
                         {
                             echo "Prepare failed: (". $conn->errno.") ".$conn->error."<br>";
