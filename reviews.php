@@ -20,7 +20,7 @@
 
                 // Create database connection
                 $config = parse_ini_file('../../private/db-config.ini');
-                $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
+                $conn = new mysqli($config['servername'], $config['username'], $config['password'], 'project1004');
                 
                 // Check connection
                 if ($conn -> connect_error)
