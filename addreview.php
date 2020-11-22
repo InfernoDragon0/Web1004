@@ -19,7 +19,7 @@
             <?php
                 session_start();
                 // Get member's id from session
-                $member_id = $_SESSION['id'] = 1;
+                $member_id = $_SESSION['id'];
                 //echo $member_id;
 
                 if (!empty($_POST['review']))
@@ -45,7 +45,7 @@
 
                     // Create database connection
                     $config = parse_ini_file('../../private/db-config.ini');
-                    $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
+                    $conn = new mysqli($config['servername'], $config['username'], $config['password'], 'project1004');
                     
                     // Check connection
                     if ($conn -> connect_error)
@@ -61,8 +61,8 @@
                         $datetime = date("Y-m-d H:i:s");
                         $stmt = $conn -> prepare("INSERT INTO reviews (member_id, review, date_time) VALUES (?, ?, ?)");
                         
-                        // Bind & execute the query statement
-                        $stmt -> bind_param("sss", $member_id, $review, $datetime);
+                        // Bind & execute the query statementi
+                        $stmt -> bind_param("iss", $member_id, $review, $datetime);
                         if(!$stmt)
                         {
                             echo "Prepare failed: (". $conn->errno.") ".$conn->error."<br>";
