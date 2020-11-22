@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
 
+<link rel="stylesheet" href="./css/nav.css">
 <link rel="stylesheet" href="./css/fonts/font-awesome.min.css">
 <link rel="stylesheet" href="./css/fonts/ionicons.min.css">
 <link rel="stylesheet" href="./css/bootstrap.min.css">

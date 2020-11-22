@@ -216,7 +216,6 @@ a:hover {
 
 
 .auth-container {
-    width: 400px;
     height: 100%;
     padding: 50px 25px;
     background-color: #00000077;
@@ -285,6 +284,7 @@ a:hover {
     color: white;
     padding: 5px;
     font-family: 'Quattrocento Sans', sans-serif;
+    display: block;
 }
 
 .auth-container label {

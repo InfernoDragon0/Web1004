@@ -123,6 +123,8 @@
 
             header("Refresh:3; url=./$redirector", true, 303);
 
+            echo "<meta http-equiv='refresh' content='3;url=./$redirector'>";
+
             echo"<div class='page-header'><h1>Login successful!</h2>";
             echo"<h2>Welcome back again, " . $first_name . " " . $last_name . ".</h4>";
             echo"<p>Redirecting back in 3 seconds!</p>";

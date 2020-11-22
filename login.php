@@ -28,7 +28,7 @@
         <div id="login" class="auth-container active">
                 <br>
                 <br>
-                <p class="auth-header">WEBSITE NAME</p>
+                <p class="auth-header">LUXAUTO</p>
                 <form action="LoginProcess.php<?php echo $redirector;?>" method="post">
                 <input type="email" class="inputs" name="email" required placeholder="Email"/>
                 <input type="password" class="inputs" name="password" required placeholder="Password"/><br>
