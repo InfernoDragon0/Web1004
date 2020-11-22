@@ -29,14 +29,16 @@
             <div class="cart">
 
             <?php
-                $memberid = 1; //debug only
+                session_start();
+                $memberid = 1;
                 setlocale(LC_MONETARY, 'en_US.UTF-8'); //for money_format to currency USD $
+                
                 if (isset($_SESSION['memberid'])) {
                     $memberid = $_SESSION['memberid']; //for later use
                 }
                 else {
-                    //Redirect to login page first
-                    //return
+                    header("Location: ./login.php?rd=checkout");
+                    return;
                 }
                 
                 $config = parse_ini_file('../../private/db-config.ini');

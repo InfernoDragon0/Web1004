@@ -17,9 +17,36 @@
             </div>
         </div>
         <a class="link" href="./reviews.php">REVIEWS</a>
-        <a class="link" href="./login.php">LOGIN</a>
-        <a class="link" href="./checkout.php">TestCheckout</a>
 
+        <?php
+            //sesion magic
+            session_start();
+            if (isset($_SESSION['memberid'])) {
+                ?>
+                    <div class="dd link">
+                        <a href="#"><?php echo $_SESSION['name']?></a>
+                        <div class="dd-content">
+                            <a href="./account.php">View Profile</a>
+                            <?php
+                                if(isset($_SESSION['memberid']) && $_SESSION['isAdmin']) {
+                                    ?>
+                                    <a href="./admin.php">Admin Panel</a>
+                                    <?php
+                                }
+                            ?>
+                            <a href="./checkout.php">Checkout</a>
+                            <a href="./logout.php">Logout</a>
+                        </div>
+                    </div>
+
+                <?php
+            }
+            else {
+                ?>
+                <a class="link" href="./login.php">LOGIN</a>
+                <?php
+            }
+        ?>
     </ul>
 </nav>
 <div class="bg"></div>

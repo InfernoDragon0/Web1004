@@ -22,6 +22,7 @@ a {
 }
 
 p {
+    color: white;
     display: block;
     margin-block-start: 0;
     margin-block-end: 0;

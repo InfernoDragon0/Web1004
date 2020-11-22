@@ -72,7 +72,6 @@
                     $stmt->bind_param("i", $memberid);
                     $stmt->execute();
                     $result = $stmt->get_result();
-
                     ?>
 
                     <div class="page-header">

@@ -1,6 +1,22 @@
-
+<html>
+    <head>
+    <meta charset="UTF-8">
+        <?php
+            include "./includes/header.php"
+        ?>
+</head>
+<body>
+    <?php
+        include "./includes/nav.php"
+    ?>
+    <br>
+    <br>
+    <br>
+    <br>
 <?php
         $email = $first_name = $last_name = $password_hashed = $errorMsg = $errorMsg1 = "";
+        $id = 0;
+        $admin = 0;
         $success = true;
         if ($_SERVER["REQUEST_METHOD"]=="POST")
         {
@@ -50,7 +66,7 @@
         */
         function authenticateUser()
         {
-            global $first_name, $last_name, $email, $password_hashed, $errorMsg, $success;
+            global $first_name, $last_name, $email, $password_hashed, $errorMsg, $success,$id, $admin;
             // Create database connection.
             $config = parse_ini_file('../../private/db-config.ini');
             $conn = new mysqli($config['servername'], $config['username'], $config['password'], 'project1004');
@@ -76,6 +92,8 @@
                     $first_name = $row["first_name"];
                     $last_name = $row["last_name"];
                     $password_hashed = $row["password"];
+                    $id = $row["member_id"];
+                    $admin = $row["user_type"];
                     // Check if the password matches:
                     if (!password_verify($_POST["password"], $password_hashed))
                     {
@@ -92,21 +110,32 @@
                 }
             $conn->close();
         }
-        ?>
-            <?php
-            if ($success)
-            {   session_start();
-                $_SESSION['email']=$email;
-                echo"<h2>Login successful!</h2>";
-                echo"<h4>Welcome back again, " . $first_name . " " . $last_name . ".</h4>";
-                echo"<a href='index.php' class='btn btn-success'>Return to Home</a>";
-                echo"<a href='logout.php' class='btn btn-success'>Logout</a>";
-            }
-            else
-            {
-                echo"<h2>Oops!</h2>";
-                echo"<h4>The following errors were detected:</h4>";
-                echo"<p>" . $errorMsg . "</p>";
-                echo"<a href='login.php' class='btn btn-warning' type>Return to Login</a>";
-            }    
-            ?>
+
+        if ($success)
+        {   
+            session_start();
+            $_SESSION['email']=$email;
+            $_SESSION['memberid'] = $id;
+            $_SESSION['name'] = $first_name;
+            $_SESSION['isAdmin'] = $admin;
+
+            $redirector = (isset($_GET['rd']) ? $_GET['rd'] : "index")  . ".php";
+
+            header("Refresh:3; url=./$redirector", true, 303);
+
+            echo"<div class='page-header'><h1>Login successful!</h2>";
+            echo"<h2>Welcome back again, " . $first_name . " " . $last_name . ".</h4>";
+            echo"<p>Redirecting back in 3 seconds!</p>";
+            echo"<a href='./index.php' class='btn btn-success'>Return to Home</a></div>";
+        }
+        else
+        {
+            echo"<div class='page-header'><h2>Oops!</h2>";
+            echo"<h4>The following errors were detected:</h4>";
+            echo"<p>" . $errorMsg . "</p>";
+            echo"<a href='login.php' class='btn btn-warning' type>Return to Login</a></div>";
+        }    
+?>
+
+</body>
+</html>

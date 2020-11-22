@@ -10,13 +10,26 @@
         include "./includes/nav.php"
     ?>
 
+    <?php
+        //check if logged in already, then bypass login page if already logged in
+        session_start();
+        $redirector = "";
+        if (isset($_SESSION['memberid'])) {
+            header("Location:./index.php", true, 303);
+        }
+
+        if (isset($_GET['rd'])) {
+            $redirector = "?rd=".$_GET['rd'];
+        }
+    ?>
+
     <div class="auth">
         <img src="./images/hd/cat1.png"/>
         <div id="login" class="auth-container active">
                 <br>
                 <br>
                 <p class="auth-header">WEBSITE NAME</p>
-                <form action="LoginProcess.php" method="post">
+                <form action="LoginProcess.php<?php echo $redirector;?>" method="post">
                 <input type="email" class="inputs" name="email" required placeholder="Email"/>
                 <input type="password" class="inputs" name="password" required placeholder="Password"/><br>
                 <input type="checkbox" id="cb"/><label for="cb">Remember me</label><br>
