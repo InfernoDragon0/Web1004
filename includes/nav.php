@@ -40,6 +40,7 @@
                                         }
                                     ?>
                                     <a class="dropdown-item" href="./account.php">View Profile</a>
+                                    <a class="dropdown-item" href="./cart.php">Cart</a>
                                     <a class="dropdown-item" href="./checkout.php">Checkout</a>
                                     <a class="dropdown-item" href="./logout.php">Logout</a>
                                 </div>
@@ -85,7 +86,6 @@
             </div>
         </div>
         <a class="link" href="./reviews.php">REVIEWS</a>
-
         
     </ul> -->
 </nav>
