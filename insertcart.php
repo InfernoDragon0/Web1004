@@ -15,6 +15,7 @@ function helloDb() {
     if (isset($_SESSION['memberid'])) {
         $userid = $_SESSION['memberid'];
         $username = $_SESSION['membername'];
+        echo $userid;
     }
 
     if ($conn->connect_error) {
@@ -24,15 +25,17 @@ function helloDb() {
     } else {
         $stmtinsert = $conn->prepare("INSERT INTO cart(member_id,car_id,qty) VALUES('?','?','?')");
 
-        $stmtinsert->bind_param("i,i,i", $car, $qty, $userid);
+        $stmtinsert->bind_param("iii", $car, $qty, $userid);
         $stmtinsert->execute();
-        if ($stmtinsert >= 1) {
+        $stmt->bind_param("ssss", $fname, $lname, $email, $pwd_hashed);
+       
+        if (!$stmtinsert->execute()) {
 
-
-            header("Location:cart.php");
+            $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+            $success = false;
         } else {
 
-            echo $sql;
+            header("Location:cart.php");
         }
         $stmt->close();
     }
