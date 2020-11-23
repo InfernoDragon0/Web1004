@@ -22,9 +22,12 @@
             $('[data-toggle="tooltip"]').tooltip();   
         });
     </script>
+    <meta charset="UTF-8">
 </head>
 <body>
     <?php
+        include "./includes/nav.php";
+        
         session_start();
         if (!isset($_SESSION['memberid']) || !$_SESSION['isAdmin']) {
             header('HTTP/1.0 403 Forbidden');
