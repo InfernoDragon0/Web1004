@@ -4,10 +4,6 @@
     </head>
     <body>
         <?php include "./includes/nav.php" ?>
-        <br>
-        <br>
-        <br>
-
         <?php
         $car = $_POST['carid'];
         $qty = $_POST['qty'];

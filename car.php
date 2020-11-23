@@ -43,7 +43,7 @@
                             <span class="price" ><?php echo "$" . $row['price']; ?></span><br>
                             <span class="stock"><?php echo "There are stock: " . $row['stock']; ?></span>
                             <label for="cars">Q:</label>
-                            <form action="cart.php" method="post">
+                            <form action="insertcart.php" method="post">
                                 <select id="qty" name="qty">
                                     <?php
                                     for ($x = 1; $x <= $row['stock']; $x++) {
