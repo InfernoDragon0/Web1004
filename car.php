@@ -4,15 +4,8 @@
     </head>
     <body>
         <?php include "./includes/nav.php" ?>
-        <br>
-        <br>
-        <br>
-
         <?php
-//do some weird stuff for fetching all cars of the selected brand
         $car = $_GET['id'];
-        echo "<br><br><br><p>your car is $car</p>";
-
         helloDb();
 
         function helloDb() {
@@ -29,10 +22,8 @@
                 $stmt = $conn->prepare("SELECT * FROM car WHERE id=?");
                 $stmt->bind_param("i", $car);
                 $stmt->execute();
-                //int id, varchar catID, varchar brand, varchar heading, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo, int isMain
-
                 $result = $stmt->get_result();
-                $row = $result->fetch_assoc(); //not a while loop cos should only take one car 
+                $row = $result->fetch_assoc(); 
 
                 if ($result->num_rows > 0) {
                     ?>
