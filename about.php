@@ -29,7 +29,7 @@
     <div class="col-sm-8">
       <h2>About Us</h2><br>
       <h4>Founded in 2020 by a team of car enthusiast, LUXAUTO aims to bring car lovers' dreams to reality by offering them an experience in luxurious vehicles of exorbitant prices at affordable rates</h4><br>
-      <p>Most people in the world will never experience the feeling of being in a vehicle worth as much as someone's home. This is where LUXAUTO steps in to bridge the gap of such experience and reach out to more walks of life. At LUXAUTO, we feel that everyone should have a chance to experience engineering marvels and craftsmanship of many rare automobiles from all over the world. Brands such as Bugatti, Pagani and many more brands that most people can only dream of seeing one in person are now within your reach.</p>
+      <p>Most people in the world will never experience the thrill of driving around with a vehicle that has a monetary value equivalent to that of someone’s home. This is where LUXAUTO steps in to bridge the gap between your dream and reality. At LUXAUTO, we believe that everyone should have a chance to enjoy engineering marvels and craftsmanship of rare automobiles from around the world. Brands that most can only dream of such as Bugatti, Pagani and many more are only an order away</p>
     </div>
       <img id="emblem" src="images/logos/Pagani-emblem.png"/>
   </div>
