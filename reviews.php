@@ -11,7 +11,7 @@
             <h3>Reviews</h3>
             <?php
                 session_start();
-                includes './includes/nav/php';
+                include './includes/nav/php';
                 $review = $errormsg = "";
                 $success = true;
                 // Get member's id from session
