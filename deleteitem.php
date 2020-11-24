@@ -11,7 +11,7 @@ if (isset($_SESSION['memberid'])) {
 helloDb();
 
 function helloDb() {
-    global $car;
+    global $cartidToDelete, $caridToDelete, $memberid;
 
     $config = parse_ini_file('../../private/db-config.ini');
     $conn = new mysqli($config['servername'], $config['username'], $config['password'], "project1004");
@@ -22,7 +22,7 @@ function helloDb() {
         $success = false;
     } else {
         $stmt = $conn->prepare("DELETE FROM cart WHERE id = ? AND car_id = ? AND member_id = ?");
-        $stmt->bind_param("i,i,i", $cartidToDelete, $caridToDelete,$memberid);
+        $stmt->bind_param("iii", $cartidToDelete, $caridToDelete,$memberid);
         $stmt->execute();
 
         $result = $stmt->get_result();

@@ -32,9 +32,18 @@
                         <img src="images/hd/<?php echo $row['media']; ?>">
                         <aside id="detail">
                             <span class="price" ><?php echo "$" . $row['price']; ?></span><br>
-                            <span class="stock"><?php echo "There are stock: " . $row['stock']; ?></span>
+                            <span class="stock"><?php 
+                            if($row[stock] > 0)
+                            {
+                                echo "There are stock: " . $row['stock'];
+                            }
+                            else{
+                                echo "There is no stock";
+                            }
+                            ?>
+                            </span>
                             <label for="cars">Q:</label>
-                            <form action="insertcart.php" method="post">
+                            <form action="cart.php" method="post">
                                 <select id="qty" name="qty">
                                     <?php
                                     for ($x = 1; $x <= $row['stock']; $x++) {
@@ -49,7 +58,6 @@
 
                     </section>
                     <?php
-                    //and more!
                 } else {
                     echo "No results!";
                 }

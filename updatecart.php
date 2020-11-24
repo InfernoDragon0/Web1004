@@ -2,6 +2,7 @@
 
 $cartid = $_POST["cartid"];
 $carid = $_POST["carid"];
+$qty = $_POST["carid"];
 if (isset($_SESSION['memberid'])) {
     $memberid = $_SESSION['memberid']; //for later use
 } else {
@@ -22,7 +23,7 @@ function helloDb() {
         $success = false;
     } else {
         $stmt = $conn->prepare("UPDATE cart SET  qty = ? WHERE id= ? AND car_id=? AND member_id=? ");
-        $stmt->bind_param("i,i,i", $cartid, $carid,$memberid);
+        $stmt->bind_param("iiii",$qty, $cartid, $carid,$memberid);
         $stmt->execute();
 
         $result = $stmt->get_result();
