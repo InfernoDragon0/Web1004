@@ -5,9 +5,11 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
                 class=""accesskey=""rel="stylesheet">
         <link rel="stylesheet" href="css/reviewpage.css">
+        <?php include './includes/header.php'; ?>
     </head>
     <body>
         <main>
+            <?php include './includes/nav.php'; ?>
             <h3>Reviews</h3>
             <?php
                 session_start();
