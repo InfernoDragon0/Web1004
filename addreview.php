@@ -5,9 +5,11 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
                 class=""accesskey=""rel="stylesheet">
         <link rel="stylesheet" href="css/reviewpage.css">
+        <?php include './includes/header.php'; ?>
     </head>
     <body>
         <main>
+            <?php include './includes/nav.php'; ?>
             <h3>Add Review</h3>
             <form action="" method="POST">
                 <label>Please leave a review:</label></br>
