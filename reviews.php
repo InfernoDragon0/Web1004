@@ -5,6 +5,9 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
                 class=""accesskey=""rel="stylesheet">
         <link rel="stylesheet" href="css/reviewpage.css">
+        <?php
+            include "./includes/header.php"
+        ?>
     </head>
     <body>
         <main>
