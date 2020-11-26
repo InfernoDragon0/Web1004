@@ -127,7 +127,7 @@
 
             echo"<div class='page-header'><h1>Login successful!</h2>";
             echo"<h2>Welcome back again, " . $first_name . " " . $last_name . ".</h4>";
-            echo"<p>Redirecting in 3 seconds!</p>";
+            echo"<p>Redirecting to profile page in 3 seconds!</p>";
             echo"<a href='./AccountUpdate.php' class='btn btn-success'>/a></div>";
         }
         else
