@@ -50,7 +50,7 @@
                     <input type="text" class="inputs" required placeholder="Last Name" name="last_name"/>
                     <input type="email" class="inputs" required placeholder="Email Address" name="email"/>
                     <input type="password" class="inputs" required placeholder="Password" name="password"/>
-                    <input type="password" class="inputs" required placeholder="Re-Password" name="password_confirm"/><br>
+                    <input type="password" class="inputs" required placeholder="Re-enter Password" name="password_confirm"/><br>
                     <input type="checkbox" id="tc" name="tc" required /><label for="tc">I have read and agreed to the terms and conditions</label><br>
                     <input type="checkbox" id="mailing" name="mailing" required /><label for="mailing">I want spam mail</label><br>
                     <br><br>
