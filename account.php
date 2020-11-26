@@ -9,18 +9,38 @@
     <?php
         include "./includes/nav.php"
     ?>
+    
     <p> </p>
     <p> </p>
     <p> </p>
 <!--  extra 3x <p> </p>  to insert extra spaces, ensure navbar doesnt block contents-->
+    
     <p>Account details here</p>
     <p>Your name: abc</p>
     <p>Your email address:</p>
     <p>Your profile pic here</p>
     <p>reset password?</p>
     <p>email verification?</p>
-
+   
     <p>Your order history:</p>
+    
+   
+    
+    <div id="update" class="auth-container">
+                <br>
+                <br>
+                <p class="auth-header">Update Now</p>
+                <form action="UpdateProcess.php" method="post">
+                    <input type="text" class="inputs" required placeholder="First Name" name="first_name"/>
+                    <input type="text" class="inputs" required placeholder="Last Name" name="last_name"/>
+                    <input type="email" class="inputs" required placeholder="Email Address" name="email"/>
+                    <input type="password" class="inputs" required placeholder="Password" name="password"/>
+                    <input type="password" class="inputs" required placeholder="Re-Password" name="password_confirm"/><br>
+                    <br><br>
+                    <button class="auth-submit">Update</button><br>
+                    <hr>
+                </form>
+        </div>
 
 <?php
     //order history READ
