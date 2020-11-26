@@ -93,8 +93,10 @@ function updateMemberToDB() {
         $result = 0;
     }
     else
-    {
-        $stmt = $conn->prepare("UPDATE members SET first_name = '$first_name' last_name = '$last_name' email = '$email' password = '$password_hashed'  WHERE ");
+    {       session_start();
+            $_SESSION['memberid'] = $id;
+            
+        $stmt = $conn->prepare("UPDATE members SET first_name = '$first_name', last_name = '$last_name', email = '$email', password = '$password_hashed', WHERE member_id = '$id' ");
         $stmt->bind_param("ssss", $first_name, $last_name, $email, $password_hashed);
         $stmt->execute();
 
