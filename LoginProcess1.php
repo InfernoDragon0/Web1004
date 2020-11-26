@@ -119,7 +119,7 @@
             $_SESSION['name'] = $first_name;
             $_SESSION['isAdmin'] = $admin;
 
-            $redirector = (isset($_GET['rd']) ? $_GET['rd'] : "index")  . ".php";
+            $redirector = (isset($_GET['rd']) ? $_GET['rd'] : "AccountUpdate")  . ".php";
 
             header("Refresh:3; url=./$redirector", true, 303);
 
@@ -128,7 +128,7 @@
             echo"<div class='page-header'><h1>Login successful!</h2>";
             echo"<h2>Welcome back again, " . $first_name . " " . $last_name . ".</h4>";
             echo"<p>Redirecting to profile page in 3 seconds!</p>";
-            echo"<a href='./AccountUpdate.php' class='btn btn-success'>/a></div>";
+            echo"<a href='./AccountUpdate.php' class='btn btn-success'>Profile Page</a></div>";
         }
         else
         {
