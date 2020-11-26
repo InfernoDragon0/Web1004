@@ -30,23 +30,20 @@
     <p> </p>
     <p> </p>
     
-   
-    
-    <div id="update" class="auth-container active">
+    <div class="auth">
+        <img src="./images/hd/cat1.png"/>
+        <div id="login" class="auth-container active">
                 <br>
                 <br>
-                <p class="auth-header">Update Account</p>
-                <form action="UpdateProcess.php" method="post">
-                    <input type="text" class="inputs" required placeholder="First Name" value="default value" name="first_name"/>
-                    <input type="text" class="inputs" required placeholder="Last Name" value="default value" name="last_name"/>
-                    <input type="email" class="inputs" required placeholder="Email Address" value="default value" name="email"/>
-                    <input type="password" class="inputs" required placeholder="Password" value="default value" name="password"/>
-                    <input type="password" class="inputs" required placeholder="Re-Password" value="default value" name="password_confirm"/><br>
-                    <br><br>
-                    <button class="auth-submit">Update</button><br>
-                    <hr>
+                <p class="auth-header">Login to view/edit profile</p>
+                <form action="LoginProcess1.php<?php echo $redirector;?>" method="post">
+                <input type="email" class="inputs" name="email" required placeholder="Email"/>
+                <input type="password" class="inputs" name="password" required placeholder="Password"/><br>
+                <br><br>
+                <button class="auth-submit">Login</button><br>
                 </form>
         </div>
+   
 
 <?php
     //order history READ
