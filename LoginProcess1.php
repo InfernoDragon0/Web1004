@@ -116,7 +116,7 @@
             session_start();
             $_SESSION['email'] = $email;
             $_SESSION['memberid'] = $id;
-            $_SESSION['first_name'] = $first_name;
+            $_SESSION['name'] = $first_name;
             $_SESSION['last_name'] = $last_name;
             $_SESSION['password'] = $password_hashed;
             $_SESSION['password_confirm'] = $password_hashed;

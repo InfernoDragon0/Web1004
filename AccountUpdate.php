@@ -46,11 +46,12 @@
     }
     ?>
     <?php
-    session_start();
+   
             
     $email = $_SESSION['email'];
-    $password_hashed = $session["password"];
-    $password_hashed = $session["password_confirm"];
+    $password_hashed = $_SESSION['password'] ;
+    $password_hashed = $_SESSION['password_confirm'] ;
+    
             
             
    ?>
@@ -61,11 +62,16 @@
                 <br>
                 <p class="auth-header">Update Account</p>
                 <form action="UpdateProcess.php" method="post">
+                    <label for="first_name">First Name:</label>
                     <input type="text" class="inputs" required placeholder="First Name" value= "<?php echo $first_name;?>" name="first_name"/>
+                    <label for="last_name">Last Name:</label>
                     <input type="text" class="inputs" required placeholder="Last Name" value="<?php echo $last_name;?>" name="last_name"/>
+                    <label for="email">Email:</label>
                     <input type="email" class="inputs" required placeholder="Email Address" value="<?php echo $email;?>" name="email"/>
+                    <label for="password">Password:</label>
                     <input type="password" class="inputs" required placeholder="Password" value="<?php echo $password_hashed;?>" name="password"/>
-                    <input type="password" class="inputs" required placeholder="Re-enter Password" value="<?php echo $password;?>" name="password_confirm"/><br>
+                    <label for="password_confirm">Re-enter Password:</label>
+                    <input type="password" class="inputs" required placeholder="Re-enter Password" value="<?php echo $password_hashed;?>" name="password_confirm"/><br>
                     <br><br>
                     <button class="auth-submit">Update</button><br>
                     <hr>

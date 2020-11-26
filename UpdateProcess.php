@@ -123,8 +123,8 @@ if (!$res) {
 }
 else
 {
-    echo "<h2>Your registration is successful!</h2>";
-    echo "<h4>Thank you for signing up, $first_name $last_name</h4>";
+    echo "<h2>Your Update is successful!</h2>";
+    echo "<h4>Thank you, $first_name $last_name</h4>";
     echo "<a href='login.php' class='btn btn-success'>Log-in</a>";
     echo "<p>Your account ID is $res</p>";
 }
