@@ -26,7 +26,7 @@
     
    
     
-    <div id="update" class="auth-container">
+    <div id="update" class="auth-container active">
                 <br>
                 <br>
                 <p class="auth-header">Update Now</p>
