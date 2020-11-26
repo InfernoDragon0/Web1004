@@ -21,21 +21,27 @@
     <p>Your profile pic here</p>
     <p>reset password?</p>
     <p>email verification?</p>
-   
     <p>Your order history:</p>
+    
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
     
    
     
     <div id="update" class="auth-container active">
                 <br>
                 <br>
-                <p class="auth-header">Update Now</p>
+                <p class="auth-header">Update Account</p>
                 <form action="UpdateProcess.php" method="post">
-                    <input type="text" class="inputs" required placeholder="First Name" name="first_name"/>
-                    <input type="text" class="inputs" required placeholder="Last Name" name="last_name"/>
-                    <input type="email" class="inputs" required placeholder="Email Address" name="email"/>
-                    <input type="password" class="inputs" required placeholder="Password" name="password"/>
-                    <input type="password" class="inputs" required placeholder="Re-Password" name="password_confirm"/><br>
+                    <input type="text" class="inputs" required placeholder="First Name" value="default value" name="first_name"/>
+                    <input type="text" class="inputs" required placeholder="Last Name" value="default value" name="last_name"/>
+                    <input type="email" class="inputs" required placeholder="Email Address" value="default value" name="email"/>
+                    <input type="password" class="inputs" required placeholder="Password" value="default value" name="password"/>
+                    <input type="password" class="inputs" required placeholder="Re-Password" value="default value" name="password_confirm"/><br>
                     <br><br>
                     <button class="auth-submit">Update</button><br>
                     <hr>
