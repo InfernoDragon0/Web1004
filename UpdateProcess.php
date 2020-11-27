@@ -78,7 +78,7 @@ function sanitize_input($data) {
 }
 
 function UpdateMemberToDB() {
-    global $first_name, $last_name, $email, $password_hashed, $errorMsg, $success, $res;
+    global $first_name, $last_name, $email, $password_hashed, $errorMsg , $id;
     // Create database connection.
         $config = parse_ini_file('../../private/db-config.ini');
         $conn = new mysqli($config['servername'], $config['username'], $config['password'], 'project1004');
@@ -89,12 +89,12 @@ function UpdateMemberToDB() {
         $result = 0;
     }
     else
-    {
-        $stmt = $conn->prepare("UPDATE members SET first_name = '$first_name' last_name='$last_name' email='$email' password = '$password_hashed' ");
+    {  
+        $stmt = $conn->prepare("UPDATE members SET first_name = '$first_name' last_name='$last_name' email='$email' password = '$password_hashed' WHERE member_id = '$id' ");
         
         $stmt->execute();
 
-        $result = $conn->insert_id;
+
 
         if (!$result)
         {
