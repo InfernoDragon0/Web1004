@@ -30,10 +30,9 @@
 
                     <?php
                     session_start();
-                    $memberid = 19;
 
-                    if (isset($_SESSION['memberid'])) {
-                        $memberid = $_SESSION['memberid']; //for later use
+                    if (!isset($_SESSION['memberid'])) {
+                        //redirect
                     }
 
                     $config = parse_ini_file('../../private/db-config.ini');
@@ -48,7 +47,7 @@
 
                         //int id, varchar catID, varchar brand, varchar heading, float price, int stock, bool forRent, varchar model,text description,varchar bigImage,varchar logo, int isMain
 
-                        $stmt->bind_param("i", $memberid);
+                        $stmt->bind_param("i", $_SESSION['memberid']);
                         $stmt->execute();
                         $result = $stmt->get_result();
 
