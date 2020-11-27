@@ -31,15 +31,18 @@
             <div class="cart">
 
             <?php
+                require_once('vendor/autoload.php'); //composer autoload, for stripe
                 session_start();
                 $memberid = 1;
+                $intent = ""; //for stripe
+
                 setlocale(LC_MONETARY, 'en_US.UTF-8'); //for money_format to currency USD $
 
                 if (isset($_SESSION['memberid'])) {
-                    $memberid = $_SESSION['memberid']; //for later use
+                    $memberid = $_SESSION['memberid'];
                 }
                 else {
-                    header("Location: ./login.php?rd=checkout");
+                    header("Location: ./login.php?rd=checkout"); //header wont work because bootstrap is bad bad
                     echo "<meta http-equiv='refresh' content='0;url=./login.php?rd=checkout'>";
 
                     return;
@@ -62,7 +65,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
 
-                    $totalprice = 0; //should we add SGD?
+                    $totalprice = 0;
                     //echo $result->num_rows;
                     if ($result->num_rows > 0) {
                         //$row = $result->fetch_assoc();
@@ -95,6 +98,13 @@
                         }
 
                         
+                        //stripe initialize, this secretkey is a test
+                        \Stripe\Stripe::setApiKey('sk_test_51Hs3bsBSbRVapwZw2VcuX5ux9edv11xbDQRA2DRM8vnT5428GWDqOINBf6vjbc4PqS6pmTxwr90TtTSKMOOuwCHq00wh0BiG3k');
+
+                        $intent = \Stripe\PaymentIntent::create([
+                        'amount' => $totalprice*100, //payment in cents
+                        'currency' => 'sgd',
+                        ]);
 
                         echo "<script>document.getElementById('orderpricing').innerHTML = '". money_format('%.2n', $totalprice) ."';</script>";
 
@@ -145,7 +155,7 @@
                 <div id="card-errors" role="alert"></div>
             </div>
 
-            <button id="cobutton" class="cobutton">Checkout</button>
+            <button id="cobutton" class="cobutton" data-secret="<?php echo $intent->client_secret ?>">Checkout</button>
             </form>
                 
         </div>
@@ -218,34 +228,64 @@
     // Handle form submission.
     var form = document.getElementById('payment-form');
     form.addEventListener('submit', function(event) {
-    event.preventDefault();
+        event.preventDefault();
 
-    stripe.createToken(card).then(function(result) {
-        if (result.error) {
-        // Inform the user if there was an error.
-        var errorElement = document.getElementById('card-errors');
-        errorElement.textContent = result.error.message;
-        } else {
-        // Send the token to your server.
-        stripeTokenHandler(result.token);
-        }
-    });
+        stripe.createToken(card).then(function(result) {
+            if (result.error) {
+            // Inform the user if there was an error.
+            var errorElement = document.getElementById('card-errors');
+            errorElement.textContent = result.error.message;
+            } else {
+            // Send the token to your server.
+            stripeTokenHandler(result.token);
+            }
+        });
     });
 
     // Submit the form with the token ID.
-    function stripeTokenHandler(token) {
+    function stripeTokenHandler(token) { //dont even need token
     // Insert the token ID into the form so it gets submitted to the server
     var form = document.getElementById('payment-form');
-    var hiddenInput = document.createElement('input');
-    hiddenInput.setAttribute('type', 'hidden');
-    hiddenInput.setAttribute('name', 'stripeToken');
-    hiddenInput.setAttribute('value', token.id);
-    form.appendChild(hiddenInput);
+    // var hiddenInput = document.createElement('input');
+    // hiddenInput.setAttribute('type', 'hidden');
+    // hiddenInput.setAttribute('name', 'stripeToken');
+    // hiddenInput.setAttribute('value', token.id);
+    // form.appendChild(hiddenInput);
 
-    // Submit the form
-    form.submit();
+    stripe.confirmCardPayment(document.getElementById('cobutton').dataset.secret, {
+        payment_method: {
+        card: card
+        }
+        }).then(function(result) {
+            if (result.error) {
+                // Show error
+                var hiddenInput = document.createElement('input');
+                hiddenInput.setAttribute('type', 'hidden');
+                hiddenInput.setAttribute('name', 'results');
+                hiddenInput.setAttribute('value', result.error.message);
+                form.appendChild(hiddenInput);
+                form.submit();
+                console.log(result.error.message);
+            } 
+            else {
+                // The payment successs
+                if (result.paymentIntent.status === 'succeeded') {
+                    var hiddenInput = document.createElement('input');
+                    hiddenInput.setAttribute('type', 'hidden');
+                    hiddenInput.setAttribute('name', 'results');
+                    hiddenInput.setAttribute('value', 'success');
+                    form.appendChild(hiddenInput);
+
+                    var hiddenInput2 = document.createElement('input');
+                    hiddenInput2.setAttribute('type', 'hidden');
+                    hiddenInput2.setAttribute('name', 'chargeid');
+                    hiddenInput2.setAttribute('value', result.paymentIntent.id);
+                    form.appendChild(hiddenInput2);
+                    form.submit();
+                }
+            }
+        })
     }
-
 
     var cartdatas = document.getElementsByClassName("cart-data")
     var showcase = document.getElementById("showcase")

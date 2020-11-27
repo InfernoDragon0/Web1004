@@ -1,15 +1,15 @@
 <?php
         session_start();
-        echo $car = $_POST['carid'];
-        echo $qty = $_POST['qty'];
-        echo $userid = 19;
-//        if (isset($_SESSION['id'])) {
-//            echo $userid = $_SESSION['id'];
-//        }       
-//        else{
-//            header("Location:login.php");
-//            
-//        }
+        $car = $_POST['carid'];
+        $qty = $_POST['qty'];
+        $userid = 19;
+        if (isset($_SESSION['memberid'])) {
+            $userid = $_SESSION['memberid'];
+        }       
+        else{
+            header("Location:login.php");
+            
+        }
        additem();
 
 
@@ -33,7 +33,7 @@ function additem() {
 	{
 		
 
-		header("Location:cart.php");
+		header("Location:checkout.php");
 	}
 	else     
 	{
