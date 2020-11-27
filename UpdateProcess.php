@@ -90,8 +90,7 @@ function UpdateMemberToDB() {
     }
     else
     {  
-        $stmt = "UPDATE members SET first_name = '$first_name', last_name='$last_name', email='$email', password = '$password_hashed' WHERE member_id = '$id' ";
-        $stmt->execute();
+        $stmt = $conn->prepare("UPDATE members SET first_name='$first_name' WHERE member_id=? ");
 
 
 
@@ -112,7 +111,7 @@ if (!$res) {
     echo "<h2>Oops!</h2>";
     echo "<h4>The following errors were detected:</h4>";
     echo "<p>$errorMsg</p>";
-    echo "<a href='register.php'g class='btn btn-danger'>Return to Sign Up</a>";
+    echo "<a href='account.php'g class='btn btn-danger'>Return to profile page</a>";
 }
 else
 {
