@@ -90,7 +90,7 @@ function UpdateMemberToDB() {
     }
     else
     {
-        $stmt = $conn->prepare("UPDATE members first_name = '$first_name', last_name='$last_name', email='$email', password = '$password_hashed' ");
+        $stmt = $conn->prepare("UPDATE members SET first_name = '$first_name' last_name='$last_name' email='$email' password = '$password_hashed' ");
         
         $stmt->execute();
 
