@@ -35,18 +35,15 @@
         while($row = $result->fetch_assoc()) {
             $first_name = $row["first_name"];
             $last_name = $row["last_name"];
+            $email = $row["email"];
             
             
-            
-
             //add these to a json array then show on display?
 
         }
     }
     ?>
-    <?php
-    $email = $_SESSION['email'];
-   ?>
+ 
          
                  
 <div id="update" class="auth-container active">
