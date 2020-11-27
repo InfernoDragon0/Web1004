@@ -1,8 +1,8 @@
 <?php
         session_start();
-$cartidToDelete = $_POST["cartid"];
-$caridToDelete = $_POST["carid"];
-$userid = 19;
+        echo $car = $_POST['carid'];
+        echo $qty = $_POST['qty'];
+        echo $userid = 19;
 //        if (isset($_SESSION['id'])) {
 //            echo $userid = $_SESSION['id'];
 //        }       
@@ -14,7 +14,7 @@ $userid = 19;
 
 
 function additem() {
-    global $cartidToDelete, $caridToDelete, $memberid;
+    global $userid, $car, $qty;
     // Create database connection.
         $config = parse_ini_file('../../private/db-config.ini');
         $conn = new mysqli($config['servername'], $config['username'], $config['password'], 'project1004');
@@ -26,12 +26,14 @@ function additem() {
     }
     else
     {
-        $stmtinsert = $conn->prepare("DELETE FROM .cart WHERE id = ? ");
-        $stmtinsert->bind_param("i", $cartidToDelete);
+        $stmtinsert = $conn->prepare("INSERT INTO cart(member_id,car_id,qty) VALUES(?,?,?)");
+        $stmtinsert->bind_param("iii", $userid, $car, $qty);
         $stmtinsert->execute();
    if($stmtinsert >= 1)    
 	{
-            header("Location:cart.php");
+		
+
+		header("Location:cart.php");
 	}
 	else     
 	{
@@ -47,4 +49,3 @@ function additem() {
 }
 
 ?>
-

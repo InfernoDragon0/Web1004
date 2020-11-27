@@ -1,15 +1,17 @@
 <?php
 
-$cartid = $_POST["cartid"];
-$carid = $_POST["carid"];
-$qty = $_POST["carid"];
-if (isset($_SESSION['memberid'])) {
-    $memberid = $_SESSION['memberid']; //for later use
-} else {
-    //Redirect to login page first
-    //return
-}
-helloDb();
+echo $cartid = $_POST["cartid"];
+echo $carid = $_POST["carid"];
+echo $qty = $_POST["qty"];
+$userid = 19;
+//        if (isset($_SESSION['id'])) {
+//            echo $userid = $_SESSION['id'];
+//        }       
+//        else{
+//            header("Location:login.php");
+//            
+//        }
+//helloDb();
 
 function helloDb() {
     global $car;
@@ -22,15 +24,13 @@ function helloDb() {
         echo $errorMsg;
         $success = false;
     } else {
-        $stmt = $conn->prepare("UPDATE cart SET  qty = ? WHERE id= ? AND car_id=? AND member_id=? ");
-        $stmt->bind_param("iiii",$qty, $cartid, $carid,$memberid);
+        $stmt = $conn->prepare("UPDATE cart SET  qty = ? WHERE id= ? ");
+        $stmt->bind_param("ii",$qty, $cartid);
         $stmt->execute();
 
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc(); //not a while loop cos should only take one car 
+        header("Location:cart.php");
 
         $stmt->close();
-        header("location:cart.php");
     }
 }
 

@@ -42,8 +42,8 @@
                             }
                             ?>
                             </span>
-                            <label for="cars">Q:</label>
-                            <form action="cart.php" method="post">
+                            <label for="cars">Quantity:</label>
+                            <form action="additem.php" method="post">
                                 <select id="qty" name="qty">
                                     <?php
                                     for ($x = 1; $x <= $row['stock']; $x++) {
