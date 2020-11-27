@@ -4,6 +4,8 @@
         <?php
             include "./includes/header.php"
         ?>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" href="./css/stripe.css">
 </head>
 <body>
     <?php
@@ -22,7 +24,7 @@
                     <h1 id="orderheading">Your Order</h1>
                     <h2 id="orderpricing">$0 SGD</h2>
                 </div>
-                <button id="cobutton" onclick="window.location.href='./purchaseHandler.php'" class="cobutton">Checkout</button>
+
                 <!-- hide the button if thcart is empty-->
             </div>
 
@@ -126,6 +128,25 @@
             ?>
             
             </div>
+
+                        
+            <form action="./purchaseHandler.php" method="post" id="payment-form">
+            <div class="form-row">
+                <div class="page-header">
+                    <div class="data">
+                        <h1 id="orderheading">Payment: Credit Card</h1>
+                    </div>
+                </div>
+                <div id="card-element">
+                <!-- A Stripe Element will be inserted here. -->
+                </div>
+
+                <!-- Used to display form errors. -->
+                <div id="card-errors" role="alert"></div>
+            </div>
+
+            <button id="cobutton" class="cobutton">Checkout</button>
+            </form>
                 
         </div>
 
@@ -158,6 +179,74 @@
 </body>
 
 <script>
+    //for payments
+    var stripe = Stripe('pk_test_51Hs3bsBSbRVapwZwJaGdkddKhwOH1jPoAnBLj5w4vCFvMHebOWkLQg4I9d1QGCxrkW0lFTYKhmYLgjV84X8jYCOe00POi5NMh4');
+    var elements = stripe.elements();
+
+    var style = { //custom styling
+    base: {
+        color: '#32325d',
+        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+        fontSmoothing: 'antialiased',
+        fontSize: '16px',
+        '::placeholder': {
+        color: '#aab7c4'
+        }
+    },
+    invalid: {
+        color: '#fa755a',
+        iconColor: '#fa755a'
+    }
+    };
+
+    // Create an instance of the card Element.
+    var card = elements.create('card', {style: style});
+
+    // Add an instance of the card Element into the `card-element` <div>.
+    card.mount('#card-element');
+
+    // Handle real-time validation errors from the card Element.
+    card.on('change', function(event) {
+    var displayError = document.getElementById('card-errors');
+    if (event.error) {
+        displayError.textContent = event.error.message;
+    } else {
+        displayError.textContent = '';
+    }
+    });
+
+    // Handle form submission.
+    var form = document.getElementById('payment-form');
+    form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    stripe.createToken(card).then(function(result) {
+        if (result.error) {
+        // Inform the user if there was an error.
+        var errorElement = document.getElementById('card-errors');
+        errorElement.textContent = result.error.message;
+        } else {
+        // Send the token to your server.
+        stripeTokenHandler(result.token);
+        }
+    });
+    });
+
+    // Submit the form with the token ID.
+    function stripeTokenHandler(token) {
+    // Insert the token ID into the form so it gets submitted to the server
+    var form = document.getElementById('payment-form');
+    var hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+
+    // Submit the form
+    form.submit();
+    }
+
+
     var cartdatas = document.getElementsByClassName("cart-data")
     var showcase = document.getElementById("showcase")
     

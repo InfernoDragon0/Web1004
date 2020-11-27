@@ -452,6 +452,7 @@ a:hover {
     top:0;
     right: 0;
     transition: all 0.2s linear;
+    overflow: scroll;
 }
 
 .cart {
@@ -515,9 +516,8 @@ a:hover {
     float: left;
 }
 
-.page-header .cobutton {
-    float: right;
-    min-width: 200px;
+.cobutton {
+    width: 100%;
     height: 45px;
     margin: 10px 0;
     background: gold;
