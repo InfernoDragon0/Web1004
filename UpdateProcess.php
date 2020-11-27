@@ -1,9 +1,5 @@
 <?php
-        $first_name = "";
-        $last_name = "";
-        $email = "";
-        $password_hashed = "";
-        $errorMsg = "";
+$first_name = $last_name = $email = $password_hashed = $errorMsg = "";
 $success = true;
 
 // Only process if the form has been submitted via POST.
@@ -63,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<p>errors occurred<p><br> " . $errorMsg;
     }
     else {
-$res = updateMemberToDB();
+$res = UpdateMemberToDB();
 
     }
 }
@@ -81,7 +77,7 @@ function sanitize_input($data) {
  return $data;
 }
 
-function updateMemberToDB() {
+function UpdateMemberToDB() {
     global $first_name, $last_name, $email, $password_hashed, $errorMsg, $success, $res;
     // Create database connection.
         $config = parse_ini_file('../../private/db-config.ini');
@@ -93,33 +89,22 @@ function updateMemberToDB() {
         $result = 0;
     }
     else
-    {       session_start();
-            $_SESSION['memberid'] = $id;
-            
-//        $stmt = $conn->prepare("UPDATE members SET first_name = '$first_name', last_name = '$last_name', email = '$email', password = '$password_hashed', WHERE member_id = '$id' ");
-//        $stmt->bind_param("ssss", $first_name, $last_name, $email, $password_hashed);
-//        $stmt->execute();
-//
-//        $result = $conn->insert_id;
-//
-//        if (!$result)
-//        {
-//            $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
-//            $result = 0;
-//        }
-//
-//        $stmt->close();
-//    }
-//    $conn->close();
-            $stmt = "UPDATE members SET SET first_name = '$first_name', last_name = '$last_name', email = '$email', password = '$password_hashed', WHERE member_id = '$id' ";
+    {
+        $stmt = $conn->prepare("UPDATE members first_name = '$first_name', last_name='$last_name', email='$email', password = '$password_hashed' ");
+        
+        $stmt->execute();
 
-if ($conn->query($stmt) === TRUE) {
-  echo "Record updated successfully";
-} else {
-  echo "Error updating record: " . $conn->error;
-}
+        $result = $conn->insert_id;
 
-$conn->close();
+        if (!$result)
+        {
+            $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+            $result = 0;
+        }
+
+        $stmt->close();
+    }
+    $conn->close();
     return $result;
 }
 
@@ -132,7 +117,7 @@ if (!$res) {
 }
 else
 {
-    echo "<h2>Your Update is successful!</h2>";
+    echo "<h2>Your update is successful!</h2>";
     echo "<h4>Thank you, $first_name $last_name</h4>";
     echo "<a href='login.php' class='btn btn-success'>Log-in</a>";
     echo "<p>Your account ID is $res</p>";
