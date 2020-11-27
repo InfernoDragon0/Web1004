@@ -91,7 +91,6 @@
                     $row = $result->fetch_assoc();
                     $first_name = $row["first_name"];
                     $last_name = $row["last_name"];
-                    $password_hashed = $row["password"];
                     $id = $row["member_id"];
                     $admin = $row["user_type"];
                     // Check if the password matches:
