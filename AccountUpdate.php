@@ -36,8 +36,6 @@
             $first_name = $row["first_name"];
             $last_name = $row["last_name"];
             $email = $row["email"];
-            $password = $row["password"];
-            $password = $row["password_confirm"];
             
             
             //add these to a json array then show on display?
@@ -60,9 +58,9 @@
                     <label for="email">Email:</label>
                     <input type="email" class="inputs" required placeholder="Email Address" value="<?php echo $email;?>" name="email"/>
                     <label for="password">Password:</label>
-                    <input type="password" class="inputs" required placeholder="Password" value="<?php echo $password;?>" name="password"/>
+                    <input type="password" class="inputs" required placeholder="Password" name="password"/>
                     <label for="password_confirm">Re-enter Password:</label>
-                    <input type="password" class="inputs" required placeholder="Re-enter Password" value="<?php echo $password;?>" name="password_confirm"/><br>
+                    <input type="password" class="inputs" required placeholder="Re-enter Password" name="password_confirm"/><br>
                     <button class="auth-submit">Update</button><br>
                     <hr>
                 </form>
