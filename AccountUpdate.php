@@ -55,16 +55,15 @@
                 <p class="auth-header">Update Account</p>
                 <form action="UpdateProcess.php" method="post">
                     <label for="first_name">First Name:</label>
-                    <input type="text" class="inputs" required placeholder="First Name" value= "<?php echo $first_name;?> &nbsp;" name="first_name"/>
+                    <input type="text" class="inputs" required placeholder="First Name" value= "<?php echo $first_name;?>" name="first_name"/>
                     <label for="last_name">Last Name:</label>
-                    <input type="text" class="inputs" required placeholder="Last Name" value="<?php echo $last_name;?> &nbsp;" name="last_name"/>
+                    <input type="text" class="inputs" required placeholder="Last Name" value="<?php echo $last_name;?>" name="last_name"/>
                     <label for="email">Email:</label>
-                    <input type="email" class="inputs" required placeholder="Email Address" value="<?php echo $email;?> &nbsp;" name="email"/>
+                    <input type="email" class="inputs" required placeholder="Email Address" value="<?php echo $email;?>" name="email"/>
                     <label for="password">Password:</label>
                     <input type="password" class="inputs" required placeholder="Password"  name="password"/>
                     <label for="password_confirm">Re-enter Password:</label>
                     <input type="password" class="inputs" required placeholder="Re-enter Password"  name="password_confirm"/><br>
-                    <br><br>
                     <button class="auth-submit">Update</button><br>
                     <hr>
                 </form>
