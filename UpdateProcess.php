@@ -90,7 +90,7 @@ function UpdateMemberToDB() {
     }
     else
     {  
-        $stmt = "UPDATE members SET first_name = '$first_name' last_name='$last_name' email='$email' password = '$password_hashed' WHERE member_id = '$id' ";
+        $stmt = "UPDATE members SET first_name = '$first_name', last_name='$last_name', email='$email', password = '$password_hashed' WHERE member_id = '$id' ";
         $stmt->execute();
 
 
@@ -117,7 +117,7 @@ if (!$res) {
 else
 {
     echo "<h2>Your update is successful!</h2>";
-    echo "<h4>Thank you, $first_name $last_name</h4>";
+    echo "<h4>Please login again, $first_name $last_name</h4>";
     echo "<a href='login.php' class='btn btn-success'>Log-in</a>";
     echo "<p>Your account ID is $res</p>";
 }
