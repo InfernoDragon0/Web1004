@@ -96,21 +96,30 @@ function updateMemberToDB() {
     {       session_start();
             $_SESSION['memberid'] = $id;
             
-        $stmt = $conn->prepare("UPDATE members SET first_name = '$first_name', last_name = '$last_name', email = '$email', password = '$password_hashed', WHERE member_id = '$id' ");
-        $stmt->bind_param("ssss", $first_name, $last_name, $email, $password_hashed);
-        $stmt->execute();
+//        $stmt = $conn->prepare("UPDATE members SET first_name = '$first_name', last_name = '$last_name', email = '$email', password = '$password_hashed', WHERE member_id = '$id' ");
+//        $stmt->bind_param("ssss", $first_name, $last_name, $email, $password_hashed);
+//        $stmt->execute();
+//
+//        $result = $conn->insert_id;
+//
+//        if (!$result)
+//        {
+//            $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+//            $result = 0;
+//        }
+//
+//        $stmt->close();
+//    }
+//    $conn->close();
+            $stmt = "UPDATE members SET SET first_name = '$first_name', last_name = '$last_name', email = '$email', password = '$password_hashed', WHERE member_id = '$id' ";
 
-        $result = $conn->insert_id;
+if ($conn->query($stmt) === TRUE) {
+  echo "Record updated successfully";
+} else {
+  echo "Error updating record: " . $conn->error;
+}
 
-        if (!$result)
-        {
-            $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
-            $result = 0;
-        }
-
-        $stmt->close();
-    }
-    $conn->close();
+$conn->close();
     return $result;
 }
 
