@@ -61,9 +61,9 @@
                     <label for="email">Email:</label>
                     <input type="email" class="inputs" required placeholder="Email Address" value="<?php echo $email;?> &nbsp;" name="email"/>
                     <label for="password">Password:</label>
-                    <input type="password" class="inputs" required placeholder="Password" value= "&nbsp;" name="password"/>
+                    <input type="password" class="inputs" required placeholder="Password"  name="password"/>
                     <label for="password_confirm">Re-enter Password:</label>
-                    <input type="password" class="inputs" required placeholder="Re-enter Password" value= "&nbsp;" name="password_confirm"/><br>
+                    <input type="password" class="inputs" required placeholder="Re-enter Password"  name="password_confirm"/><br>
                     <br><br>
                     <button class="auth-submit">Update</button><br>
                     <hr>
