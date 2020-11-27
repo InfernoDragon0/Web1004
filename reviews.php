@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-        <title>Review</title>
+        <title>Luxauto</title>
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
                 class=""accesskey=""rel="stylesheet">
