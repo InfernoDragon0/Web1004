@@ -149,6 +149,8 @@
                 }
                 
                 $conn->close();
+            if($member_id != NULL)
+            {
             ?>
 
             <div>
@@ -158,6 +160,9 @@
                 </span>
                 </a>
             </div>
+            <?php
+            }
+            ?>
         </main>
 
         <?php
