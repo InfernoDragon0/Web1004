@@ -125,15 +125,15 @@ function saveMemberToDB() {
 
 
 if (!$res) {
-    echo "<h2>Oops!</h2>";
-    echo "<h4>The following errors were detected:</h4>";
+    echo "<h2><p>Oops!<p></h2>";
+    echo "<h4><p>The following errors were detected:</p></h4>";
     echo "<p>$errorMsg</p>";
     echo "<a href='register.php'g class='btn btn-danger'>Return to Sign Up</a>";
 }
 else
 {
-    echo "<h2>Your registration is successful!</h2>";
-    echo "<h4>Thank you for signing up, $first_name $last_name</h4>";
+    echo "<h2><p>Your registration is successful!</p></h2>";
+    echo "<h4></p>Thank you for signing up, $first_name $last_name</p></h4>";
     echo "<a href='login.php' class='btn btn-success'>Log-in</a>";
     echo "<p>Your account ID is $res</p>";
 }
