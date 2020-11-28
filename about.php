@@ -2,9 +2,6 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="./css/about.css">
 
 </head>
@@ -38,7 +35,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-4">
-      <span id="globe" class="glyphicon glyphicon-globe logo slideanim"></span>
+      <span id="globe" class="fa fa-globe fa-4x logo slideanim"></span>
     </div>
     <div class="col-sm-8">
       <h2>Our Values</h2><br>
@@ -55,17 +52,17 @@
   <br>
   <div class="row slideanim">
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-ok-circle logo-small"></span>
+      <span class="fa fa-check fa-4x logo-small"></span>
       <h4>Checked</h4>
       <p>All vehicles go through thorough checks and maintenance before each rental</p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-thumbs-up logo-small"></span>
+      <span class="fa fa-thumbs-o-up fa-4x logo-small"></span>
       <h4>SERVICE</h4>
       <p>LUXAUTO receives over 95% of positive ratings by our customers</p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-usd logo-small"></span>
+      <span class="fa fa-usd fa-4x logo-small"></span>
       <h4>AFFORDABLE</h4>
       <p>All our vehicles come at affordable rates</p>
     </div>
@@ -73,17 +70,17 @@
   <br><br>
   <div class="row slideanim">
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <span class="fa fa-leaf fa-4x logo-small"></span>
       <h4>HYBRID AND ELECTRIC</h4>
       <p>We offer the latest hybrid and electric supercars</p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-earphone logo-small"></span>
+      <span class="fa fa-phone fa-4x logo-small"></span>
       <h4>24-HOURS</h4>
       <p>Give us a call and we will be with you shortly</p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-flash logo-small"></span>
+      <span class="fa fa-bolt fa-4x logo-small"></span>
       <h4>SPEED</h4>
       <p>Fast transaction and approvals for all customers</p>
     </div>
@@ -101,24 +98,27 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <div class="item active">
+      <div class="carousel-item active">
         <h4>"Love to experience different brands of expensive cars!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
       </div>
-      <div class="item">
+      <div class="carousel-item">
         <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
       </div>
-      <div class="item">
+      <div class="carousel-item">
         <h4>"Could I... BE any more happy with this company?"<br><span>Paige Chua, Actress, MediaCorp</span></h4>
       </div>
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <br>
+    <br>
+    <br>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="fa fa-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="fa fa-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
   </div>
