@@ -2,8 +2,8 @@
 require_once "conntodb.php";
  
 // Define variables and initialize with empty values
-$brand = $model = $price = $stock = $status = $color = $description = "";
-$brand_err = $model_err = $color_err = $price_err = $stock_err = $status_err = "";
+$brand = $model = $price = $stock = $status = $description = "";
+$brand_err = $model_err = $price_err = $stock_err = $status_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -23,13 +23,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $model_err = "Please enter the model.";     
     } else{
         $model = $input_model;
-    }
-    
-    $input_color = trim($_POST["color"]);
-    if(empty($input_color)){
-        $color_err = "Please enter the color.";     
-    } else{
-        $color = $input_color;
     }
     
     $input_price = trim($_POST["price"]);
@@ -60,13 +53,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($price_err) && empty($stock_err) && empty($status_err) && empty($brand_err) && empty($model_err) && empty($color_err)){
+    if(empty($price_err) && empty($stock_err) && empty($status_err) && empty($brand_err) && empty($model_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO car (brand, model, price, stock, status, color, description) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO car (brand, model, price, stock, status, description) VALUES (?, ?, ?, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssssss", $param_brand, $param_model, $param_price, $param_stock, $param_status, $param_color, $param_description);
+            mysqli_stmt_bind_param($stmt, "ssssss", $param_brand, $param_model, $param_price, $param_stock, $param_status, $param_description);
             
             // Set parameters
             $param_brand = $brand;
@@ -74,7 +67,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_price = $price;
             $param_stock = $stock;
             $param_status = $status;
-            $param_color = $color;
             $param_description = $description;
             
             // Attempt to execute the prepared statement
@@ -143,11 +135,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <label>Status</label>
                             <input type="number" min="1" max="4" name="status" class="form-control" value="<?php echo $status; ?>">
                             <span class="help-block"><?php echo $status_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($color_err)) ? 'has-error' : ''; ?>">
-                            <label>Color</label>
-                            <input type="text" name="color" class="form-control" value="<?php echo $color; ?>">
-                            <span class="help-block"><?php echo $color_err;?></span>
                         </div>
                         <div class="form-group">
                             <label>Description</label>
