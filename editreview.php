@@ -86,10 +86,10 @@
                         // Prepare the statement
                         date_default_timezone_set('Asia/Singapore');
                         $datetime = date("Y-m-d H:i:s");
-                        $stmt = $conn -> prepare("UPDATE reviews SET review = '$review', date_time = '$datetime'  WHERE id= '$review_id'");
+                        $stmt = $conn -> prepare("UPDATE reviews SET review = ?, date_time = ?  WHERE id= ?");
                         
                         // Bind & execute the query statement
-                        //$stmt -> bind_param("sss", $review, $datetime, $review_id);
+                        $stmt -> bind_param("sss", $review, $datetime, $review_id);
                         if(!$stmt)
                         {
                             echo "Prepare failed: (". $conn->errno.") ".$conn->error."<br>";
