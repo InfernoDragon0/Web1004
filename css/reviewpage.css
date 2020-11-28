@@ -1,6 +1,6 @@
 #review, #comment
 {
-    width: 500px;
+    width: 30%;
     height: 100px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -12,167 +12,78 @@ textarea
 
 .review-container
 {
-    border: 1px solid white;
-    width: 800px;
+    border: 1px solid black;
+    width: 45%;
     border-radius: 25px;
     padding: 20px;
-    color: white;
-    margin-top: 50px;
+    color: black;
+    margin-top: 20px;
 }
 
 .comments-container
 {
-    width: 600px;
+    width: 55%;
     padding: 20px;
     margin-top: 20px;
     margin-left: 20px;
-    color: white;
+    color: black;
 }
 
 .comment-container
 {
-    border: 1px solid white;
-    width: 500px;
+    border: 1px solid black;
+    width: 125%;
     border-radius: 25px;
     padding: 20px;
     margin-top: 10px;
-    color: white;
+    color: black;
 }
 
 .delete-container
 {
-    border: 1px solid white;
-    width: 500px;
+    border: 1px solid black;
+    width: 30%;
     border-radius: 25px;
     padding: 25px;
     margin-top: 10px;
-    height: 80px;
-    color: white;
-}
-
-.editreviewbutton
-{
-    margin-left: 700px;
-}
-
-.deletereviewbutton
-{
-    margin-top: -46px;
-    margin-left: 750px;
-}
-
-.editcommentbutton
-{
-    margin-left: 400px;
-}
-
-.deletecommentbutton
-{
-    margin-top: -46px;
-    margin-left: 450px;
-}
-
-.deletebutton
-{
-    margin-top: 10px;
-    margin-left: 600px;
-}
-
-.addreviewbutton
-{
-    margin-left: 900px;
-}
-
-.addcommentbutton
-{
-    margin-left: 750px;
-}
-
-#review, #comment
-{
-    width: 500px;
     height: 100px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-textarea
-{
-    resize: none;
-}
-
-.review-container
-{
-    border: 1px solid white;
-    width: 800px;
-    border-radius: 25px;
-    padding: 20px;
-    color: white;
-}
-
-.comments-container
-{
-    width: 600px;
-    padding: 20px;
-    margin-top: 20px;
-    margin-left: 20px;
-    color: white;
-}
-
-.comment-container
-{
-    border: 1px solid white;
-    width: 500px;
-    border-radius: 25px;
-    padding: 20px;
-    margin-top: 10px;
-    color: white;
-}
-
-.delete-container
-{
-    border: 1px solid white;
-    width: 500px;
-    border-radius: 25px;
-    padding: 25px;
-    margin-top: 10px;
-    height: 80px;
-    color: white;
+    color: black;
 }
 
 .editreviewbutton
 {
-    margin-left: 700px;
+    margin-left: 80%;
 }
 
 .deletereviewbutton
 {
-    margin-top: -46px;
-    margin-left: 750px;
+    margin-top: -5.4%;
+    margin-left: 87%;
 }
 
 .editcommentbutton
 {
-    margin-left: 400px;
+    margin-left: 70%;
 }
 
 .deletecommentbutton
 {
-    margin-top: -46px;
-    margin-left: 450px;
+    margin-top: -7.8%;
+    margin-left: 80%;
 }
 
 .deletebutton
 {
-    margin-top: 10px;
-    margin-left: 600px;
+    margin-top: -1.5%;
+    margin-left: 33%;
 }
 
 .addreviewbutton
 {
-    margin-left: 900px;
+    margin-left: 55%;
 }
 
 .addcommentbutton
 {
-    margin-left: 750px;
+    margin-left: 87%;
 }
