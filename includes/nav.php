@@ -17,7 +17,11 @@
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">BRANDS</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="./brand.php?brand=bugatti">Bugatti</a>
-                            <a class="dropdown-item" href="./brand.php?brand=lamborghini">Lambo</a>
+                            <a class="dropdown-item" href="./brand.php?brand=jaguar">Jaguar</a>
+                            <a class="dropdown-item" href="./brand.php?brand=mclaren">Mclaren</a>
+                            <a class="dropdown-item" href="./brand.php?brand=koenigsegg">Koenigsegg</a>
+                            <a class="dropdown-item" href="./brand.php?brand=lamborghini">lamborghini</a>
+                            <a class="dropdown-item" href="./brand.php?brand=bentley">Bentley</a>
                             <a class="dropdown-item" href="./brand.php?brand=astonmartin">Aston Martin</a>
                         </div>
                     </li>

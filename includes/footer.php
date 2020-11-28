@@ -7,7 +7,11 @@
                     <ul>
                         <li><a href="./brand.php?brand=bugatti">Bugatti</a></li>
                         <li><a href="./brand.php?brand=jaguar">Jaguar</a></li>
-                        <li><a href="./brand.php?brand=lamborghini">Lamborgi</a></li>
+                        <li><a href="./brand.php?brand=mclaren">Mclaren</a></li>
+                        <li><a href="./brand.php?brand=lamborghini">Lamborghini</a></li>
+                        <li><a href="./brand.php?brand=koenigsegg">Koenigsegg</a></li>
+                        <li><a href="./brand.php?brand=bentley">Bentley</a></li>
+                        <li><a href="./brand.php?brand=astonmartin">Aston Martin</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-md-3 item">
