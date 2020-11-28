@@ -69,6 +69,8 @@
                         $carId = $row["car_id"];
                         $qty = $row["qty"];
 
+                        
+
                         //the less efficient way for now
                         //should convert to bulk insert?
                         $stmt2 = $conn->prepare("INSERT INTO order_detail (order_id, car_id, qty) VALUES (?, ?, ?)");
