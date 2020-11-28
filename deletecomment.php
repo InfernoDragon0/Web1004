@@ -46,14 +46,13 @@
                 <div class="delete-container">
                     <h4 type="text" id="comment" name="comment"><?php echo $comment;?></h4>
                 </div>
-                <button class="deletebutton" type="submit" id="post">
+                <button class="deletebutton" type="submit" id="delete" name="delete">
                     <span class="material-icons">send</span>
                 </button>
              </form>
              <?php
-                if (!empty($_POST['comment']))
+                if (isset($_POST['delete']))
                 {
-                    $comment = $_POST['comment'];
                     deletecommenttodb();
                 }
 
@@ -78,10 +77,10 @@
                     else
                     {
                         // Prepare the statement
-                        $stmt = $conn -> prepare("DELETE FROM comments WHERE  id= '$comment_id'");
+                        $stmt = $conn -> prepare("DELETE FROM comments WHERE  id= ?");
                         
                         // Bind & execute the query statement
-                        //$stmt -> bind_param("sss", $review, $datetime, $review_id);
+                        $stmt -> bind_param("s", $comment_id);
                         if(!$stmt)
                         {
                             echo "Prepare failed: (". $conn->errno.") ".$conn->error."<br>";
