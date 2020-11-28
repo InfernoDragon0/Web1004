@@ -41,7 +41,7 @@ ul {
 }
 
 a:visited {
-    color: white;
+    color: inherit;
 }
 
 a:hover {
