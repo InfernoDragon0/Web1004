@@ -104,13 +104,14 @@ function UpdateMemberToDB() {
         $result = 0;
     }
     else
-    {        session_start();
-         $id = $_SESSION['memberid'] ;
-        $stmt = $conn->prepare("UPDATE members SET first_name='$first_name', last_name='$last_name' ,email='$email', password='$password_hashed'  WHERE member_id = '$id' ");
-        
-                $stmt->execute();
-
-                $result = 1;
+    {   
+        $id = $_SESSION['memberid'] ;
+       
+        $stmt = $conn->prepare("UPDATE members SET first_name= ? , last_name= ? ,email= ?,"
+                . " password= ?  WHERE member_id = ? ");
+        $stmt->bind_param("sssss", $first_name, $last_name, $email, $password_hashed, $id);
+        $stmt->execute();
+        $result = 1;
         $stmt->close();
     }
     $conn->close();
