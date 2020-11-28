@@ -186,6 +186,9 @@
             <button>View Order Status</button> button will check out after confirming login password 
         </div>
     </div> -->
+    <?php
+            include "./includes/footer.php";
+        ?>
 </body>
 
 <script>
