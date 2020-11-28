@@ -15,7 +15,9 @@
         session_start();
         $redirector = "";
         if (isset($_SESSION['memberid'])) {
-            header("Location:./index.php", true, 303);
+            header("Location:./index.php", true, 303); //headers dont work cos bootstrap bad bad
+            echo "<meta http-equiv='refresh' content='0;url=./index.php'>";
+            return;
         }
 
         if (isset($_GET['rd'])) {
