@@ -90,7 +90,7 @@ function UpdateMemberToDB() {
     }
     else
     {  
-        $stmt = $conn->prepare("UPDATE members SET first_name='$first_name' WHERE member_id = ? ");
+        $stmt = $conn->prepare("UPDATE members SET first_name='$first_name' WHERE member_id = '$memberid' ");
         
                 $stmt->execute();
                 $result = $stmt->get_result();
