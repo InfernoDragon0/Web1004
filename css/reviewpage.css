@@ -86,7 +86,9 @@ textarea
 .addcommentbutton
 {
     margin-left: 750px;
-}#review, #comment
+}
+
+#review, #comment
 {
     width: 500px;
     height: 100px;
