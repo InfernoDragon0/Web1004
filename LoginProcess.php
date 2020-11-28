@@ -127,14 +127,14 @@
             echo "<meta http-equiv='refresh' content='3;url=./$redirector'>";
 
             echo"<div class='page-header'><h1>Login successful!</h2>";
-            echo"<h2>Welcome back again, " . $first_name . " " . $last_name . ".</h4>";
+            echo"<h2><p>Welcome back again, " . $first_name . " " . $last_name . ".</p></h4>";
             echo"<p>Redirecting back in 3 seconds!</p>";
             echo"<a href='./index.php' class='btn btn-success'>Return to Home</a></div>";
         }
         else
         {
             echo"<div class='page-header'><h2>Oops!</h2>";
-            echo"<h4>The following errors were detected:</h4>";
+            echo"<h4><p>The following errors were detected:</p></h4>";
             echo"<p>" . $errorMsg . "</p>";
             echo"<a href='login.php' class='btn btn-warning' type>Return to Login</a></div>";
         }    

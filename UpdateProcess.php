@@ -1,3 +1,18 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+        <?php
+            include "./includes/header.php"
+        ?>
+</head>
+<body>
+    <?php
+        include "./includes/nav.php"
+    ?>
+    <br>
+    <br>
+    <br>
+    <br>
 <?php
 $first_name = $last_name = $email = $password_hashed = $errorMsg = "";
 $success = true;
@@ -78,7 +93,7 @@ function sanitize_input($data) {
 }
 
 function UpdateMemberToDB() {
-    global $first_name, $last_name, $email, $password_hashed, $errorMsg;
+    global $first_name, $last_name, $email, $password_hashed, $errorMsg, $id;
     // Create database connection.
         $config = parse_ini_file('../../private/db-config.ini');
         $conn = new mysqli($config['servername'], $config['username'], $config['password'], 'project1004');
@@ -89,20 +104,13 @@ function UpdateMemberToDB() {
         $result = 0;
     }
     else
-    {  
-        $stmt = $conn->prepare("UPDATE members SET first_name='$first_name' WHERE member_id = '$memberid' ");
+    {        session_start();
+         $id = $_SESSION['memberid'] ;
+        $stmt = $conn->prepare("UPDATE members SET first_name='$first_name', last_name='$last_name' ,email='$email', password='$password_hashed'  WHERE member_id = '$id' ");
         
                 $stmt->execute();
-                $result = $stmt->get_result();
 
-
-
-        if (!$result)
-        {
-            $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
-            $result = 0;
-        }
-
+                $result = 1;
         $stmt->close();
     }
     $conn->close();
@@ -111,17 +119,20 @@ function UpdateMemberToDB() {
 
 
 if (!$res) {
-    echo "<h2>Oops!</h2>";
-    echo "<h4>The following errors were detected:</h4>";
+    echo "<h2><p>Oops!<p></h2>";
+    echo "<h4><p>The following errors were detected:<p></h4>";
     echo "<p>$errorMsg</p>";
     echo "<a href='account.php'g class='btn btn-danger'>Return to profile page</a>";
 }
 else
 {
-    echo "<h2>Your update is successful!</h2>";
-    echo "<h4>Please login again, $first_name $last_name</h4>";
+    echo "<h2><p>Your update is successful!</p></h2>";
+    echo "<h4><p>Please login again, $first_name $last_name</p></h4>";
     echo "<a href='login.php' class='btn btn-success'>Log-in</a>";
-    echo "<p>Your account ID is $res</p>";
+    echo "<p>Your account ID is $id</p>";
+    session_destroy();
 }
 
 ?>
+</body>
+</html>

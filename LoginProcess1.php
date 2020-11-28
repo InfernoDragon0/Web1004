@@ -66,7 +66,7 @@
         */
         function authenticateUser()
         {
-            global $first_name, $last_name, $email, $password_hashed, $errorMsg, $success,$id, $admin;
+            global $first_name, $last_name, $email, $password_hashed, $errorMsg, $success, $id, $admin;
             // Create database connection.
             $config = parse_ini_file('../../private/db-config.ini');
             $conn = new mysqli($config['servername'], $config['username'], $config['password'], 'project1004');
@@ -126,15 +126,15 @@
 
             echo "<meta http-equiv='refresh' content='3;url=./$redirector'>";
 
-            echo"<div class='page-header'><h1>Login successful!</h2>";
-            echo"<h2>Welcome back again, " . $first_name . " " . $last_name . ".</h4>";
+            echo"<div class='page-header'><h1><p>Login successful!</p></h2>";
+            echo"<h2><p>Welcome back again, " . $first_name . " " . $last_name . ".</p></h4>";
             echo"<p>Redirecting to profile page in 3 seconds!</p>";
             echo"<a href='./AccountUpdate.php' class='btn btn-success'>Profile Page</a></div>";
         }
         else
         {
             echo"<div class='page-header'><h2>Oops!</h2>";
-            echo"<h4>The following errors were detected:</h4>";
+            echo"<h4><p>The following errors were detected:</p></h4>";
             echo"<p>" . $errorMsg . "</p>";
             echo"<a href='login.php' class='btn btn-warning' type>Return to Login</a></div>";
         }    

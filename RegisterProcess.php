@@ -1,3 +1,18 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+        <?php
+            include "./includes/header.php"
+        ?>
+</head>
+<body>
+    <?php
+        include "./includes/nav.php"
+    ?>
+    <br>
+    <br>
+    <br>
+    <br>
 <?php
 $first_name = $last_name = $email = $password_hashed = $errorMsg = "";
 $success = true;
@@ -64,7 +79,7 @@ $res = saveMemberToDB();
     }
 }
 else {
-    echo "<h2>This page is not meant to be run directly.</h2>";
+    echo "<h2><p>This page is not meant to be run directly.</p></h2>";
     echo "<p>You can register at the link below:</p>";
     echo "<a href='register.php'>Go to Sign Up page...</a>";
     exit();
@@ -78,7 +93,7 @@ function sanitize_input($data) {
 }
 
 function saveMemberToDB() {
-    global $first_name, $last_name, $email, $password_hashed, $errorMsg, $success, $res;
+    global $first_name, $last_name, $email, $password_hashed, $errorMsg;
     // Create database connection.
         $config = parse_ini_file('../../private/db-config.ini');
         $conn = new mysqli($config['servername'], $config['username'], $config['password'], 'project1004');
@@ -124,3 +139,5 @@ else
 }
 
 ?>
+</body>
+</html>
