@@ -128,6 +128,9 @@
                             {
 
                             }
+                        
+                            if($member_id != NULL)
+                            {
                             ?>
                             <form action="addcomment.php" method="GET">
                                 <input type="hidden" name="review_id" value="<?php echo $rows['id']; ?>">
@@ -137,6 +140,9 @@
                                     </span>
                                 </button>
                             </form>
+                            <?php
+                            }
+                            ?>
                         </div></br>
                     <?php
                     }
