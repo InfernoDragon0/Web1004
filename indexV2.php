@@ -15,17 +15,13 @@
             include "./includes/nav.php"
         ?>
 
-        <!-- <div class="hero-carousel">
+        <div class="hero-carousel">
              <video autoplay muted loop id="MainVid">
                 <source src="images/Chiron.mp4" type="video/mp4">
             </video>
-            <div class="hero-data">
-                <p class="hero-title">L U X A U T O</p>
-                <p class="hero-description">The all new Bugatti Chiron now available</p>
-            </div>
-        </div> -->
+        </div>
 
-        <div class="d-xl-flex justify-content-xl-center align-items-xl-end" data-bs-parallax-bg="true" style="height: 500px;background-image: url(./images/logos/cat.gif);background-position: center;background-size: cover;">
+        <div class="d-xl-flex justify-content-xl-center align-items-xl-end" data-bs-parallax-bg="true" style="height: 600px;background-position: center;background-size: cover;">
             <h1>L U X A U T O</h1>
         </div>
         <div class="photo-gallery" style="width: 100%;">
@@ -36,20 +32,13 @@
                 </div>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" style="background-image: url(./images/hd/cat1.png);width: 100%;">
-                            <figure class="figure"><img class="img-fluid figure-img" src="./images/hd/cat1.png">
-                                <figcaption class="figure-caption">Caption</figcaption>
-                            </figure>
+                        <div class="swiper-slide" data-bs-parallax-bg="true" style="background-image: url(./images/hd/astonMain.png);width: 100%; height: 600px;background-position: center;background-size: cover;">
                         </div>
-                        <div class="swiper-slide" style="background-image:url(./images/hd/cat2.png);">
-                            <figure class="figure"><img class="img-fluid figure-img" src="./images/hd/cat2.png">
-                                <figcaption class="figure-caption">Caption</figcaption>
-                            </figure>
+                        <div class="swiper-slide" data-bs-parallax-bg="true" style="background-image: url(./images/hd/huayra.png);width: 100%; height: 600px;background-position: center;background-size: cover;">
                         </div>
-                        <div class="swiper-slide" style="background-image:url(./images/hd/cat3.png);">
-                            <figure class="figure"><img class="img-fluid figure-img" src="./images/hd/cat3.png">
-                                <figcaption class="figure-caption">Caption</figcaption>
-                            </figure>
+                        <div class="swiper-slide" data-bs-parallax-bg="true" style="background-image: url(./images/hd/lamboMain.png);width: 100%; height: 600px;background-position: center;background-size: cover;">
+                        </div>
+                        <div class="swiper-slide" data-bs-parallax-bg="true" style="background-image: url(./images/hd/koenesiggMain.png);width: 100%; height: 600px;background-position: center;background-size: cover;">
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -58,16 +47,12 @@
                 </div>
                 <div class="row photos">
                     <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="./images/hd/cat1.png"><img class="img-fluid" src="./images/hd/cat1.png"></a>
-                        <p>lambo</p>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="./images/hd/cat2.png"><img class="img-fluid" src="./images/hd/cat2.png"></a>
-                        <p>paganni</p>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="./images/hd/cat3.png"><img class="img-fluid" src="./images/hd/cat3.png"></a>
-                        <p>aston martin</p>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="./images/hd/cat4.png"><img class="img-fluid" src="./images/hd/cat4.png"></a>
-                        <p>bentley</p>
                     </div>
                 </div>
             </div>
@@ -93,7 +78,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 item">
                         <div class="box">
-                            <p class="description">Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id.</p>
+                            <p class="description">This is a school project btw, not a real web. Do not contact us for car sales.</p>
                         </div>
                         <div class="author"><img class="rounded-circle" src="./images/logos/cat.gif">
                             <h5 class="name">Cart</h5>
@@ -117,9 +102,9 @@
             <div class="container">
                 <div class="intro">
                     <h2 class="text-center">BE QUICK.</h2>
-                    <p class="text-center">Sign up now and indulge in the fastest.</p>
+                    <p class="text-center">Enter now and indulge in the fastest.</p>
                 </div>
-                <div class="buttons"><a class="btn btn-primary" role="button" href="#">Sign Up</a><button class="btn btn-light" type="button">Login</button></div>
+                <div class="buttons"><a class="btn btn-primary" role="button" href="./login.php">ENTER</a></div>
             </div>
         </div>
     
