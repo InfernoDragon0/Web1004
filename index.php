@@ -62,7 +62,6 @@
             </div>
         </div>
         <div data-bs-parallax-bg="true" style="height: 500px;background-image: url(./images/hd/actionBG2.png);background-position: center;background-size: cover;">
-            <h1><img src="./images/logos/cat.gif">Weird Car</h1>
         </div>
         <div class="testimonials-clean">
             <div class="container">
