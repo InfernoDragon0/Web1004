@@ -94,7 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Create Car Record</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
+    <style>
         .wrapper{
             width: 500px;
             margin: 0 auto;
@@ -110,7 +110,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <h2>Create Record</h2>
                     </div>
                     <p>Please fill this form and submit to add a car record to the database.</p>
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"" method="post">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group <?php echo (!empty($brand_err)) ? 'has-error' : ''; ?>">
                             <label>Brand</label>
                             <input type="text" name="brand" class="form-control" value="<?php echo $brand; ?>">

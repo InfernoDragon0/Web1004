@@ -57,7 +57,7 @@
                     }
                     else {
                         ?>
-                        <span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="./login.php">Login</a></span></div>
+                        <span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="./login.php">Login</a></span>
                         <?php
                     }
                 ?>

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!-- bootstraping things so stuff have to change -->
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
         <?php
             include "./includes/bootstrap-header.php"
         ?>
