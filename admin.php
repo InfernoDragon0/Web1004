@@ -5,7 +5,7 @@
     <?php
         include "./includes/header.php";?>
 
-    <style type="text/css">
+    <style>
         .wrapper{
             min-width: 650px;
             margin: 0 auto;
@@ -18,12 +18,11 @@
             margin-right: 15px;
         }
     </style>
-    <script type="text/javascript">
+    <script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();   
         });
     </script>
-    <meta charset="UTF-8">
 </head>
 <body>
     <?php
