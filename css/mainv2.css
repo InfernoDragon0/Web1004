@@ -218,7 +218,6 @@ background-color: #055ada;
 color: #fff;
 }
   
-  
 .hero-carousel {
     z-index: -100;
     position: fixed;
@@ -227,6 +226,20 @@ color: #fff;
 }
 
 #MainVid {
-    object-fit: cover;
-    width: 100%;
+    position:fixed;
+    z-index: -1;
 }
+
+@media (min-aspect-ratio: 16/9) {
+    #MainVid {
+        width:100%;
+        height: auto;
+        }
+    }
+    
+@media (max-aspect-ratio: 16/9) {
+    #MainVid {
+        width:auto;
+        height: 100%;
+        }
+    }
