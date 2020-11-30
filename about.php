@@ -28,14 +28,14 @@
       <h4>Founded in 2020 by a team of car enthusiast, LUXAUTO aims to bring car lovers' dreams to reality by offering them an experience in luxurious vehicles of exorbitant prices at affordable rates</h4><br>
       <p>Most people in the world will never experience the thrill of driving around with a vehicle that has a monetary value equivalent to that of someone’s home. This is where LUXAUTO steps in to bridge the gap between your dream and reality. At LUXAUTO, we believe that everyone should have a chance to enjoy engineering marvels and craftsmanship of rare automobiles from around the world. Brands that most can only dream of such as Bugatti, Pagani and many more are only an order away</p>
     </div>
-      <img id="emblem" src="images/logos/Pagani-emblem.png"/>
+      <img id="emblem" class="slideanim" src="images/logos/Pagani-emblem.png"/>
   </div>
 </div>
 
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-4">
-      <span id="globe" class="fa fa-globe fa-4x logo slideanim"></span>
+      <span id="globe" class="fa fa-globe logo slideanim"></span>
     </div>
     <div class="col-sm-8">
       <h2>Our Values</h2><br>
@@ -52,17 +52,17 @@
   <br>
   <div class="row slideanim">
     <div class="col-sm-4">
-      <span class="fa fa-check fa-4x logo-small"></span>
+      <span class="fa fa-check fa-2x logo-small"></span>
       <h4>Checked</h4>
       <p>All vehicles go through thorough checks and maintenance before each rental</p>
     </div>
     <div class="col-sm-4">
-      <span class="fa fa-thumbs-o-up fa-4x logo-small"></span>
+      <span class="fa fa-thumbs-o-up fa-2x logo-small"></span>
       <h4>SERVICE</h4>
       <p>LUXAUTO receives over 95% of positive ratings by our customers</p>
     </div>
     <div class="col-sm-4">
-      <span class="fa fa-usd fa-4x logo-small"></span>
+      <span class="fa fa-usd fa-2x logo-small"></span>
       <h4>AFFORDABLE</h4>
       <p>All our vehicles come at affordable rates</p>
     </div>
@@ -70,17 +70,17 @@
   <br><br>
   <div class="row slideanim">
     <div class="col-sm-4">
-      <span class="fa fa-leaf fa-4x logo-small"></span>
+      <span class="fa fa-leaf fa-2x logo-small"></span>
       <h4>HYBRID AND ELECTRIC</h4>
       <p>We offer the latest hybrid and electric supercars</p>
     </div>
     <div class="col-sm-4">
-      <span class="fa fa-phone fa-4x logo-small"></span>
+      <span class="fa fa-phone fa-2x logo-small"></span>
       <h4>24-HOURS</h4>
       <p>Give us a call and we will be with you shortly</p>
     </div>
     <div class="col-sm-4">
-      <span class="fa fa-bolt fa-4x logo-small"></span>
+      <span class="fa fa-bolt fa-2x logo-small"></span>
       <h4>SPEED</h4>
       <p>Fast transaction and approvals for all customers</p>
     </div>

@@ -225,3 +225,8 @@ color: #fff;
     top: 0;
     left: 0;
 }
+
+#MainVid {
+    object-fit: cover;
+    width: 100%;
+}
