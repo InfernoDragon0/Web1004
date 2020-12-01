@@ -157,6 +157,16 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     </style>
 </head>
 <body>
+    <body>
+    <?php        
+        session_start();
+        if (!isset($_SESSION['memberid']) || !$_SESSION['isAdmin']) {
+            header('HTTP/1.0 403 Forbidden');
+            echo "<h1>Forbidden</h1>";
+            echo "You must have admin privileges to access this page.";
+        }
+        else {
+            ?>
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -206,3 +216,4 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     </div>
 </body>
 </html>
+        <?php }

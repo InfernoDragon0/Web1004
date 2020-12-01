@@ -19,7 +19,7 @@
     <br>
     <br>
     <br>
-    <h1 class="text-center">Nothing Here!</h1>
+    <h1 style="color:whitesmoke;" class="text-center">Nothing Here!</h1>
     <p class="text-center">Hmm, this doesn't seem like a car!</p>
     <img src="./images/logos/cat.gif">
     <button class="btn btn-warning btn-block btn-lg text-center" type="button" onclick="window.location.href='./index.php'">Back to Home</button>

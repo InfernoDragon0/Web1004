@@ -47,7 +47,7 @@
                                 <br>
                                 <br>
                                 <h2 class="pull-left">Car Details</h2>
-                                <a href="create.php" class="btn btn-success pull-right">Add New Car</a>
+                                <a href="create.php" class="btn btn-success pull-right" style="color:whitesmoke;">Add New Car</a>
                             </div>
                             <?php
                             

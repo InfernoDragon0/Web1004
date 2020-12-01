@@ -20,7 +20,7 @@
                             <a class="dropdown-item" href="./brand.php?brand=jaguar">Jaguar</a>
                             <a class="dropdown-item" href="./brand.php?brand=mclaren">Mclaren</a>
                             <a class="dropdown-item" href="./brand.php?brand=koenigsegg">Koenigsegg</a>
-                            <a class="dropdown-item" href="./brand.php?brand=lamborghini">lamborghini</a>
+                            <a class="dropdown-item" href="./brand.php?brand=lamborghini">Lamborghini</a>
                             <a class="dropdown-item" href="./brand.php?brand=bentley">Bentley</a>
                             <a class="dropdown-item" href="./brand.php?brand=astonmartin">Aston Martin</a>
                         </div>

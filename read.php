@@ -51,6 +51,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,6 +66,15 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     </style>
 </head>
 <body>
+    <?php        
+        session_start();
+        if (!isset($_SESSION['memberid']) || !$_SESSION['isAdmin']) {
+            header('HTTP/1.0 403 Forbidden');
+            echo "<h1>Forbidden</h1>";
+            echo "You must have admin privileges to access this page.";
+        }
+        else {
+            ?>
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -103,3 +113,4 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     </div>
 </body>
 </html>
+        <?php }
