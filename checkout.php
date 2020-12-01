@@ -1,35 +1,27 @@
+<!DOCTYPE html>
 <html>
-    <head>
-    <meta charset="UTF-8">
-        <?php
-            include "./includes/header.php"
+
+<head>
+    <?php
+            include "./includes/bootstrap-header.php"
         ?>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/checkout.css">
     <script src="https://js.stripe.com/v3/"></script>
     <link rel="stylesheet" href="./css/stripe.css">
 </head>
+
 <body>
     <?php
         include "./includes/nav.php"
     ?>
 
-    <div class="auth">
-        <img id="showcase" src="./images/hd/floorneedspolish.png"/>
-        <div class="checkout-container">
-            <br>
-            <br>
-
-
-            <div class="page-header">
-                <div class="data">
-                    <h1 id="orderheading">Your Order</h1>
-                    <h2 id="orderpricing">$0 SGD</h2>
-                </div>
-
-                <!-- hide the button if thcart is empty-->
-            </div>
-
-            <div class="cart">
-
+    <div class="login-dark" id="showcase" style="background: url(./images/hd/floorneedspolish.png) center / cover no-repeat;">
+        <form action="./purchaseHandler.php" method="post" id="payment-form" style="max-width: 640px;background: rgba(0,0,0,0.73);padding: 0;min-height: 500px;">
+            <div class="illustration"></div>
+            <h1 id="orderheading">Your Order</h1>
+            <h2 id="orderpricing">$0</h2>
             <?php
                 require_once('vendor/autoload.php'); //composer autoload, for stripe
                 session_start();
@@ -115,7 +107,7 @@
                     }
 
                     if ($result->num_rows < 4) {
-                        $extra = 5-$result->num_rows;
+                        $extra = 4-$result->num_rows;
 
                         for ($i = 0; $i < $extra; $i++) {
                             ?>
@@ -136,59 +128,23 @@
 
                 //;
             ?>
-            
-            </div>
 
-                        
-            <form action="./purchaseHandler.php" method="post" id="payment-form">
-            <div class="form-row">
-                <div class="page-header">
-                    <div class="data">
-                        <h1 id="orderheading">Payment: Credit Card</h1>
-                    </div>
-                </div>
-                <div id="card-element">
+            
+            <div class="illustration"></div>
+            <div class="form-group">
+            <div id="card-element">
                 <!-- A Stripe Element will be inserted here. -->
                 </div>
 
                 <!-- Used to display form errors. -->
                 <div id="card-errors" role="alert"></div>
             </div>
-
-            <button id="cobutton" class="cobutton" data-secret="<?php echo $intent->client_secret ?>">Checkout</button>
-            </form>
-                
-        </div>
-
+            <div class="form-group"><button class="btn btn-primary btn-block" id="cobutton" data-secret="<?php echo $intent->client_secret ?>">Checkout</button></div>
+        </form>
     </div>
-
-
-    <!-- <div class="checkout-container">
-        
-
-        
-
-        <div class="checkout">
-            <p>Confirm your order</p>
-            <p>Total: $9,999,999 SGD</p>
-            <p>Select a payment method</p>
-            <div class="card-form"></div> place credit card info here
-            <button>Complete Payment</button>  button will check out after confirming login password 
-            <p>WE ACCEPT</p>
-            <p>icons of visa mc etc</p>
-        </div>
-
-        <div class="checkout-completed"> hidden until completed
-            <p>tick/cross icon</p>
-            <p>Payment Successful / Failed</p>
-            <p>Total: $9,999,999 SGD</p>
-            <p>You will receive an invoice via your email.</p>
-            <button>View Order Status</button> button will check out after confirming login password 
-        </div>
-    </div> -->
     <?php
-            include "./includes/footer.php";
-        ?>
+        include "./includes/footer.php";
+    ?>
 </body>
 
 <script>
@@ -295,7 +251,7 @@
     
     Array.from(cartdatas).forEach((element) => {
         element.addEventListener('click', () => {
-            showcase.src = element.firstElementChild.src
+            showcase.style.background="url(" + element.firstElementChild.src + ")";
         })
     })
 
