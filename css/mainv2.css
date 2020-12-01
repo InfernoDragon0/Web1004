@@ -243,3 +243,16 @@ color: #fff;
         height: 100%;
         }
     }
+    
+@media (max-width: 767px) {
+    #MainVid {
+        display: none;
+    }
+    body {
+        background: url('mobilebg.png');
+        width: 100%;
+        height: 800px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
