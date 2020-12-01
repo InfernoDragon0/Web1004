@@ -34,7 +34,7 @@
             <div class="container hero">
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
-                        <div class="author"><img class="rounded-circle" src="assets/img/cat.gif">
+                        <div class="author"><img class="rounded-circle" src="./images/logos/cat.gif">
                             <h5 class="text-white name">bugcat Johnson</h5>
                             <p class="text-white title">Newbie</p>
                         </div>
