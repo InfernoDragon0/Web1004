@@ -21,7 +21,7 @@
             <?php
                 session_start();
                 // Get member's id from session
-                $member_id = $_SESSION['id'];
+                $member_id = $_SESSION['memberid'];
                 //echo $member_id;
 
                 if (!empty($_POST['review']))
