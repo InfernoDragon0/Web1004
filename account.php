@@ -91,8 +91,8 @@
                 <br>
                 <p class="auth-header">Login to view/edit profile</p>
                 <form action="LoginProcess1.php<?php echo $redirector;?>" method="post">
-                <input type="email" class="inputs" name="email" required placeholder="Email"/>
-                <input type="password" class="inputs" name="password" required placeholder="Password"/><br>
+                <input aria-label="email" type="email" class="inputs" name="email" required placeholder="Email"/>
+                <input aria-label="password" type="password" class="inputs" name="password" required placeholder="Password"/><br>
                 <br><br>
                 <button class="auth-submit">Login</button><br>
                 </form>
