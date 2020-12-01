@@ -14,24 +14,13 @@
     <p> </p>
     <p> </p>
 <!--  extra 3x <p> </p>  to insert extra spaces, ensure navbar doesnt block contents-->
-    
-    <p>Account details here</p>
-    <p>Your name: abc</p>
-    <p>Your email address:</p>
-    <p>Your profile pic here</p>
-    <p>reset password?</p>
-    <p>email verification?</p>
-    
-    
     <p> </p>
     <p> </p>
     <p> </p>
     <p> </p>
     <p> </p>
     <p> </p>
- 
-   
-    <p>Your order history:</p>
+
     <div class="orderhistory">
         <?php
             //order history READ
