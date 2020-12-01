@@ -53,15 +53,15 @@
                 <p class="auth-header">Update Account</p>
                 <form action="UpdateProcess.php" method="post">
                     <label for="first_name">First Name:</label>
-                    <input type="text" class="inputs" required placeholder="First Name" value= "<?php echo $first_name;?>" name="first_name"/>
+                    <input aria-label="first name type="text" class="inputs" required placeholder="First Name" value= "<?php echo $first_name;?>" name="first_name"/>
                     <label for="last_name">Last Name:</label>
-                    <input type="text" class="inputs" required placeholder="Last Name" value="<?php echo $last_name;?>" name="last_name"/>
+                    <input aria-label="" type="text" class="inputs" required placeholder="Last Name" value="<?php echo $last_name;?>" name="last_name"/>
                     <label for="email">Email:</label>
-                    <input type="email" class="inputs" required placeholder="Email Address" value="<?php echo $email;?>" name="email"/>
+                    <input aria-label="email" type="email" class="inputs" required placeholder="Email Address" value="<?php echo $email;?>" name="email"/>
                     <label for="password">Password:</label>
-                    <input type="password" class="inputs" required placeholder="Password" name="password"/>
+                    <input aria-label="password" type="password" class="inputs" required placeholder="Password" name="password"/>
                     <label for="password_confirm">Re-enter Password:</label>
-                    <input type="password" class="inputs" required placeholder="Re-enter Password" name="password_confirm"/><br>
+                    <input aria-label="retype password" type="password" class="inputs" required placeholder="Re-enter Password" name="password_confirm"/><br>
                     <button class="auth-submit">Update</button><br>
                     <hr>
                 </form>
