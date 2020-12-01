@@ -97,6 +97,8 @@
                 <button class="auth-submit">Login</button><br>
                 </form>
         </div>
+        
+  </div>
 
         <?php
             include "./includes/footer.php";
