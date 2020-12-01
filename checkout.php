@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <?php
             include "./includes/bootstrap-header.php"
         ?>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="./css/checkout.css">
     <script src="https://js.stripe.com/v3/"></script>
