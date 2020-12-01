@@ -362,8 +362,6 @@ a:hover {
 }
 
 .car-container {
-    /* width: 100%; */
-    /* min-height: 600px; */
     vertical-align: middle;
     text-align: center;
     overflow-x: scroll;
@@ -390,17 +388,12 @@ a:hover {
     color: white;
     font-family: 'Montserrat', sans-serif;
 }
-.update-delete {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 200px;
-    background: rgba(0,0,0,0.75);
-    color: white;
-    top: 1000px;
-    right: 1500px;
-    font-family: 'Montserrat', sans-serif;
+.deletebutton{
+    background: none;
+    color: red;
+    border: none;
 }
+
 
 ::-webkit-scrollbar { 
     width: 0px; /* remove scrollbar space */ 
@@ -455,6 +448,29 @@ a:hover {
     overflow: scroll;
 }
 
+.caritem {
+    width: 100%;
+    height: 70%;
+    overflow-y: scroll;
+}
+
+.caritem-data {
+    height: 120px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s linear;
+}
+
+.caritem-data .display {
+    position: relative;
+    height: auto;
+    width: 100%;
+    min-height: 0;
+    top: -50%;
+}
+
 .cart {
     width: 100%;
     height: 70%;
@@ -497,6 +513,7 @@ a:hover {
     margin-right: 10px;
     
 }
+
 
 .cart-data .item-data {
     float: right;

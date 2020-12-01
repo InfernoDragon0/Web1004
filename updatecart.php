@@ -1,9 +1,7 @@
 <?php
-
-echo $cartid = $_POST["cartid"];
-echo $carid = $_POST["carid"];
-echo $qty = $_POST["qty"];
-$userid = 19;
+session_start();
+$cartid = $_POST["cartid"];
+$qty = $_POST["qty"];
 //        if (isset($_SESSION['id'])) {
 //            echo $userid = $_SESSION['id'];
 //        }       
@@ -11,27 +9,41 @@ $userid = 19;
 //            header("Location:login.php");
 //            
 //        }
-//helloDb();
+       updateitem();
 
-function helloDb() {
-    global $car;
 
-    $config = parse_ini_file('../../private/db-config.ini');
-    $conn = new mysqli($config['servername'], $config['username'], $config['password'], "project1004");
-
-    if ($conn->connect_error) {
+function updateitem() {
+    global  $qty, $cartid;
+    // Create database connection.
+        $config = parse_ini_file('../../private/db-config.ini');
+        $conn = new mysqli($config['servername'], $config['username'], $config['password'], 'project1004');
+    // Check connection
+    if ($conn->connect_error)
+    {
         $errorMsg = "Connection failed: " . $conn->connect_error;
-        echo $errorMsg;
-        $success = false;
-    } else {
+        $result = 0;
+    }
+    else
+    {
         $stmt = $conn->prepare("UPDATE cart SET  qty = ? WHERE id= ? ");
-        $stmt->bind_param("ii",$qty, $cartid);
+        $stmt->bind_param("ii", $qty,$cartid );
         $stmt->execute();
-
-        header("Location:cart.php");
+   if($stmt >= 1)    
+	{
+            echo '<script>window.location.href = "cart.php";</script>';
+	}
+	else     
+	{
+		
+		echo "Prepare failed: (". $conn->errno.") ".$conn->error."<br>";	
+	}
+    
 
         $stmt->close();
     }
+    $conn->close();
+    return $result;
 }
 
 ?>
+

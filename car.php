@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <?php include "./includes/header.php" ?>
     </head>
@@ -23,51 +24,51 @@
                 $stmt->bind_param("i", $car);
                 $stmt->execute();
                 $result = $stmt->get_result();
-                $row = $result->fetch_assoc(); 
+                $row = $result->fetch_assoc();
 
                 if ($result->num_rows > 0) {
                     ?>
-                    <section id="product">
-                        <span class="name"><?php echo $row["model"]; ?></span><br>
-                        <img src="images/hd/<?php echo $row['media']; ?>">
-                        <aside id="detail">
-                            <span class="price" ><?php echo "$" . $row['price']; ?></span><br>
-                            <span class="stock"><?php 
-                            if($row[stock] > 0)
-                            {
-                                echo "There are stock: " . $row['stock'];
-                            }
-                            else{
-                                echo "There is no stock";
-                            }
-                            ?>
-                            </span>
-                            <label for="cars">Quantity:</label>
-                            <form action="additem.php" method="post">
-                                <select id="qty" name="qty">
+
+                    <div class="caritem">
+                        <div class="caritem-data">
+                            <span class="name"><?php echo $row["model"]; ?></span><br>
+                            <img class="display" src="images/hd/<?php echo $row['media']; ?>">
+                            <aside id="detail">
+                                <span class="price" ><?php echo "$" . $row['price']; ?></span><br>
+                                <span class="stock"><?php
+                                    if ($row[stock] > 0) {
+                                        echo "There are stock: " . $row['stock'];
+                                    } else {
+                                        echo "There is no stock";
+                                    }
+                                    ?>
+                                </span>
+                                <label for="cars">Quantity:</label>
+                                <form action="additem.php" method="post">
+                                    <select id="qty" name="qty">
                                     <?php
                                     for ($x = 1; $x <= $row['stock']; $x++) {
                                         echo '<option value="' . $x . '">' . $x . '</option>';
                                     }
                                     ?>
-                                </select>
-                                <input type="submit" value="Add to cart" class="buttoncart">
-                                <input type="text" name="carid" value="<?php echo $row["id"]; ?>" hidden>
-                            </form>
-                        </aside>
-
-                    </section>
-                    <?php
-                } else {
-                    echo "No results!";
-                }
-
-                $stmt->close();
-            }
+                                    </select>
+                                    <input type="submit" value="Add to cart" class="buttoncart">
+                                    <input type="text" name="carid" value="<?php echo $row["id"]; ?>" hidden>
+                                </form>
+                            </aside>
+                        </div>
+                    </div>
+            <?php
+        } else {
+            echo "No results!";
         }
-        ?>
+
+        $stmt->close();
+    }
+}
+?>
         <?php
-            include "./includes/footer.php";
+        include "./includes/footer.php";
         ?>
     </body>
 </html>

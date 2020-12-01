@@ -1,19 +1,12 @@
 <?php
-        session_start();
-$cartidToDelete = $_POST["cartid"];
-$caridToDelete = $_POST["carid"];
-$userid = 19;
-//        if (isset($_SESSION['id'])) {
-//            echo $userid = $_SESSION['id'];
-//        }       
-//        else{
-//            header("Location:login.php");
-//            
-//        }
-       additem();
+    session_start();
+    $cartidToDelete = $_POST["cartid"];
+    $caridToDelete = $_POST["carid"];
+
+       deleteitem();
 
 
-function additem() {
+function deleteitem() {
     global $cartidToDelete, $caridToDelete, $memberid;
     // Create database connection.
         $config = parse_ini_file('../../private/db-config.ini');
@@ -26,17 +19,17 @@ function additem() {
     }
     else
     {
-        $stmtinsert = $conn->prepare("DELETE FROM .cart WHERE id = ? ");
-        $stmtinsert->bind_param("i", $cartidToDelete);
-        $stmtinsert->execute();
-   if($stmtinsert >= 1)    
+        $stmt= $conn->prepare("DELETE FROM .cart WHERE id = ? ");
+        $stmt->bind_param("i", $cartidToDelete);
+        $stmt->execute();
+   if($stmt >= 1)    
 	{
-            header("Location:cart.php");
+            echo '<script>window.location.href = "cart.php";</script>';
 	}
 	else     
 	{
 		
-		echo $stmtinsert;	
+		echo "Prepare failed: (". $conn->errno.") ".$conn->error."<br>";	
 	}
     
 
