@@ -1,0 +1,171 @@
+.login-dark {
+    height: 1000px;
+    background: #475d62 url(../../assets/img/star-sky.jpg);
+    background-size: cover;
+    position: relative;
+  }
+  
+  .login-dark form {
+    max-width: 320px;
+    width: 90%;
+    background-color: #1e2833;
+    padding: 40px;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
+  }
+
+  form {
+      max-height: 800px;
+      overflow-y: scroll;
+  }
+  
+  .login-dark .illustration {
+    text-align: center;
+    padding: 15px 0 20px;
+    font-size: 100px;
+    color: #2980ef;
+  }
+  
+  .login-dark form .form-control {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #434a52;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    color: inherit;
+  }
+  
+  .login-dark form .btn-primary {
+    background: gold;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    padding: 11px;
+    box-shadow: none;
+    margin-top: 26px;
+    text-shadow: none;
+    outline: none;
+  }
+  
+  .login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+    background: #214a80;
+    outline: none;
+  }
+  
+  .login-dark form .forgot {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #6f7a85;
+    opacity: 0.9;
+    text-decoration: none;
+  }
+  
+  .login-dark form .forgot:hover, .login-dark form .forgot:active {
+    opacity: 1;
+    text-decoration: none;
+  }
+  
+  .login-dark form .btn-primary:active {
+    transform: translateY(1px);
+  }
+  
+h1 {
+    font-size: 36px;
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 10px;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+.display {
+    position: relative;
+    height: auto;
+    width: 100%;
+    min-height: 0;
+    top: -50%;
+}
+
+.small-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 64px !important;
+    height: auto !important;
+    min-height: 0px !important;
+    margin: 5px;
+    z-index: 5;
+}
+
+.item-name {
+    float: left;
+    position: absolute;
+    bottom: 0;
+    font-size: 24px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+.item-data {
+    float: right;
+    position: absolute;
+    margin-right: 25px;
+    right: 0;
+    top: 0;
+    height: 100%;
+    line-height: 60px;
+}
+
+.cart-data {
+    height: 120px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s linear;
+}
+
+.cart-data:hover {
+    height: 190px;
+    z-index: 5;
+}
+
+::-webkit-scrollbar { 
+    width: 0px; /* remove scrollbar space */ 
+    background: transparent; /* optional: just make scrollbar invisible */ 
+}
+
+a {
+    text-decoration: none;
+    color:inherit;
+    transition: all 0.2s linear;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: #FDD835;
+}
+
+
+.smaller-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px !important;
+    height: auto !important;
+    min-height: 0px !important;
+    margin: 5px;
+}
