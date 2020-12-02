@@ -16,7 +16,7 @@
                 $review = $errormsg = "";
                 $success = true;
                 // Get member's id from session
-                $member_id = $_SESSION['id'] = 1;
+                $member_id = $_SESSION['memberid'];
 
                 global $member_id, $review, $error_msg, $success; 
 

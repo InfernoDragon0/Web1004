@@ -22,7 +22,7 @@
                 session_start();
                 $review_id = $_GET['review_id'];
                 // Get member's id from session
-                $member_id = $_SESSION['id'] = 1;
+                $member_id = $_SESSION['memberid'];
                 //echo $member_id;
 
                 if (!empty($_POST['comment']))
