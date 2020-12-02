@@ -26,7 +26,7 @@
                     <h3>Luxauto</h3>
                     <p>At LUXAUTO, we believe that everyone should have a chance to enjoy engineering marvels and craftsmanship of rare automobiles from around the world.</p>
                 </div>
-                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                <div class="col item social"><a href="#"><i class="icon ion-social-facebook" aria-label="facebook"></i></a><a href="#"><i class="icon ion-social-twitter" aria-label="twitter"></i></a><a href="#"><i class="icon ion-social-snapchat" aria-label="snapchat"></i></a><a href="#"><i class="icon ion-social-instagram" aria-label="instagram"></i></a></div>
             </div>
             <p class="copyright"><br>Luxauto&nbsp;Pte&nbsp;Ltd&nbsp;Copyright © 2020&nbsp;|&nbsp;All&nbsp;Rights&nbsp;Reserved<br></p>
         </div>

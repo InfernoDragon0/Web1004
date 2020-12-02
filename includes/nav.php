@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark navbar-expand-md navigation-clean-button fixed-top">
     <div class="container">
         <a class="navbar-brand" href="./index.php">
-            <img src="images/logos/companylogo1.png" height="40"> 
+            <img src="images/logos/companylogo1.png" aria-label="company logo" height="40"> 
         </a>
 
         <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
