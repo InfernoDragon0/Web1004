@@ -59,9 +59,9 @@
                     <label for="email">Email:</label>
                     <input aria-label="email" type="email" class="inputs" required placeholder="Email Address" value="<?php echo $email;?>" name="email"/>
                     <label for="password">Password:</label>
-                    <input aria-label="password" type="password" class="inputs" required placeholder="Password" name="password"/>
+                    <input aria-label="password" type="password" class="inputs" required placeholder="Password" name="password" minlength="8" maxlength="20"/>
                     <label for="password_confirm">Re-enter Password:</label>
-                    <input aria-label="retype password" type="password" class="inputs" required placeholder="Re-enter Password" name="password_confirm"/><br>
+                    <input aria-label="retype password" type="password" class="inputs" required placeholder="Re-enter Password" name="password_confirm" minlength="8" maxlength="20"/><br>
                     <button class="auth-submit">Update</button><br>
                     <hr>
                 </form>
