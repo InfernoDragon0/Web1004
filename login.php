@@ -52,7 +52,7 @@
                     <input aria-label="last name" type="text" class="inputs" required placeholder="Last Name" name="last_name"/>
                     <input aria-label="email" type="email" class="inputs" required placeholder="Email Address" name="email"/>
                     <input aria-label="password" type="password" class="inputs" required placeholder="Password" name="password" minlength="8" maxlength="20"/>
-                    <input aria-label="re-enter password" type="password" class="inputs" required placeholder="Re-enter Password" name="password_confirm" minlength="8" maxlength="20" pattern="[a-zA-Z0-9]{8-20}"/><br>
+                    <input aria-label="re-enter password" type="password" class="inputs" required placeholder="Re-enter Password" name="password_confirm" minlength="8" maxlength="20"/><br>
                     <input aria-label="agree to terms and condition" type="checkbox" id="tc" name="tc" required /><label for="tc">I have read and agreed to the terms and conditions</label><br>
                     <input aria-label="subscribe to mailing" type="checkbox" id="mailing" name="mailing" /><label for="mailing">I want spam mail</label><br>
                     <br><br>
