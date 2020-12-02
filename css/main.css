@@ -388,12 +388,6 @@ a:hover {
     color: white;
     font-family: 'Montserrat', sans-serif;
 }
-.deletebutton{
-    background: none;
-    color: red;
-    border: none;
-}
-
 
 ::-webkit-scrollbar { 
     width: 0px; /* remove scrollbar space */ 
@@ -486,7 +480,7 @@ a:hover {
 }
 
 .cart-data:hover {
-    height: 190px;
+    height: 350px;
     z-index: 5;
 }
 
@@ -522,6 +516,22 @@ a:hover {
     top: 0;
     height: 100%;
     line-height: 60px;
+}
+.deletebutton{
+    margin: 10px 0;
+    background: gold;
+    color: black;
+    border: none;
+    outline: none;
+    transition: all 0.2s linear;
+}
+.updatebutton{
+    margin: 10px 0;
+    background: gold;
+    color: black;
+    border: none;
+    outline: none;
+    transition: all 0.2s linear;
 }
 
 #showcase {
