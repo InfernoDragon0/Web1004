@@ -23,6 +23,7 @@
                             <a class="dropdown-item" href="./brand.php?brand=lamborghini">Lamborghini</a>
                             <a class="dropdown-item" href="./brand.php?brand=bentley">Bentley</a>
                             <a class="dropdown-item" href="./brand.php?brand=astonmartin">Aston Martin</a>
+                            <a class="dropdown-item" href="./brand.php?brand=pagani">Pagani</a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="./reviews.php">REVIEWS</a></li>
