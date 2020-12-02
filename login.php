@@ -32,9 +32,9 @@
                 <br>
                 <p class="auth-header">LUXAUTO</p>
                 <form action="LoginProcess.php<?php echo $redirector;?>" method="post">
-                <input type="email" class="inputs" name="email" required placeholder="Email"/>
-                <input type="password" class="inputs" name="password" required placeholder="Password"/><br>
-                <input type="checkbox" id="cb"/><label for="cb">Remember me</label><br>
+                <input aria-label="email" type="email" class="inputs" name="email" required placeholder="Email"/>
+                <input aria-label="password" type="password" class="inputs" name="password" required placeholder="Password"/><br>
+                <input aria-label="remember me button"type="checkbox" id="cb"/><label for="cb">Remember me</label><br>
                 <br><br>
                 <button class="auth-submit">Login</button><br>
                 </form>
@@ -48,13 +48,13 @@
                 <br>
                 <p class="auth-header">REGISTER NOW</p>
                 <form action="RegisterProcess.php" method="post">
-                    <input type="text" class="inputs" required placeholder="First Name" name="first_name"/>
-                    <input type="text" class="inputs" required placeholder="Last Name" name="last_name"/>
-                    <input type="email" class="inputs" required placeholder="Email Address" name="email"/>
-                    <input type="password" class="inputs" required placeholder="Password" name="password"/>
-                    <input type="password" class="inputs" required placeholder="Re-enter Password" name="password_confirm"/><br>
-                    <input type="checkbox" id="tc" name="tc" required /><label for="tc">I have read and agreed to the terms and conditions</label><br>
-                    <input type="checkbox" id="mailing" name="mailing" required /><label for="mailing">I want spam mail</label><br>
+                    <input aria-label="first name" type="text" class="inputs" required placeholder="First Name" name="first_name"/>
+                    <input aria-label="last name" type="text" class="inputs" required placeholder="Last Name" name="last_name"/>
+                    <input aria-label="email" type="email" class="inputs" required placeholder="Email Address" name="email"/>
+                    <input aria-label="password" type="password" class="inputs" required placeholder="Password" name="password" minlength="8" maxlength="20"/>
+                    <input aria-label="re-enter password" type="password" class="inputs" required placeholder="Re-enter Password" name="password_confirm" minlength="8" maxlength="20" pattern="[a-zA-Z0-9]+"/><br>
+                    <input aria-label="agree to terms and condition" type="checkbox" id="tc" name="tc" required /><label for="tc">I have read and agreed to the terms and conditions</label><br>
+                    <input aria-label="subscribe to mailing" type="checkbox" id="mailing" name="mailing" /><label for="mailing">I want spam mail</label><br>
                     <br><br>
                     <button class="auth-submit">Register</button><br>
                     <hr>
