@@ -31,27 +31,30 @@
 
                     <div class="caritem">
                         <div class="caritem-data">
-                            <span class="name"><?php echo $row["model"]; ?></span><br>
+
                             <img class="display" src="images/hd/<?php echo $row['media']; ?>">
                             <aside id="detail">
-                                <span class="price" ><?php echo "$" . $row['price']; ?></span><br>
-                                <span class="stock"><?php
-                                    if ($row[stock] > 0) {
-                                        echo "There are stock: " . $row['stock'];
-                                    } else {
-                                        echo "There is no stock";
-                                    }
+                                <p class="name"><?php echo $row["model"]; ?></p><br>
+                                <p class="price" ><?php echo "$" . $row['price']; ?></p><br>
+                                <p class="description"><?php echo row['description']; ?> </p><br>
+                                <p class="stock"><?php
+                                    if ($row[stock] > 0) {?>
+                                <p> There are stock: <?php echo $row['stock']; ?></p>
+                                  <?php  } else { ?>
+                                    <p>There is no stock <p>
+                                  <?php  }
                                     ?>
-                                </span>
-                                <label for="cars">Quantity:</label>
+                                </p>
+                                <label for="cars"><p>Quantity:</p></label>
                                 <form action="additem.php" method="post">
                                     <select id="qty" name="qty">
                                     <?php
                                     for ($x = 1; $x <= $row['stock']; $x++) {
-                                        echo '<option value="' . $x . '">' . $x . '</option>';
+                                        echo '<option value="' . $x . '"><p>' . $x . '</p></option>';
                                     }
                                     ?>
                                     </select>
+                                    <br>
                                     <input type="submit" value="Add to cart" class="buttoncart">
                                     <input type="text" name="carid" value="<?php echo $row["id"]; ?>" hidden>
                                 </form>

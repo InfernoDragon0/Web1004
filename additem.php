@@ -3,11 +3,13 @@
 session_start();
 $car = $_POST['carid'];
 $addqty = $_POST['qty'];
-$userid = 19;
+    if (isset($_SESSION['memberid'])) {
+                    $memberid = $_SESSION['memberid'];
+                }
 additem();
 
 function additem() {
-    global $userid, $car, $addqty;
+    global $memberid, $car, $addqty;
     // Create database connection.
     $config = parse_ini_file('../../private/db-config.ini');
     $conn = new mysqli($config['servername'], $config['username'], $config['password'], 'project1004');
@@ -18,7 +20,7 @@ function additem() {
     } else {
         // check if cart have same car inside
         $stmtcheckcar = $conn->prepare("SELECT *, cart.id as cartid from cart inner join car ON cart.car_id = car.id where member_id = ? and car_id= ?");
-        $stmtcheckcar->bind_param("ii", $userid, $car);
+        $stmtcheckcar->bind_param("ii", $memberid, $car);
         $stmtcheckcar->execute();
         $result = $stmtcheckcar->get_result();
         if ($result->num_rows > 0) {
@@ -53,7 +55,7 @@ function additem() {
             }
         } else {
             $stmtinsert = $conn->prepare("INSERT INTO cart(member_id,car_id,qty) VALUES(?,?,?)");
-            $stmtinsert->bind_param("iii", $userid, $car, $addqty);
+            $stmtinsert->bind_param("iii", $memberid, $car, $addqty);
             $stmtinsert->execute();
             if ($stmtinsert >= 1) {
 
