@@ -26,7 +26,7 @@
     ?>
 
     <div class="auth">
-        <img src="./images/hd/cat1.png"/>
+        <img src="./images/hd/cat1.png" aria-label="background image"/>
         <div id="login" class="auth-container active">
                 <br>
                 <br>
