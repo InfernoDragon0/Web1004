@@ -62,7 +62,7 @@ and open the template in the editor.
                 <p class="auth-header">Update Account</p>
                 <form action="UpdateProcess.php" method="post">
                     <label for="first_name">First Name:</label>
-                    <input aria-label="first name type="text" class="inputs" required placeholder="First Name" value= "<?php echo $first_name;?>" id="first_name"/>
+                    <input aria-label="first name" type="text" class="inputs" required placeholder="First Name" value= "<?php echo $first_name;?>" id="first_name"/>
                     <label for="last_name">Last Name:</label>
                     <input aria-label="last_name" type="text" class="inputs" required placeholder="Last Name" value="<?php echo $last_name;?>" id="last_name"/>
                     <label for="email">Email:</label>
