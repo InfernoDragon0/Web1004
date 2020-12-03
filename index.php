@@ -49,13 +49,13 @@
                     <p class="text-center">Get a taste of what we provide.</p>
                 </div>
                 <div class="row photos">
-                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="./images/hd/bentleyMain.png"><img class="img-fluid" src="./images/hd/bentleyMain.png"></a>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="./images/hd/bentleyMain.png"><img class="img-fluid" title="car" src="./images/hd/bentleyMain.png"></a>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="./images/hd/lamboMain2.png"><img class="img-fluid" src="./images/hd/lamboMain2.png"></a>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="./images/hd/lamboMain2.png"><img class="img-fluid" title="car" src="./images/hd/lamboMain2.png"></a>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="./images/hd/unknown7.png"><img class="img-fluid" src="./images/hd/unknown7.png"></a>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="./images/hd/unknown7.png"><img class="img-fluid" title="car" src="./images/hd/unknown7.png"></a>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="./images/hd/unknownd.png"><img class="img-fluid" src="./images/hd/unknownd.png"></a>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="./images/hd/unknownd.png"><img class="img-fluid" title="car" src="./images/hd/unknownd.png"></a>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                         <div class="box">
                             <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
                         </div>
-                        <div class="author"><img class="rounded-circle" src="./images/logos/cat.gif">
+                        <div class="author"><img class="rounded-circle" title="car" src="./images/logos/cat.gif">
                             <h5 class="name">Cat</h5>
                             <p class="title">CEO of Company Inc.</p>
                         </div>
@@ -82,7 +82,7 @@
                         <div class="box">
                             <p class="description">This is a school project btw, not a real web. Do not contact us for car sales.</p>
                         </div>
-                        <div class="author"><img class="rounded-circle" src="./images/logos/cat.gif">
+                        <div class="author"><img class="rounded-circle" title="car" src="./images/logos/cat.gif">
                             <h5 class="name">Cart</h5>
                             <p class="title">Founder of Style Co.</p>
                         </div>
@@ -91,7 +91,7 @@
                         <div class="box">
                             <p class="description">Aliquam varius finibus est, et interdum justo suscipit. Vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p>
                         </div>
-                        <div class="author"><img class="rounded-circle" src="./images/logos/cat.gif">
+                        <div class="author"><img class="rounded-circle" title="car" src="./images/logos/cat.gif">
                             <h5 class="name">cattttt</h5>
                             <p class="title">Owner of Creative Ltd.</p>
                         </div>

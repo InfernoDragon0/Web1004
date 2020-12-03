@@ -56,7 +56,6 @@
                     <button class="auth-submit">Register</button><br>
                     <hr>
                 </form>
-                <p class="qs">Have an account? Click <a onclick="switchTab(event, 'login');">Here to login</a></p>
         </div>
 
     </div>
