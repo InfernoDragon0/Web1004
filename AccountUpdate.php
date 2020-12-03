@@ -9,6 +9,9 @@
     <?php
         include "./includes/nav.php"
     ?>
+    <header class="page-header">
+    <h1>Profile Page</h1>
+</header>
      <?php       
     if (isset($_SESSION['memberid'])) {
         $memberid = $_SESSION['memberid']; //for later use
@@ -55,7 +58,7 @@
                     <label for="first_name">First Name:</label>
                     <input aria-label="first name type="text" class="inputs" required placeholder="First Name" value= "<?php echo $first_name;?>" name="first_name"/>
                     <label for="last_name">Last Name:</label>
-                    <input aria-label="" type="text" class="inputs" required placeholder="Last Name" value="<?php echo $last_name;?>" name="last_name"/>
+                    <input aria-label="last_name" type="text" class="inputs" required placeholder="Last Name" value="<?php echo $last_name;?>" name="last_name"/>
                     <label for="email">Email:</label>
                     <input aria-label="email" type="email" class="inputs" required placeholder="Email Address" value="<?php echo $email;?>" name="email"/>
                     <label for="password">Password:</label>

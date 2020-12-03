@@ -59,12 +59,12 @@
         </div>
 
     </div>
-
+      
   
  <?php
             include "./includes/footer.php";
         ?>
-</body>
+ </body>
  
 <script>
     function switchTab(evt, tabName) {
