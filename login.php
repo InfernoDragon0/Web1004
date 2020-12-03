@@ -6,10 +6,19 @@ and open the template in the editor.
 -->
 <html lang="en">
     <head>
-    <meta charset="UTF-8">
         <?php
             include "./includes/header.php"
         ?>
+         <script>
+    function switchTab(evt, tabName) {
+        var i, tabcontent;
+        tabcontent = document.getElementsByClassName("auth-container");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+</script>
 </head>
 <body>
     <?php
@@ -32,7 +41,7 @@ and open the template in the editor.
     ?>
 
     <div class="auth">
-        <img src="./images/hd/cat1.png" aria-label="background image"/>
+        <img src="./images/hd/cat1.png" title="background image"/>
         <div id="login" class="auth-container active">
                 <br>
                 <br>
@@ -40,7 +49,7 @@ and open the template in the editor.
                 <form action="LoginProcess.php<?php echo $redirector;?>" method="post">
                 <input aria-label="email" type="email" class="inputs" name="email" required placeholder="Email"/>
                 <input aria-label="password" type="password" class="inputs" name="password" required placeholder="Password"/><br>
-                <input aria-label="remember me button"type="checkbox" id="cb"/><label for="cb">Remember me</label><br>
+                <input aria-label="remember me button" type="checkbox" id="cb"/><label for="cb">Remember me</label><br>
                 <button class="auth-submit">Login</button><br>
                 </form>
                 <a class="qs" href="./forget.php">Forget Password</a>
@@ -71,16 +80,5 @@ and open the template in the editor.
             include "./includes/footer.php";
         ?>
  </body>
- 
-<script>
-    function switchTab(evt, tabName) {
-        var i, tabcontent;
-        tabcontent = document.getElementsByClassName("auth-container");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        document.getElementById(tabName).style.display = "block";
-    }
-</script>
 
 </html>
