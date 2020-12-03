@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html lang="en">
     <head>
     <meta charset="UTF-8">
@@ -56,15 +62,15 @@
                 <p class="auth-header">Update Account</p>
                 <form action="UpdateProcess.php" method="post">
                     <label for="first_name">First Name:</label>
-                    <input aria-label="first name type="text" class="inputs" required placeholder="First Name" value= "<?php echo $first_name;?>" name="first_name"/>
+                    <input aria-label="first name type="text" class="inputs" required placeholder="First Name" value= "<?php echo $first_name;?>" id="first_name"/>
                     <label for="last_name">Last Name:</label>
-                    <input aria-label="last_name" type="text" class="inputs" required placeholder="Last Name" value="<?php echo $last_name;?>" name="last_name"/>
+                    <input aria-label="last_name" type="text" class="inputs" required placeholder="Last Name" value="<?php echo $last_name;?>" id="last_name"/>
                     <label for="email">Email:</label>
-                    <input aria-label="email" type="email" class="inputs" required placeholder="Email Address" value="<?php echo $email;?>" name="email"/>
+                    <input aria-label="email" type="email" class="inputs" required placeholder="Email Address" value="<?php echo $email;?>" id="email"/>
                     <label for="password">Password:</label>
-                    <input aria-label="password" type="password" class="inputs" required placeholder="Password" name="password" minlength="8" maxlength="20"/>
+                    <input aria-label="password" type="password" class="inputs" required placeholder="Password" id="password" minlength="8" maxlength="20"/>
                     <label for="password_confirm">Re-enter Password:</label>
-                    <input aria-label="retype password" type="password" class="inputs" required placeholder="Re-enter Password" name="password_confirm" minlength="8" maxlength="20"/><br>
+                    <input aria-label="retype password" type="password" class="inputs" required placeholder="Re-enter Password" id="password_confirm" minlength="8" maxlength="20"/><br>
                     <button class="auth-submit">Update</button><br>
                     <hr>
                 </form>
