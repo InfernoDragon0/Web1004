@@ -12,6 +12,7 @@
                         <li><a href="./brand.php?brand=koenigsegg">Koenigsegg</a></li>
                         <li><a href="./brand.php?brand=bentley">Bentley</a></li>
                         <li><a href="./brand.php?brand=astonmartin">Aston Martin</a></li>
+                        <li><a href="./brand.php?brand=pagani">Pagani</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-md-3 item">
