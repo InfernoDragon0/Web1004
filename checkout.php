@@ -93,8 +93,9 @@
                         \Stripe\Stripe::setApiKey('sk_test_51Hs3bsBSbRVapwZw2VcuX5ux9edv11xbDQRA2DRM8vnT5428GWDqOINBf6vjbc4PqS6pmTxwr90TtTSKMOOuwCHq00wh0BiG3k');
 
                         $intent = \Stripe\PaymentIntent::create([
-                        'amount' => $totalprice*100, //payment in cents
+                        'amount' => $totalprice*100 > 99999999  ? 99999999  : $totalprice*100, //payment in cents, this cannot go over $999,999.99 as this is a test doesnt matter.
                         'currency' => 'sgd',
+                        //'receipt_email' => "", //receipt emails in Stripe test mode will not send.
                         ]);
 
                         echo "<script>document.getElementById('orderpricing').innerHTML = '". money_format('%.2n', $totalprice) ."';</script>";
