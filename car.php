@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php include "./includes/header.php" ?>
+        <?php include "./includes/bootstrap-header.php" ?>
+        <link rel="stylesheet" href="./css/cars.css">
     </head>
     <body>
         <?php include "./includes/nav.php" ?>
@@ -29,24 +30,23 @@
                 if ($result->num_rows > 0) {
                     ?>
 
-                    <div class="caritem">
-                        <div class="caritem-data">
-
-                            <img class="display" src="images/hd/<?php echo $row['media']; ?>">
-                            <aside id="detail">
-                                <p class="name"><?php echo $row["model"]; ?></p><br>
-                                <p class="price" ><?php echo "$" . $row['price']; ?></p><br>
-                                <p class="description"><?php echo row['description']; ?> </p><br>
-                                <p class="stock"><?php
-                                    if ($row[stock] > 0) {?>
-                                <p> There are stock: <?php echo $row['stock']; ?></p>
+                <div class="header-blue" style="margin-top:65px; min-height:800px; background: url(images/hd/<?php echo $row['media']?>);">
+                    <div class="container hero">
+                        <div class="row">
+                            <div class="col-12 col-lg-6 col-xl-5 offset-xl-1" style="background: rgba(0,0,0,0.25);">
+                                <h1><?php echo $row["model"]; ?></h1>
+                                <p><?php echo $row['description']; ?></p>
+                                <form action="additem.php" method="post">
+                                <p><?php
+                                    if ($row['stock'] > 0) {?>
+                                 There are stock: <?php echo $row['stock']; ?>
                                   <?php  } else { ?>
-                                    <p>There is no stock <p>
+                                    There is no stock
                                   <?php  }
                                     ?>
-                                </p>
-                                <label for="cars"><p>Quantity:</p></label>
-                                <form action="additem.php" method="post">
+                                    </p>
+                                    <p>Price is <?php echo "$" . $row['price']; ?></p>
+
                                     <select id="qty" name="qty">
                                     <?php
                                     for ($x = 1; $x <= $row['stock']; $x++) {
@@ -54,16 +54,25 @@
                                     }
                                     ?>
                                     </select>
-                                    <br>
-                                    <input type="submit" value="Add to cart" class="buttoncart">
                                     <input type="text" name="carid" value="<?php echo $row["id"]; ?>" hidden>
+                                    <button class="btn btn-light btn-lg action-button" type="submit">Add to Cart</button>
+                                    <br>
+                                    <br>
+                                    <br>
+                                </div>
                                 </form>
-                            </aside>
+
+                                <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
+                                <div class="phone-mockup">
+                                    <div class="screen"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
             <?php
         } else {
-            echo "No results!";
+            echo "<h1>There is no car</h1>";
         }
 
         $stmt->close();
