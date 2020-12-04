@@ -22,6 +22,7 @@ and open the template in the editor.
         $memberid = $_SESSION['memberid']; //for later use
     }
     else {
+         echo "<meta http-equiv='refresh' content='0.1;url=https://luxauto.studio/login.php'>";
         //Redirect to login page first
         //return
     }
