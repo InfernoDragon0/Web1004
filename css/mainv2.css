@@ -29,7 +29,7 @@ background-color: #eef4f7;
 }
 
 .testimonials-clean p {
-color: #7d8285;
+color: black;
 }
 
 .testimonials-clean h2 {
@@ -102,7 +102,7 @@ color: inherit;
 
 .testimonials-clean .item .title {
 font-size: 13px;
-color: #9da9ae;
+color: black;
 }
 
 .testimonials-clean .item .description {
@@ -123,7 +123,7 @@ background-color: #fff;
 }
 
 .photo-gallery p {
-color: #7d8285;
+color: black;
 }
 
 .photo-gallery h2 {
@@ -166,7 +166,7 @@ padding: 50px 0;
 }
 
 .highlight-clean p {
-color: #7d8285;
+color: black;
 }
 
 .highlight-clean h2 {
@@ -202,7 +202,7 @@ font-size: 13px;
 letter-spacing: 0.4px;
 line-height: 1;
 outline: none;
-background-color: #ddd;
+background-color: red;
 }
 
 .highlight-clean .buttons .btn:hover {
@@ -214,7 +214,7 @@ transform: translateY(1px);
 }
 
 .highlight-clean .buttons .btn-primary {
-background-color: #055ada;
+background-color: #841620;
 color: #fff;
 }
   
