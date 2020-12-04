@@ -2,15 +2,37 @@
     <head>
         <title>Luxauto</title>
         <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-                class=""accesskey=""rel="stylesheet">
-        <link rel="stylesheet" href="css/reviewpage.css">
-        <?php include './includes/header.php'; ?>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" class=""accesskey=""rel="stylesheet">
+        <link rel="stylesheet" href="./css/reviews2.css">
+        <?php include './includes/bootstrap-header.php'; ?>
     </head>
     <body>
-        <main>
-            <?php include './includes/nav.php'; ?>
-            <h3>Reviews</h3>
+    <?php include './includes/nav.php'; ?>
+
+    <div>
+        <div class="header-blue" style="background: url(&quot;https://i.imgur.com/POvH8Fx.png&quot;);">
+            
+            <div class="container hero">
+                <div class="row">
+                    <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+                        <h1>Let us know</h1>
+                        <p>Your Reviews. </p><a href="addreview.php"><button class="btn btn-light btn-lg action-button" type="button">Add a Review</button></a></div>
+                    <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
+                        <div class="phone-mockup">
+                            <div class="screen"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonials-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">User Reviews</h2>
+            </div>
+
+
             <?php
                 session_start();
                 $review = $errormsg = "";
@@ -51,10 +73,48 @@
                     while ($rows = $result->fetch_assoc())
                     {
                         ?>
-                        <div class="review-container">
-                            <h4><?php echo $rows['review']; ?></h4>
-                            <small><?php echo $rows['date_time'];  ?></small>
+                        <div class="row people" style="margin-left: 0px;margin-right: 0px;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col-md-6 col-lg-4 item" style="max-width: 100%;margin-right: 10px;margin-left: 10px;min-width: 100%;height: 100%;margin-bottom: 0px;">
+                                <div class="box">
+                                    <p class="description"><?php echo $rows['review']; ?></p>
+                                </div>
+                                <div class="author"><img class="rounded-circle" src="./images/logos/cat.gif">
+                                    <h5 class="name">Anonymous Member</h5>
+                                    <p class="title">Reviewed at <?php echo $rows['date_time']; ?></p>
+                                </div>
+                                
                             <?php 
+
+                            
+                                if($member_id != null) {
+                                    ?>
+                                    <div class="btn-toolbar">
+                                    
+                                    <form action="addcomment.php" method="GET">
+                                        <input type="hidden" name="review_id" value="<?php echo $rows['id']; ?>">
+                                        <button class="btn btn-primary" type="submit">Add comment</button>
+                                    </form>
+                                    <?php
+
+                                    if ($member_id == $rows['member_id']) { //buttons are done
+                                        ?>
+                                        <form action="editreview.php" method="GET">
+                                            <input type="hidden" name="review_id" value="<?php echo $rows['id'];?>"> 
+                                            <button class="btn btn-primary" type="submit">Edit Review</button>
+                                        </form>
+                                        <form action="deletereview.php" method="GET">
+                                            <input type="hidden" name="review_id" value="<?php echo $rows['id'];?>">
+                                            <button class="btn btn-primary" type="submit">Delete Review</button>
+                                        </form>
+                                        <?php
+                                    }
+                                    ?>
+                                    </div>
+                                    <hr>
+
+                                    <?php
+                                }
+
                                 $statement = $conn -> prepare("SELECT * FROM comments WHERE review_id=?");
                                 $statement->bind_param("s", $rows['id']);
                                 $statement->execute();
@@ -64,86 +124,38 @@
                                     while ($strows = $stresult->fetch_assoc())
                                     {
                                         ?>
-                                        <div class="comments-container">
-                                            <div class="comment-container">
-                                                <h4><?php echo $strows['comment'];?></h4>
-                                                <small><?php echo $strows['date_time'];  ?></small>
-                                                <?php
-                                                    if($member_id == $strows['member_id'])
-                                                    {
-                                                        ?>
-                                                        <form action="editcomment.php" method="GET">
-                                                            <input type="hidden" name="comment_id" value="<?php echo $strows['id'];?>"> 
-                                                            <button class="editcommentbutton">
-                                                                <span class="material-icons">
-                                                                    create
-                                                                </span>
-                                                            </button>
-                                                        </form>
-                                                        <form action="deletecomment.php" method="GET">
-                                                            <input type="hidden" name="comment_id" value="<?php echo $strows['id'];?>">
-                                                            <button class="deletecommentbutton">
-                                                                <span class="material-icons">
-                                                                    delete_sweep
-                                                                </span>
-                                                            </button>
-                                                        </form>
-                                                        <?php
-                                                        }
-                            
-                                                        else
-                                                        {
-                            
-                                                        }
-                                                        ?>
+                                        <div class="box">
+                                            <p class="description"><?php echo $strows['comment'];?></p>
+                                            <div class="author"><img class="rounded-circle" src="./images/logos/cat.gif">
+                                                <h5 class="name">Anonymous Member</h5>
+                                                <p class="title">Commented on <?php echo $strows['date_time'];?></p>
                                             </div>
                                         </div>
-                                        <?php
+                                            
+
+                                    <?php
+                                        if($member_id == $strows['member_id']) {
+                                            ?>
+                                                <form action="editcomment.php" method="GET">
+                                                <input type="hidden" name="comment_id" value="<?php echo $strows['id'];?>">
+                                                <button class="btn btn-primary" type="submit">Edit Comment</button>
+                                            </form>
+                                            <form action="deletecomment.php" method="GET">
+                                                <input type="hidden" name="comment_id" value="<?php echo $strows['id'];?>">
+                                                <button class="btn btn-primary" type="submit">Delete Comment</button>
+                                            </form>
+                                            <?php
+                                        }
                                     }
-                                }
-
-                            if($member_id == $rows['member_id'])
-                            {
-                                ?>
-                                <form action="editreview.php" method="GET">
-                                    <input type="hidden" name="review_id" value="<?php echo $rows['id'];?>"> 
-                                    <button class="editreviewbutton">
-                                        <span class="material-icons">
-                                            create
-                                        </span>
-                                    </button>
-                                </form>
-                                <form action="deletereview.php" method="GET">
-                                    <input type="hidden" name="review_id" value="<?php echo $rows['id'];?>">
-                                    <button class="deletereviewbutton">
-                                        <span class="material-icons">
-                                            delete_sweep
-                                        </span>
-                                    </button>
-                                </form>
-                                <?php
-                            }
-
-                            else
-                            {
-
-                            }
-                        
-                            if($member_id != NULL)
-                            {
-                            ?>
-                            <form action="addcomment.php" method="GET">
-                                <input type="hidden" name="review_id" value="<?php echo $rows['id']; ?>">
-                                <button class="addcommentbutton">
-                                    <span class="material-icons">
-                                        add
-                                    </span>
-                                </button>
-                            </form>
-                            <?php
-                            }
-                            ?>
-                        </div></br>
+                                }?>
+                            </div>
+                            <div class="col">
+                                <!-- <div class="author"><img class="rounded-circle" src="assets/img/cat.gif">
+                                    <h5 class="name">Ben Johnson</h5>
+                                    <p class="title">CEO of Company Inc.</p>
+                                </div> -->
+                            </div>
+                        </div>
                     <?php
                     }
                 }
@@ -155,24 +167,10 @@
                 }
                 
                 $conn->close();
-            if($member_id != NULL)
-            {
             ?>
+        </div>
+    </div>
 
-            <div>
-                <a href="addreview.php" class="addreviewbutton">
-                <span class="material-icons">
-                    add
-                </span>
-                </a>
-            </div>
-            <?php
-            }
-            ?>
-        </main>
-
-        <?php
-            include "./includes/footer.php";
-        ?>
+    <?php include "./includes/footer.php"; ?>
     </body>
 </html>

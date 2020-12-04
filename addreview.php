@@ -23,6 +23,15 @@
                 // Get member's id from session
                 $member_id = $_SESSION['memberid'];
                 //echo $member_id;
+                if (isset($_SESSION['memberid'])) {
+                    $memberid = $_SESSION['memberid'];
+                }
+                else {
+                    header("Location: ./login.php?rd=review"); //header wont work because bootstrap is bad bad
+                    echo "<meta http-equiv='refresh' content='0;url=./login.php?rd=review'>";
+
+                    return;
+                }
 
                 if (!empty($_POST['review']))
                 {
