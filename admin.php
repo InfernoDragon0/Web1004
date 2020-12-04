@@ -17,6 +17,9 @@
         table tr td:last-child a{
             margin-right: 15px;
         }
+        .text-color {
+            color: white;
+        }
     </style>
     <script>
         $(document).ready(function(){
@@ -25,18 +28,25 @@
     </script>
 </head>
 <body>
+    <span class ="text-color">
     <?php
         include "./includes/nav.php";
         
         session_start();
         if (!isset($_SESSION['memberid']) || !$_SESSION['isAdmin']) {
             header('HTTP/1.0 403 Forbidden');
+            echo "<br>";
+            echo "<br>";
+            echo "<br>";
+            echo "<br>";
             echo "<h1>Forbidden</h1>";
             echo "You must have admin privileges to access this page.";
+            echo "<br>";
+            echo "<br>";
         }
         else {
             ?>
-
+    </span>
             <div class="wrapper">
                 <div class="container-fluid">
                     <div class="row">
