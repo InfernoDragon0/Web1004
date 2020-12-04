@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark navbar-expand-md navigation-clean-button fixed-top">
     <div class="container">
         <a class="navbar-brand" href="./index.php">
-            <img src="images/logos/companylogo1.png" height="40"> 
+            <img src="images/logos/companylogo1.png" aria-label="company logo" alt="company logo" height="40"> 
         </a>
 
         <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
@@ -23,6 +23,7 @@
                             <a class="dropdown-item" href="./brand.php?brand=lamborghini">Lamborghini</a>
                             <a class="dropdown-item" href="./brand.php?brand=bentley">Bentley</a>
                             <a class="dropdown-item" href="./brand.php?brand=astonmartin">Aston Martin</a>
+                            <a class="dropdown-item" href="./brand.php?brand=pagani">Pagani</a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="./reviews.php">REVIEWS</a></li>

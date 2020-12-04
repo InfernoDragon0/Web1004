@@ -25,8 +25,8 @@
   <div class="row">
     <div class="col-sm-8">
       <h2>About Us</h2><br>
-      <h4>Founded in 2020 by a team of car enthusiast, LUXAUTO aims to bring car lovers' dreams to reality by offering them an experience in luxurious vehicles of exorbitant prices at affordable rates</h4><br>
-      <p>Most people in the world will never experience the thrill of driving around with a vehicle that has a monetary value equivalent to that of someone’s home. This is where LUXAUTO steps in to bridge the gap between your dream and reality. At LUXAUTO, we believe that everyone should have a chance to enjoy engineering marvels and craftsmanship of rare automobiles from around the world. Brands that most can only dream of such as Bugatti, Pagani and many more are only an order away</p>
+      <h4>Founded in 2020 by a team of car enthusiast, LUXAUTO is one of the largest importers of exotic vehicles in Singapore</h4><br>
+      <p>Limited edition supercars have always been sought after by many people. LUXAUTO serves to be the platform where Singaporeans are also given the opportunity to bring home rare automobiles such as Pagani, Koenigsegg, etc.</p>
     </div>
       <img id="emblem" class="slideanim" src="images/logos/Pagani-emblem.png"/>
   </div>
@@ -39,8 +39,8 @@
     </div>
     <div class="col-sm-8">
       <h2>Our Values</h2><br>
-      <h4><strong>MISSION:</strong> To bridge gap of exorbitant vehicles and people from all walks of life</h4><br>
-      <p><strong>VISION:</strong> One day, every car fanatic from all over the world will not miss out on the experience of being in expertly crafted and engineered vehicles of the highest standards through years of hardship</p>
+      <h4><strong>MISSION:</strong> A smooth transaction for exotic car sales</h4><br>
+      <p><strong>VISION:</strong> To be the main hub of exotic cars in the world</p>
     </div>
   </div>
 </div>
@@ -54,7 +54,7 @@
     <div class="col-sm-4">
       <span class="fa fa-check fa-2x logo-small"></span>
       <h4>Checked</h4>
-      <p>All vehicles go through thorough checks and maintenance before each rental</p>
+      <p>All vehicles go through thorough checks</p>
     </div>
     <div class="col-sm-4">
       <span class="fa fa-thumbs-o-up fa-2x logo-small"></span>

@@ -12,6 +12,7 @@
                         <li><a href="./brand.php?brand=koenigsegg">Koenigsegg</a></li>
                         <li><a href="./brand.php?brand=bentley">Bentley</a></li>
                         <li><a href="./brand.php?brand=astonmartin">Aston Martin</a></li>
+                        <li><a href="./brand.php?brand=pagani">Pagani</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-md-3 item">
@@ -26,9 +27,9 @@
                     <h3>Luxauto</h3>
                     <p>At LUXAUTO, we believe that everyone should have a chance to enjoy engineering marvels and craftsmanship of rare automobiles from around the world.</p>
                 </div>
-                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                <div class="col item social"><a href="#"><i class="icon ion-social-facebook" title="facebook"></i></a><a href="#"><i class="icon ion-social-twitter" title="twitter"></i></a><a href="#"><i class="icon ion-social-snapchat" title="snapchat"></i></a><a href="#"><i class="icon ion-social-instagram" title="instagram"></i></a></div>
             </div>
-            <p class="copyright"><br>Luxauto&nbsp;Pte&nbsp;Ltd&nbsp;Copyright © 2020&nbsp;|&nbsp;All&nbsp;Rights&nbsp;Reserved<br></p>
+           <p class="copyright"><br>Luxauto&nbsp;Pte&nbsp;Ltd&nbsp;Copyright © 2020&nbsp;|&nbsp;All&nbsp;Rights&nbsp;Reserved<br></p>
         </div>
     </footer>
 </div>

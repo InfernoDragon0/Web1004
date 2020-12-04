@@ -1,6 +1,11 @@
-<html>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
     <head>
-    <meta charset="UTF-8">
         <?php
             include "./includes/header.php"
         ?>
@@ -21,7 +26,7 @@
     <p> </p>
     <p> </p>
 <div class="auth">
-        <img src="./images/hd/cat1.png"/>
+        <img src="./images/hd/cat1.png" title="background image"/>
         <div id="login" class="auth-container active">
                 <br>
                 <br>
